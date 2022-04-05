@@ -16,7 +16,8 @@ kernelspec:
 ```{code-cell} ipython3
 :tags: [hide-cell]
 
-from IPython.display import display, Markdown
+from myst_nb import glue
+from IPython.display import display, Markdown, HTML
 from schemacode import render, schema, utils
 
 # Load the schema path
@@ -40,7 +41,6 @@ Every dataset MUST include this file with the following fields:
 
 ```{code-cell} ipython3
 :tags: [hide-input]
-# First, import the necessary modules and functions
 
 field_info = {
     "Name": "REQUIRED",
@@ -129,11 +129,15 @@ top level of every derived dataset:
 In contrast to raw BIDS datasets, derived BIDS datasets MUST include a
 `GeneratedBy` key:
 
-{{ MACROS___make_metadata_table(
-   {
-      "GeneratedBy": "REQUIRED"
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "GeneratedBy": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+```
 
 If a derived dataset is stored as a subdirectory of the raw dataset, then the `Name` field
 of the first `GeneratedBy` object MUST be a substring of the derived dataset directory name.
@@ -388,12 +392,16 @@ MAY be accompanied by a JSON file describing the columns in detail
 
 In addition to the column descriptions, the JSON file MAY contain the following fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "MeasurementToolMetadata": "OPTIONAL",
-      "Derivative": "OPTIONAL",
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "MeasurementToolMetadata": "OPTIONAL",
+    "Derivative": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+```
 
 As an example, consider the contents of a file called
 `phenotype/acds_adult.json`:
