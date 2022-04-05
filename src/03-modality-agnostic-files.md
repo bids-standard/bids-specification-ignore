@@ -1,4 +1,28 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Modality agnostic files
+
+```{code-cell} ipython3
+:tags: [hide-cell]
+
+from IPython.display import display, Markdown
+from schemacode import render, schema, utils
+
+# Load the schema path
+schemapath = utils.get_schema_path()
+schema_obj = schema.load_schema(schemapath)
+```
 
 ## Dataset description
 
@@ -14,24 +38,30 @@ Templates:
 The file `dataset_description.json` is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "Name": "REQUIRED",
-      "BIDSVersion": "REQUIRED",
-      "HEDVersion": "RECOMMENDED",
-      "DatasetType": "RECOMMENDED",
-      "License": "RECOMMENDED",
-      "Authors": "OPTIONAL",
-      "Acknowledgements": "OPTIONAL",
-      "HowToAcknowledge": "OPTIONAL",
-      "Funding": "OPTIONAL",
-      "EthicsApprovals": "OPTIONAL",
-      "ReferencesAndLinks": "OPTIONAL",
-      "DatasetDOI": "OPTIONAL",
-      "GeneratedBy": "RECOMMENDED",
-      "SourceDatasets": "RECOMMENDED",
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+# First, import the necessary modules and functions
+
+field_info = {
+    "Name": "REQUIRED",
+    "BIDSVersion": "REQUIRED",
+    "HEDVersion": "RECOMMENDED",
+    "DatasetType": "RECOMMENDED",
+    "License": "RECOMMENDED",
+    "Authors": "OPTIONAL",
+    "Acknowledgements": "OPTIONAL",
+    "HowToAcknowledge": "OPTIONAL",
+    "Funding": "OPTIONAL",
+    "EthicsApprovals": "OPTIONAL",
+    "ReferencesAndLinks": "OPTIONAL",
+    "DatasetDOI": "OPTIONAL",
+    "GeneratedBy": "RECOMMENDED",
+    "SourceDatasets": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(Markdown(table.to_markdown()))
+```
 
 Each object in the `GeneratedBy` array includes the following REQUIRED, RECOMMENDED
 and OPTIONAL keys:

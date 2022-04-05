@@ -2,15 +2,54 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: index
+root: src/index.md
 parts:
-
 - caption: The BIDS Specification
   chapters:
-  - file: 01-introduction.md
-  - file: 02-common-principles.md
-  - file: 03-modality-agnostic-files.md
+  - file: src/01-introduction.md
+  - file: src/02-common-principles.md
+  - file: src/03-modality-agnostic-files.md
+  - file: src/04-modality-specific-files.md
+    sections:
+    - file: src/04-modality-specific-files/01-magnetic-resonance-imaging-data.md
+    - file: src/04-modality-specific-files/02-magnetoencephalography.md
+    - file: src/04-modality-specific-files/03-electroencephalography.md
+    - file: src/04-modality-specific-files/04-intracranial-electroencephalography.md
+    - file: src/04-modality-specific-files/05-task-events.md
+    - file: src/04-modality-specific-files/06-physiological-and-other-continuous-recordings.md
+    - file: src/04-modality-specific-files/07-behavioral-experiments.md
+    - file: src/04-modality-specific-files/08-genetic-descriptor.md
+    - file: src/04-modality-specific-files/09-positron-emission-tomography.md
+    - file: src/04-modality-specific-files/10-microscopy.md
+  - file: src/05-derivatives.md
+    sections:
+    - file: src/05-derivatives/01-introduction.md
+    - file: src/05-derivatives/02-common-data-types.md
+    - file: src/05-derivatives/03-imaging.md
+  - file: src/06-longitudinal-and-multi-site-studies.md
+  - file: src/07-extensions.md
+  - file: src/99-appendices.md
+    sections:
+    - file: src/99-appendices/01-contributors.md
+    - file: src/99-appendices/02-licenses.md
+    - file: src/99-appendices/03-hed.md
+    - file: src/99-appendices/04-entity-table.md
+    - file: src/99-appendices/05-units.md
+    - file: src/99-appendices/06-meg-file-formats.md
+    - file: src/99-appendices/07-meg-systems.md
+    - file: src/99-appendices/08-coordinate-systems.md
+    - file: src/99-appendices/09-entities.md
+    - file: src/99-appendices/10-file-collections.md
+    - file: src/99-appendices/11-qmri.md
+    - file: src/99-appendices/12-arterial-spin-labeling.md
+    - file: src/99-appendices/13-cross-modality-correspondence.md
+    - file: src/99-appendices/14-glossary.md
+  - file: src/CHANGES.md
 - caption: The BIDS Starter Kit
   chapters:
-  - url: https://executablebooks.org/en/latest/gallery.html
-    title: Gallery of Jupyter Books
+  - url: https://bids-standard.github.io/bids-starter-kit
+    title: Website
+  - url: https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html
+    title: Tutorials
+  - url: https://github.com/bids-standard/bids-starter-kit
+    title: GitHub repository
