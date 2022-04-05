@@ -524,7 +524,7 @@ def make_metadata_table(schema, field_info, tablefmt="github"):
 
     # Print it as markdown
     table_str = tabulate(df, headers="keys", tablefmt=tablefmt)
-    return table_str
+    return df
 
 
 def make_columns_table(schema, column_info, tablefmt="github"):
