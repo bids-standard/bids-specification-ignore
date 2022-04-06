@@ -41,6 +41,7 @@ The file `dataset_description.json` is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:
 
 ```{code-cell} ipython3
+:tags: [remove-input]
 
 field_info = {
     "Name": "REQUIRED",
