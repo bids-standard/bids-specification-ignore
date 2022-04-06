@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix VI: MEG file formats &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix VII: MEG systems" href="07-meg-systems.html" />
+    <link rel="prev" title="Appendix V: Units" href="05-units.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/src/99-appendices/06-meg-file-formats.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/99-appendices/06-meg-file-formats.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/06-meg-file-formats.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/99-appendices/06-meg-file-formats.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ctf">
+   CTF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neuromag-elekta-megin">
+   Neuromag/Elekta/MEGIN
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-talk-and-fine-calibration-files">
+     Cross-talk and fine-calibration files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-with-single-session-omitted-session-directory">
+       Example with single session (omitted session directory)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-with-multiple-sessions">
+       Example with multiple sessions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharing-fiff-data-after-signal-space-separation-sss">
+     Sharing FIFF data after signal-space separation (SSS)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-files">
+     Split files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recording-dates-in-fif-files">
+     Recording dates in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .fif
+      </span>
+     </code>
+     files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bti-4d-neuroimaging">
+   BTi/4D neuroimaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kit-yokogawa-ricoh">
+   KIT/Yokogawa/Ricoh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kriss">
+   KRISS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#itab">
+   ITAB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aalto-megmri">
+   Aalto MEG–MRI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Appendix VI: MEG file formats</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ctf">
+   CTF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neuromag-elekta-megin">
+   Neuromag/Elekta/MEGIN
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-talk-and-fine-calibration-files">
+     Cross-talk and fine-calibration files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-with-single-session-omitted-session-directory">
+       Example with single session (omitted session directory)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-with-multiple-sessions">
+       Example with multiple sessions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharing-fiff-data-after-signal-space-separation-sss">
+     Sharing FIFF data after signal-space separation (SSS)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-files">
+     Split files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recording-dates-in-fif-files">
+     Recording dates in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .fif
+      </span>
+     </code>
+     files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bti-4d-neuroimaging">
+   BTi/4D neuroimaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kit-yokogawa-ricoh">
+   KIT/Yokogawa/Ricoh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kriss">
+   KRISS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#itab">
+   ITAB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aalto-megmri">
+   Aalto MEG–MRI
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-vi-meg-file-formats">
+<h1>Appendix VI: MEG file formats<a class="headerlink" href="#appendix-vi-meg-file-formats" title="Permalink to this headline">¶</a></h1>
+<p>Each MEG system brand has specific file organization and data formats.
+RECOMMENDED values for <code class="docutils literal notranslate"><span class="pre">manufacturer_specific_extensions</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="06-meg-file-formats.md#ctf"><code class="docutils literal notranslate"><span class="pre">ctf</span></code></a></p></td>
+<td><p>CTF (directory with <code class="docutils literal notranslate"><span class="pre">.ds</span></code> extension)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="06-meg-file-formats.md#neuromagelektamegin"><code class="docutils literal notranslate"><span class="pre">fif</span></code></a></p></td>
+<td><p>Neuromag / Elekta / MEGIN and BabyMEG (file with extension <code class="docutils literal notranslate"><span class="pre">.fif</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="06-meg-file-formats.md#bti4d-neuroimaging"><code class="docutils literal notranslate"><span class="pre">4d</span></code></a></p></td>
+<td><p>BTi / 4D Neuroimaging (directory containing multiple files without extensions)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="06-meg-file-formats.md#kityokogawaricoh"><code class="docutils literal notranslate"><span class="pre">kit</span></code></a></p></td>
+<td><p>KIT / Yokogawa / Ricoh (file with extension <code class="docutils literal notranslate"><span class="pre">.sqd</span></code>, <code class="docutils literal notranslate"><span class="pre">.con</span></code>, <code class="docutils literal notranslate"><span class="pre">.raw</span></code>, <code class="docutils literal notranslate"><span class="pre">.ave</span></code> or <code class="docutils literal notranslate"><span class="pre">.mrk</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="06-meg-file-formats.md#kriss"><code class="docutils literal notranslate"><span class="pre">kdf</span></code></a></p></td>
+<td><p>KRISS (file with extension <code class="docutils literal notranslate"><span class="pre">.kdf</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="06-meg-file-formats.md#itab"><code class="docutils literal notranslate"><span class="pre">itab</span></code></a></p></td>
+<td><p>Chieti system (file with extension <code class="docutils literal notranslate"><span class="pre">.raw</span></code> and <code class="docutils literal notranslate"><span class="pre">.mhd</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Below are specifications for each system brand.</p>
+<div class="section" id="ctf">
+<h2>CTF<a class="headerlink" href="#ctf" title="Permalink to this headline">¶</a></h2>
+<p>Each experimental run with a CTF system yields a directory with a <code class="docutils literal notranslate"><span class="pre">.ds</span></code> extension,
+containing several files. The OPTIONAL digitized positions of the head points
+are usually stored in a separate <code class="docutils literal notranslate"><span class="pre">.pos</span></code> file, not necessarily within the <code class="docutils literal notranslate"><span class="pre">.ds</span></code>
+directory.</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>[sub-&lt;label&gt;[_ses-&lt;label&gt;]_headshape.pos]
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.ds&gt;
+</pre></div>
+</div>
+<p>CTF’s data storage is therefore via directories containing multiple files. The
+files contained within a <code class="docutils literal notranslate"><span class="pre">.ds</span></code> directory are named such that they match the
+parent directory, but preserve the original file extension (for example, <code class="docutils literal notranslate"><span class="pre">.meg4</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.res4</span></code>).
+The renaming of CTF datasets SHOULD be done with a specialized software
+such as the CTF newDs command-line application or
+<a class="reference external" href="https://github.com/mne-tools/mne-bids">MNE-BIDS</a>.</p>
+<p>Example:</p>
+<p></p>
+<p>To learn more about CTF’s data organization:
+<a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/ctf">https://www.fieldtriptoolbox.org/getting_started/ctf</a></p>
+</div>
+<div class="section" id="neuromag-elekta-megin">
+<h2>Neuromag/Elekta/MEGIN<a class="headerlink" href="#neuromag-elekta-megin" title="Permalink to this headline">¶</a></h2>
+<p>Neuromag/Elekta/MEGIN and Tristan Technologies BabyMEG data is stored as
+FIFF files with the extension <code class="docutils literal notranslate"><span class="pre">.fif</span></code>. The digitized positions of the head
+points are saved inside the FIFF file along with the MEG data, with typically no
+<code class="docutils literal notranslate"><span class="pre">_headshape</span></code> file.</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.fif
+</pre></div>
+</div>
+<div class="section" id="cross-talk-and-fine-calibration-files">
+<h3>Cross-talk and fine-calibration files<a class="headerlink" href="#cross-talk-and-fine-calibration-files" title="Permalink to this headline">¶</a></h3>
+<p>In case internal active shielding (IAS) was used during acquisition, raw FIFF
+files need to be processed using Maxwell filtering
+(signal-space separation, SSS) to make the data usable.
+To this end, two specific files are needed:
+The <em>cross-talk</em> file, and the <em>fine-calibration</em> file,
+both of which are produced by the MaxFilter software
+and the work of the Neuromag/Elekta/MEGIN engineers during maintenance of the MEG acquisition system.
+Both files are thus specific to the site of recording and may change in the
+process of regular system maintenance.</p>
+<p>In BIDS, the cross-talk and fine-calibration files are shared unmodified,
+including their original extensions (<code class="docutils literal notranslate"><span class="pre">.fif</span></code> for cross-talk and <code class="docutils literal notranslate"><span class="pre">.dat</span></code> for
+fine-calibration), but with BIDS file naming convention and by using the <code class="docutils literal notranslate"><span class="pre">acq</span></code>
+entity.</p>
+<ul class="simple">
+<li><p>cross-talk file template: <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;[_ses-&lt;label&gt;]_acq-crosstalk_meg.fif</span></code></p></li>
+<li><p>fine-calibration file template: <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;[_ses-&lt;label&gt;]_acq-calibration_meg.dat</span></code></p></li>
+</ul>
+<p>Note that cross-talk files MUST be denoted using <code class="docutils literal notranslate"><span class="pre">acq-crosstalk</span></code> and
+fine-calibration files MUST be denoted using <code class="docutils literal notranslate"><span class="pre">acq-calibration</span></code>.</p>
+<p>The cross-talk and fine-calibration data MUST be stored in the subject-level <code class="docutils literal notranslate"><span class="pre">meg</span></code> directory,
+which may be nested inside a <code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code> directory, as shown in the following examples.</p>
+<div class="section" id="example-with-single-session-omitted-session-directory">
+<h4>Example with single session (omitted session directory)<a class="headerlink" href="#example-with-single-session-omitted-session-directory" title="Permalink to this headline">¶</a></h4>
+<p></p>
+</div>
+<div class="section" id="example-with-multiple-sessions">
+<h4>Example with multiple sessions<a class="headerlink" href="#example-with-multiple-sessions" title="Permalink to this headline">¶</a></h4>
+<p></p>
+</div>
+</div>
+<div class="section" id="sharing-fiff-data-after-signal-space-separation-sss">
+<h3>Sharing FIFF data after signal-space separation (SSS)<a class="headerlink" href="#sharing-fiff-data-after-signal-space-separation-sss" title="Permalink to this headline">¶</a></h3>
+<p>After applying SSS (for example, by using the MaxFilter software),
+files SHOULD be renamed with the corresponding label (for example, <code class="docutils literal notranslate"><span class="pre">proc-sss</span></code>)
+and placed in a <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> subdirectory.</p>
+<p>Example:</p>
+<p></p>
+</div>
+<div class="section" id="split-files">
+<h3>Split files<a class="headerlink" href="#split-files" title="Permalink to this headline">¶</a></h3>
+<p>In the case of long data recordings that exceed a file size of 2Gb, the <code class="docutils literal notranslate"><span class="pre">.fif</span></code>
+files are conventionally split into multiple parts.
+For example:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>some_file.fif
+some_file-1.fif
+</pre></div>
+</div>
+<p>Each of these files has an internal pointer to the next file.
+This is important when renaming these split recordings to the BIDS convention.
+Instead of a simple renaming, files should be read in and saved under their new
+names with dedicated tools like <a class="reference external" href="https://mne.tools">MNE</a>, which will ensure
+that not only the filenames, but also the internal file pointers will be
+updated.</p>
+<p>It is RECOMMENDED that FIFF files with multiple parts use the <code class="docutils literal notranslate"><span class="pre">split-&lt;index&gt;</span></code>
+entity to indicate each part.</p>
+<p>If there are multiple parts of a recording and the optional <code class="docutils literal notranslate"><span class="pre">scans.tsv</span></code> is provided,
+remember to list all files separately in <code class="docutils literal notranslate"><span class="pre">scans.tsv</span></code> and that the entries
+for the <code class="docutils literal notranslate"><span class="pre">acq_time</span></code> column in <code class="docutils literal notranslate"><span class="pre">scans.tsv</span></code> MUST all be identical, as described in
+<a class="reference external" href="../03-modality-agnostic-files.md#scans-file">Scans file</a>.</p>
+<p>Example:</p>
+<p></p>
+<p>More information can be found under the following links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/neuromag">Neuromag/Elekta/MEGIN data organization</a></p></li>
+<li><p><a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/babysquid">BabyMEG</a></p></li>
+</ul>
+</div>
+<div class="section" id="recording-dates-in-fif-files">
+<h3>Recording dates in <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files<a class="headerlink" href="#recording-dates-in-fif-files" title="Permalink to this headline">¶</a></h3>
+<p>It is important to note that recording dates in <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files are represented
+as <code class="docutils literal notranslate"><span class="pre">int32</span></code> format seconds since (or before) <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time"><em>the Epoch</em></a>
+(<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00.000000</span></code> UTC).
+Integers in <code class="docutils literal notranslate"><span class="pre">int32</span></code> format can encode values from -2,147,483,647 to +2,147,483,647.
+Due to this representation, the Neuromag/Elekta/MEGIN file format for MEG (<code class="docutils literal notranslate"><span class="pre">.fif</span></code>) does <em>not</em>
+support recording dates earlier than <code class="docutils literal notranslate"><span class="pre">1901-12-13T08:45:53.000000</span></code> UTC or later than
+<code class="docutils literal notranslate"><span class="pre">2038-01-19T03:14:07.000000</span></code> UTC.</p>
+</div>
+</div>
+<div class="section" id="bti-4d-neuroimaging">
+<h2>BTi/4D neuroimaging<a class="headerlink" href="#bti-4d-neuroimaging" title="Permalink to this headline">¶</a></h2>
+<p>Each experimental run on a 4D neuroimaging/BTi system results in a directory
+containing multiple files without extensions.</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>[sub-&lt;label&gt;[_ses-&lt;label&gt;]_headshape.pos]
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg&gt;
+</pre></div>
+</div>
+<p>One SHOULD rename/create a parent run-specific directory and keep the original
+files for each run inside (for example, <code class="docutils literal notranslate"><span class="pre">c,rfhp0.1Hz</span></code>, <code class="docutils literal notranslate"><span class="pre">config</span></code> and <code class="docutils literal notranslate"><span class="pre">hs_file</span></code>).</p>
+<p>Example:</p>
+<p></p>
+<p>Where:</p>
+<p></p>
+<p>More about the 4D neuroimaging/BTi data organization at:
+<a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/bti">https://www.fieldtriptoolbox.org/getting_started/bti</a></p>
+</div>
+<div class="section" id="kit-yokogawa-ricoh">
+<h2>KIT/Yokogawa/Ricoh<a class="headerlink" href="#kit-yokogawa-ricoh" title="Permalink to this headline">¶</a></h2>
+<p>Each experimental run on a KIT/Yokogawa/Ricoh system yields a raw file with either
+<code class="docutils literal notranslate"><span class="pre">.sqd</span></code> or <code class="docutils literal notranslate"><span class="pre">.con</span></code> extension,
+and with its associated marker coil file(s) with either <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> or <code class="docutils literal notranslate"><span class="pre">.mrk</span></code> extension.
+The marker coil file(s) contain coil positions in the <em>acquisition system’s native space</em>.
+Head points and marker points in <em>head space</em> are acquired using third-party hardware.</p>
+<p>Example:</p>
+<p></p>
+<p>To understand why both <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> and <code class="docutils literal notranslate"><span class="pre">.con</span></code>, as well as both <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> and <code class="docutils literal notranslate"><span class="pre">.mrk</span></code> are valid
+extensions, we provide a brief historical perspective on the evolution of the data format:
+The original extension for KIT/Yokogawa/Ricoh continuous data was <code class="docutils literal notranslate"><span class="pre">.sqd</span></code>.
+This was later modernized to <code class="docutils literal notranslate"><span class="pre">.con</span></code> (to denote “continuous”).
+However, to preserve backwards compatibility, <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> is still a valid extension for the raw, continuous data file.
+The original extension for KIT/Yokogawa/Ricoh marker files was <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> as well.
+That lead to the ambiguous situation where both the raw data and the marker file(s) could end on <code class="docutils literal notranslate"><span class="pre">.sqd</span></code>.
+To distinguish between continuous data and marker file(s), the internal header of the files needed to be read first.
+For this reason, the marker file extension was later modernized to <code class="docutils literal notranslate"><span class="pre">.mrk</span></code> to better disambiguate files.
+However again, to preserve backwards compatibility, <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> is still a valid extension for the marker file(s).</p>
+<p>If there are multiple files with marker coils, the marker files must have the
+<code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code> parameter and no more that two marker files may be associated with
+one raw data file.
+While the acquisition parameter can take any value, it is RECOMMENDED that if
+the two marker measurements occur before and after the raw data acquisition,
+<code class="docutils literal notranslate"><span class="pre">pre</span></code> and <code class="docutils literal notranslate"><span class="pre">post</span></code> are used to differentiate the two situations.</p>
+<p>More about the KIT/Yokogawa/Ricoh data organization at:
+<a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/yokogawa">https://www.fieldtriptoolbox.org/getting_started/yokogawa</a></p>
+</div>
+<div class="section" id="kriss">
+<h2>KRISS<a class="headerlink" href="#kriss" title="Permalink to this headline">¶</a></h2>
+<p>Each experimental run on the KRISS system produces a file with extension
+<code class="docutils literal notranslate"><span class="pre">.kdf</span></code>. Additional files can be available in the same directory: the digitized
+positions of the head points (<code class="docutils literal notranslate"><span class="pre">\_digitizer.txt</span></code>), the position of the center of
+the MEG coils (<code class="docutils literal notranslate"><span class="pre">.chn</span></code>) and the event markers (<code class="docutils literal notranslate"><span class="pre">.trg</span></code>).</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>[sub-&lt;label&gt;[_ses-&lt;label&gt;]_headshape.txt]
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.kdf
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.chn
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.trg
+sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_acq-&lt;label&gt;]_digitizer.txt
+</pre></div>
+</div>
+<p>Example:</p>
+<p></p>
+</div>
+<div class="section" id="itab">
+<h2>ITAB<a class="headerlink" href="#itab" title="Permalink to this headline">¶</a></h2>
+<p>Each experimental run on a ITAB-ARGOS153 system yields a raw (<code class="docutils literal notranslate"><span class="pre">.raw</span></code>) data file
+plus an associated binary header file (<code class="docutils literal notranslate"><span class="pre">.mhd</span></code>). The raw data file has an ASCII
+header that contains detailed information about the data acquisition system,
+followed by binary data. The associated binary header file contains part of the
+information from the ASCII header, specifically the one needed to process data,
+plus other information on offline preprocessing performed after data acquisition
+(for example, sensor position relative to subject’s head, head markers, stimulus
+information).</p>
+<p>Example:</p>
+<p></p>
+</div>
+<div class="section" id="aalto-megmri">
+<h2>Aalto MEG–MRI<a class="headerlink" href="#aalto-megmri" title="Permalink to this headline">¶</a></h2>
+<p>For stand-alone MEG data, the Aalto hybrid device uses the standard <code class="docutils literal notranslate"><span class="pre">.fif</span></code> data
+format and follows the conventions of Elekta/Neuromag as described
+<a class="reference external" href="06-meg-file-formats.md#neuromagelektamegin">above</a>. The <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files may
+contain unreconstructed MRI data. The inclusion of MRI data and information for
+accurate reconstruction will be fully standardized at a later stage.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/99-appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="05-units.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Appendix V: Units</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07-meg-systems.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix VII: MEG systems</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

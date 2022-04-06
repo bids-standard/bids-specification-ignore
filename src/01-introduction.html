@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common principles" href="02-common-principles.html" />
+    <link rel="prev" title="The Brain Imaging Data Structure" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/src/01-introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/01-introduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extensions">
+   Extensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citing-bids">
+   Citing BIDS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#original-publication">
+     Original publication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datatype-specific-publications">
+     Datatype specific publications
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eeg">
+       EEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ieeg">
+       iEEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meg">
+       MEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pet">
+       PET
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#genetics">
+       Genetics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#research-resource-identifier-rrid">
+     Research Resource Identifier (RRID)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extensions">
+   Extensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citing-bids">
+   Citing BIDS
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#original-publication">
+     Original publication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datatype-specific-publications">
+     Datatype specific publications
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eeg">
+       EEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ieeg">
+       iEEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meg">
+       MEG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pet">
+       PET
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#genetics">
+       Genetics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#research-resource-identifier-rrid">
+     Research Resource Identifier (RRID)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Neuroimaging experiments result in complicated data that can be arranged in many
+different ways. So far there is no consensus how to organize and share data
+obtained in neuroimaging experiments. Even two researchers working in the same
+lab can opt to arrange their data in a different way. Lack of consensus (or a
+standard) leads to misunderstandings and time wasted on rearranging data or
+rewriting scripts expecting certain structure. Here we describe a simple and
+easy-to-adopt way of organising neuroimaging and behavioral data. By using this
+standard you will benefit in the following ways:</p>
+<ul class="simple">
+<li><p>It will be easy for another researcher to work on your data. To understand
+the organisation of the files and their format you will only need to refer
+them to this document. This is especially important if you are running your
+own lab and anticipate more than one person working on the same data over
+time. By using BIDS you will save time trying to understand and reuse data
+acquired by a graduate student or postdoc that has already left the lab.</p></li>
+<li><p>There are a growing number of data analysis software packages that can
+understand data organised according to BIDS (see the
+<a class="reference external" href="https://bids.neuroimaging.io/benefits.html">up to date list</a>).</p></li>
+<li><p>Databases such as <a class="reference external" href="https://openneuro.org/">OpenNeuro.org</a> accept datasets
+organised according to BIDS.
+If you ever plan to share your data publicly (nowadays some journals require
+this) you can minimize the additional time and energy spent on publication,
+and speed up the curation process by using BIDS to structure and describe
+your data right after acquisition.</p></li>
+<li><p>Validation tools such as the <a class="reference external" href="https://github.com/bids-standard/bids-validator">BIDS Validator</a>
+can check your dataset integrity and help you easily spot missing values.</p></li>
+</ul>
+<p>BIDS was heavily inspired by the format used internally by the OpenfMRI repository
+that is now known as <a class="reference external" href="https://openneuro.org/">OpenNeuro.org</a>,
+and has been supported by the International Neuroinformatics Coordinating Facility
+(<a class="reference external" href="https://www.incf.org/">INCF</a>)
+and the INCF Neuroimaging Data Sharing (NIDASH) Task Force.
+While working on BIDS we consulted
+many neuroscientists to make sure it covers most common experiments, but at the
+same time is intuitive and easy to adopt. The specification is intentionally
+based on simple file formats and directory structures to reflect current lab
+practices and make it accessible to a wide range of scientists coming from
+different backgrounds.</p>
+</div>
+<div class="section" id="extensions">
+<h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<p>The BIDS specification can be extended in a backwards compatible way and will
+evolve over time. This is accomplished through community-driven BIDS Extension
+Proposals (BEPs). For more information about the BEP process, see
+<a class="reference internal" href="07-extensions.html"><span class="doc std std-doc">Extending the BIDS specification</span></a>.</p>
+</div>
+<div class="section" id="citing-bids">
+<h2>Citing BIDS<a class="headerlink" href="#citing-bids" title="Permalink to this headline">¶</a></h2>
+<p>When referring to BIDS in context of academic literature, please cite one or
+more of the publications listed below.
+We RECOMMEND that you cite the original publication on BIDS and <em>additionally</em>
+the publication regarding the datatype you were using
+(for example, EEG, MEG, iEEG, if available).</p>
+<p>For example:</p>
+<blockquote>
+<div><p>The data used in the study were organized using the
+Brain Imaging Data Structure (Gorgolewski, K., Auer, T., Calhoun, V. et al., 2016)
+with the extension for EEG data (Pernet, C.R., Appelhoff, S., Gorgolewski, K.J. et al., 2019).</p>
+</div></blockquote>
+<div class="section" id="original-publication">
+<h3>Original publication<a class="headerlink" href="#original-publication" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Gorgolewski, K.J., Auer, T., Calhoun, V.D., Craddock, R.C., Das, S., Duff,
+E.P., Flandin, G., Ghosh, S.S., Glatard, T., Halchenko, Y.O., Handwerker,
+D.A., Hanke, M., Keator, D., Li, X., Michael, Z., Maumet, C., Nichols, B.N.,
+Nichols, T.E., Pellman, J., Poline, J.-B., Rokem, A., Schaefer, G., Sochat,
+V., Triplett, W., Turner, J.A., Varoquaux, G., Poldrack, R.A. (2016).
+<strong>The brain imaging data structure,</strong>
+<strong>a format for organizing and describing outputs of neuroimaging experiments</strong>.
+Scientific Data, 3 (160044).
+<a class="reference external" href="https://doi.org/10.1038/sdata.2016.44">doi:10.1038/sdata.2016.44</a></p></li>
+</ul>
+</div>
+<div class="section" id="datatype-specific-publications">
+<h3>Datatype specific publications<a class="headerlink" href="#datatype-specific-publications" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="eeg">
+<h4>EEG<a class="headerlink" href="#eeg" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Pernet, C. R., Appelhoff, S., Gorgolewski, K.J., Flandin, G., Phillips, C.,
+Delorme, A., Oostenveld, R. (2019).
+<strong>EEG-BIDS, an extension to the brain imaging data structure for electroencephalography</strong>.
+Scientific data, 6 (103).
+<a class="reference external" href="https://doi.org/10.1038/s41597-019-0104-8">doi:10.1038/s41597-019-0104-8</a></p></li>
+</ul>
+</div>
+<div class="section" id="ieeg">
+<h4>iEEG<a class="headerlink" href="#ieeg" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Holdgraf, C., Appelhoff, S., Bickel, S., Bouchard, K., D’Ambrosio, S.,
+David, O., Devinsky, O., Dichter, B., Flinker, A., Foster, B. L.,
+Gorgolewski, K. J., Groen, I., Groppe, D., Gunduz, A., Hamilton, L.,
+Honey, C. J., Jas, M., Knight, R., Lauchaux, J.-P., Lau, J. C.,
+Lee-Messer, C., Lundstrom, B. N., Miller, K. J., Ojemann, J. G.,
+Oostenveld, R., Petridou, N., Piantoni, G., Pigorini, A., Pouratian, N.,
+Ramsey, N. F., Stolk, A., Swann, N. C., Tadel, F., Voytek, B., Wandell, B. A.,
+Winawer, J., Whitaker, K., Zehl, L., Hermes, D. (2019).
+<strong>iEEG-BIDS, extending the Brain Imaging Data Structure specification to</strong>
+<strong>human intracranial electrophysiology</strong>.
+Scientific data, 6 (102).
+<a class="reference external" href="https://doi.org/10.1038/s41597-019-0105-7">doi:10.1038/s41597-019-0105-7</a></p></li>
+</ul>
+</div>
+<div class="section" id="meg">
+<h4>MEG<a class="headerlink" href="#meg" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Niso Galan, J.G., Gorgolewski, K.J., Bock, E., Brooks, T.L., Flandin, G.,
+Gramfort, A., Henson, R.N., Jas, M., Litvak, V., Moreau, J., Oostenveld, R.,
+Schoffelen, J.-M., Tadel, F., Wexler, J., Baillet, S. (2018).
+<strong>MEG-BIDS, the brain imaging data structure extended to magnetoencephalography</strong>.
+Scientific Data, 5 (180110).
+<a class="reference external" href="https://doi.org/10.1038/sdata.2018.110">doi:10.1038/sdata.2018.110</a></p></li>
+</ul>
+</div>
+<div class="section" id="pet">
+<h4>PET<a class="headerlink" href="#pet" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Norgaard, M., Matheson, G.J., Hansen, H.D., Thomas, A., Searle, G., Rizzo, G.,
+Veronese, M., Giacomel, A., Yaqub, M., Tonietto, M., Funck, T., Gillman, A., Boniface,
+H., Routier, A., Dalenberg, J.R.., Betthauser, T., Feingold, F., Markiewicz, C.J.,
+Gorgolewski, K.J., Blair, R.W., Appelhoff, S., Gau, R., Salo, T., Niso, G., Pernet, C.,
+Phillips, C., Oostenveld, R., Gallezot, J-D., Carson, R.E., Knudsen, G.M.,
+Innis R.B. &amp; Ganz M. (2021).
+<strong>PET-BIDS, an extension to the brain imaging data structure for positron emission tomography</strong>.
+Scientific Data, 9 (65).
+<a class="reference external" href="https://doi.org/10.1038/s41597-022-01164-1">doi:10.1038/s41597-022-01164-1</a></p></li>
+<li><p>Knudsen GM, Ganz M, Appelhoff S, Boellaard R, Bormans G, Carson RE, Catana C,
+Doudet D, Gee AD, Greve DN, Gunn RN, Halldin C, Herscovitch P, Huang H, Keller SH,
+Lammertsma AA, Lanzenberger R, Liow JS, Lohith TG, Lubberink M, Lyoo CH, Mann JJ,
+Matheson GJ, Nichols TE, Nørgaard M, Ogden T, Parsey R, Pike VW, Price J, Rizzo G,
+Rosa-Neto P, Schain M, Scott PJH, Searle G, Slifstein M, Suhara T, Talbot PS, Thomas A,
+Veronese M, Wong DF, Yaqub M, Zanderigo F, Zoghbi S, Innis RB. (2020).
+<strong>Guidelines for Content and Format of PET Brain Data in Publications and in Archives: A Consensus Paper</strong>.
+Journal of Cerebral Blood Flow and Metabolism, 2020 Aug; 40(8): 1576-1585.
+<a class="reference external" href="https://doi.org/10.1177/0271678X20905433">doi:10.1177/0271678X20905433</a></p></li>
+</ul>
+</div>
+<div class="section" id="genetics">
+<h4>Genetics<a class="headerlink" href="#genetics" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Clara Moreau, Martineau Jean-Louis, Ross Blair, Christopher Markiewicz, Jessica Turner,
+Vince Calhoun, Thomas Nichols, Cyril Pernet (2020).
+<strong>The genetics-BIDS extension: Easing the search for genetic data associated with human brain imaging</strong>.
+GigaScience, 9 (10). <a class="reference external" href="https://doi.org/10.1093/gigascience/giaa104">doi:10.1093/gigascience/giaa104</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="research-resource-identifier-rrid">
+<h3>Research Resource Identifier (RRID)<a class="headerlink" href="#research-resource-identifier-rrid" title="Permalink to this headline">¶</a></h3>
+<p>BIDS has also a
+<a class="reference external" href="https://www.force11.org/group/resource-identification-initiative">Research Resource Identifier (RRID)</a>,
+which you can also include in your citations in addition to relevant publications (see above):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scicrunch.org/resources/Any/search?q=SCR_016124&amp;l=SCR_016124"><code class="docutils literal notranslate"><span class="pre">RRID:SCR_016124</span></code></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Brain Imaging Data Structure</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-common-principles.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Common principles</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

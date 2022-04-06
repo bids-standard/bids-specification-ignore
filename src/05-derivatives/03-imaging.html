@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imaging data types &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Longitudinal and multi-site studies" href="../06-longitudinal-and-multi-site-studies.html" />
+    <link rel="prev" title="Common data types and metadata" href="02-common-data-types.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/src/05-derivatives/03-imaging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/05-derivatives/03-imaging.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/05-derivatives/03-imaging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/05-derivatives/03-imaging.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessed-coregistered-and-or-resampled-volumes">
+   Preprocessed, coregistered and/or resampled volumes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#masks">
+   Masks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segmentations">
+   Segmentations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-segmentations">
+     Discrete Segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilistic-segmentations">
+     Probabilistic Segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-surface-segmentations">
+     Discrete surface segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-image-derived-labels">
+     Common image-derived labels
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Imaging data types</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessed-coregistered-and-or-resampled-volumes">
+   Preprocessed, coregistered and/or resampled volumes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#masks">
+   Masks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segmentations">
+   Segmentations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-segmentations">
+     Discrete Segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilistic-segmentations">
+     Probabilistic Segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-surface-segmentations">
+     Discrete surface segmentations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-image-derived-labels">
+     Common image-derived labels
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="imaging-data-types">
+<h1>Imaging data types<a class="headerlink" href="#imaging-data-types" title="Permalink to this headline">¶</a></h1>
+<p>This section pertains to imaging data, which characteristically have spatial
+extent and resolution.</p>
+<div class="section" id="preprocessed-coregistered-and-or-resampled-volumes">
+<h2>Preprocessed, coregistered and/or resampled volumes<a class="headerlink" href="#preprocessed-coregistered-and-or-resampled-volumes" title="Permalink to this headline">¶</a></h2>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>&lt;pipeline_name&gt;/
+    sub-&lt;label&gt;/
+        &lt;datatype&gt;/
+            &lt;source_entities&gt;[_space-&lt;space&gt;][_res-&lt;label&gt;][_den-&lt;label&gt;][_desc-&lt;label&gt;]_&lt;suffix&gt;.&lt;ext&gt;
+</pre></div>
+</div>
+<p>Volumetric preprocessing does not modify the number of dimensions, and so
+the specifications in <a class="reference external" href="02-common-data-types.md#preprocessed-or-cleaned-data">Preprocessed or cleaned data</a>
+apply.
+The use of surface meshes and volumetric measures sampled to those meshes is
+sufficiently similar in practice to treat them equivalently.</p>
+<p>When two or more instances of a given derivative are provided with resolution
+or surface sampling density being the only difference between them, then the
+<a class="reference external" href="../99-appendices/09-entities.md#res"><code class="docutils literal notranslate"><span class="pre">res</span></code></a> (for <em>resolution</em> of regularly sampled N-D data) and/or
+<a class="reference external" href="../99-appendices/09-entities.md#den"><code class="docutils literal notranslate"><span class="pre">den</span></code></a> (for <em>density</em> of non-parametric surfaces)
+entities SHOULD be used to avoid name conflicts.
+Note that only files combining both regularly sampled (for example, gridded)
+and surface sampled data (and their downstream derivatives) are allowed
+to present both <a class="reference external" href="../99-appendices/09-entities.md#res"><code class="docutils literal notranslate"><span class="pre">res</span></code></a> and
+<a class="reference external" href="../99-appendices/09-entities.md#den"><code class="docutils literal notranslate"><span class="pre">den</span></code></a> entities simultaneously.</p>
+<p>Examples:</p>
+<p></p>
+<p>The following metadata JSON fields are defined for preprocessed images:</p>
+<p></p>
+<p>Example JSON file corresponding to
+<code class="docutils literal notranslate"><span class="pre">pipeline1/sub-001/func/sub-001_task-rest_run-1_space-MNI305_bold.json</span></code> above:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SkullStripped&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;hi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with high-resolution T1w (0.7mm, isotropic)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;lo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with original BOLD resolution (2x2x3 mm^3)&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This would be equivalent to having two JSON metadata files, one
+corresponding to <code class="docutils literal notranslate"><span class="pre">res-lo</span></code>
+(<code class="docutils literal notranslate"><span class="pre">pipeline1/sub-001/func/sub-001_task-rest_run-1_space-MNI305_res-lo_bold.json</span></code>):</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SkullStripped&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with original BOLD resolution (2x2x3 mm^3)&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>And one corresponding to <code class="docutils literal notranslate"><span class="pre">res-hi</span></code>
+(<code class="docutils literal notranslate"><span class="pre">pipeline1/sub-001/func/sub-001_task-rest_run-1_space-MNI305_res-hi_bold.json</span></code>):</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SkullStripped&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with high-resolution T1w (0.7mm, isotropic)&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Example of CIFTI-2 files (a format that combines regularly sampled data
+and non-parametric surfaces) having both <a class="reference external" href="../99-appendices/09-entities.md#res"><code class="docutils literal notranslate"><span class="pre">res</span></code></a>
+and <a class="reference external" href="../99-appendices/09-entities.md#den"><code class="docutils literal notranslate"><span class="pre">den</span></code></a> entities:</p>
+<p></p>
+<p>And the corresponding <code class="docutils literal notranslate"><span class="pre">sub-001_task-rest_run-1_space-fsLR_bold.json</span></code> file:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SkullStripped&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with MNI152NLin6Asym 1.6mm isotropic&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Matched with MNI152NLin6Asym 2.0mm isotropic&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;10k&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10242 vertices per hemisphere (5th order icosahedron)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;41k&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40962 vertices per hemisphere (6th order icosahedron)&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="masks">
+<h2>Masks<a class="headerlink" href="#masks" title="Permalink to this headline">¶</a></h2>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>&lt;pipeline_name&gt;/
+    sub-&lt;label&gt;/
+        anat|func|dwi/
+            &lt;source_entities&gt;[_space-&lt;space&gt;][_res-&lt;label&gt;][_den-&lt;label&gt;][_label-&lt;label&gt;][_desc-&lt;label&gt;]_mask.nii.gz
+</pre></div>
+</div>
+<p>A binary (1 - inside, 0 - outside) mask in the space defined by the <a class="reference external" href="../99-appendices/09-entities.md#space"><code class="docutils literal notranslate"><span class="pre">space</span></code> entity</a>.
+If no transformation has taken place, the value of <code class="docutils literal notranslate"><span class="pre">space</span></code> SHOULD be set to <code class="docutils literal notranslate"><span class="pre">orig</span></code>.
+If the mask is an ROI mask derived from an atlas, then the <a class="reference external" href="../99-appendices/09-entities.md#label"><code class="docutils literal notranslate"><span class="pre">label</span></code> entity</a>) SHOULD
+be used to specify the masked structure
+(see <a class="reference external" href="#common-image-derived-labels">Common image-derived labels</a>),
+and the <code class="docutils literal notranslate"><span class="pre">Atlas</span></code> metadata SHOULD be defined.</p>
+<p>JSON metadata fields:</p>
+<p></p>
+<p>Examples:</p>
+<p></p>
+<p></p>
+</div>
+<div class="section" id="segmentations">
+<h2>Segmentations<a class="headerlink" href="#segmentations" title="Permalink to this headline">¶</a></h2>
+<p>A <em>segmentation</em> is a labeling of regions of an image such that each location
+(for example, a voxel or a surface vertex) is identified with a label or a
+combination of labels.
+Labeled regions may include anatomical structures (such as tissue class,
+Brodmann area or white matter tract), discontiguous, functionally-defined
+networks, tumors or lesions.</p>
+<p>A <em>discrete segmentation</em> represents each region with a unique integer
+label.
+A <em>probabilistic segmentation</em> represents each region as values between
+0 and 1 (inclusive) at each location in the image, and one volume/frame per
+structure may be concatenated in a single file.</p>
+<p>Segmentations may be defined in a volume (labeled voxels), a surface (labeled
+vertices) or a combined volume/surface space.</p>
+<p>If the segmentation can be derived from different atlases,
+the <a class="reference external" href="../99-appendices/09-entities.md#atlas"><code class="docutils literal notranslate"><span class="pre">atlas</span></code> entity</a> MAY be used to
+distinguish the different segmentations.
+If so, the <code class="docutils literal notranslate"><span class="pre">Atlas</span></code> metadata SHOULD also be defined.</p>
+<p>The following section describes discrete and probabilistic segmentations of
+volumes, followed by discrete segmentations of surface/combined spaces.
+Probabilistic segmentations of surfaces are currently <a class="reference external" href="../02-common-principles.md#unspecified-data">unspecified</a>.</p>
+<p>The following metadata fields apply to all segmentation files:</p>
+<p></p>
+<div class="section" id="discrete-segmentations">
+<h3>Discrete Segmentations<a class="headerlink" href="#discrete-segmentations" title="Permalink to this headline">¶</a></h3>
+<p>Discrete segmentations of brain tissue represent multiple anatomical structures
+(such as tissue class or Brodmann area) with a unique integer label in a 3D volume.
+See <a class="reference external" href="#common-image-derived-labels">Common image-derived labels</a> for a description
+of how integer values map to anatomical structures.</p>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>&lt;pipeline_name&gt;/
+    sub-&lt;label&gt;/
+        anat|func|dwi/
+            &lt;source_entities&gt;[_space-&lt;space&gt;][_atlas-&lt;label&gt;][_res-&lt;label&gt;][_den-&lt;label&gt;]_dseg.nii.gz
+</pre></div>
+</div>
+<p>Example:</p>
+<p></p>
+<p>A segmentation can be used to generate a binary mask that functions as a
+discrete “label” for a single structure.
+In this case, the mask suffix MUST be used,
+the <a class="reference external" href="../99-appendices/09-entities.md#label"><code class="docutils literal notranslate"><span class="pre">label</span></code> entity</a>) SHOULD be used
+to specify the masked structure
+(see <a class="reference external" href="#common-image-derived-labels">Common image-derived labels</a>),
+the <a class="reference external" href="../99-appendices/09-entities.md#atlas"><code class="docutils literal notranslate"><span class="pre">atlas</span></code> entity</a> and the
+<code class="docutils literal notranslate"><span class="pre">Atlas</span></code> metadata SHOULD be defined.</p>
+<p>For example:</p>
+<p></p>
+</div>
+<div class="section" id="probabilistic-segmentations">
+<h3>Probabilistic Segmentations<a class="headerlink" href="#probabilistic-segmentations" title="Permalink to this headline">¶</a></h3>
+<p>Probabilistic segmentations of brain tissue represent a single anatomical
+structure with values ranging from 0 to 1 in individual 3D volumes or across
+multiple frames.
+If a single structure is included,
+the <a class="reference external" href="../99-appendices/09-entities.md#label"><code class="docutils literal notranslate"><span class="pre">label</span></code> entity</a> SHOULD be used to specify
+the structure.</p>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>&lt;pipeline_name&gt;/
+    sub-&lt;label&gt;/
+        func|anat|dwi/
+            &lt;source_entities&gt;[_space-&lt;space&gt;][_atlas-&lt;label&gt;][_res-&lt;label&gt;][_den-&lt;label&gt;][_label-&lt;label&gt;]_probseg.nii.gz
+</pre></div>
+</div>
+<p>Example:</p>
+<p></p>
+<p>See <a class="reference external" href="#common-image-derived-labels">Common image-derived labels</a>
+for reserved key values for <a class="reference external" href="../99-appendices/09-entities.md#label"><code class="docutils literal notranslate"><span class="pre">label</span></code></a>.</p>
+<p>A 4D probabilistic segmentation, in which each frame corresponds to a different
+tissue class, must provide a label mapping in its JSON sidecar. For example:</p>
+<p></p>
+<p>The JSON sidecar MUST include the label-map key that specifies a tissue label
+for each volume:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;LabelMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;BG&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;WM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;GM&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Values of <code class="docutils literal notranslate"><span class="pre">label</span></code> SHOULD correspond to abbreviations defined in
+<a class="reference external" href="#common-image-derived-labels">Common image-derived labels</a>.</p>
+</div>
+<div class="section" id="discrete-surface-segmentations">
+<h3>Discrete surface segmentations<a class="headerlink" href="#discrete-surface-segmentations" title="Permalink to this headline">¶</a></h3>
+<p>Discrete surface segmentations (sometimes called <em>parcellations</em>) of cortical
+structures MUST be stored as GIFTI label files, with the extension <code class="docutils literal notranslate"><span class="pre">.label.gii</span></code>.
+For combined volume/surface spaces, discrete segmentations MUST be stored as
+CIFTI-2 dense label files, with the extension <code class="docutils literal notranslate"><span class="pre">.dlabel.nii</span></code>.</p>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>&lt;pipeline_name&gt;/
+    sub-&lt;label&gt;/
+        anat/
+            &lt;source_entities&gt;[_hemi-{L|R}][_space-&lt;space&gt;][_atlas-&lt;label&gt;][_res-&lt;label&gt;][_den-&lt;label&gt;]_dseg.{label.gii|dlabel.nii}
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#hemi"><code class="docutils literal notranslate"><span class="pre">hemi-&lt;label&gt;</span></code></a> entity is REQUIRED for GIFTI files storing information about
+a structure that is restricted to a hemibrain.
+For example:</p>
+<p></p>
+<p>The REQUIRED extension for CIFTI parcellations is <code class="docutils literal notranslate"><span class="pre">.dlabel.nii</span></code>. For example:</p>
+<p></p>
+</div>
+<div class="section" id="common-image-derived-labels">
+<h3>Common image-derived labels<a class="headerlink" href="#common-image-derived-labels" title="Permalink to this headline">¶</a></h3>
+<p>BIDS supplies a standard, generic label-index mapping, defined in the table
+below, that contains common image-derived segmentations and can be used to map segmentations
+(and parcellations) between lookup tables.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Integer value</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Abbreviation (label)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Background</p></td>
+<td><p>BG</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Gray Matter</p></td>
+<td><p>GM</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>White Matter</p></td>
+<td><p>WM</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Cerebrospinal Fluid</p></td>
+<td><p>CSF</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Bone</p></td>
+<td><p>B</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Soft Tissue</p></td>
+<td><p>ST</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Non-brain</p></td>
+<td><p>NB</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Lesion</p></td>
+<td><p>L</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Cortical Gray Matter</p></td>
+<td><p>CGM</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Subcortical Gray Matter</p></td>
+<td><p>SGM</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>Brainstem</p></td>
+<td><p>BS</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>Cerebellum</p></td>
+<td><p>CBM</p></td>
+</tr>
+</tbody>
+</table>
+<p>These definitions can be overridden (or added to) by providing custom labels in
+a sidecar <code class="docutils literal notranslate"><span class="pre">&lt;matches&gt;.tsv</span></code> file, in which <code class="docutils literal notranslate"><span class="pre">&lt;matches&gt;</span></code> corresponds to segmentation
+filename.</p>
+<p>Example:</p>
+<p></p>
+<p>Definitions can also be specified with a top-level <code class="docutils literal notranslate"><span class="pre">dseg.tsv</span></code>, which propagates to
+segmentations in relative subdirectories.</p>
+<p>Example:</p>
+<p></p>
+<p>These TSV lookup tables contain the following columns:</p>
+<p></p>
+<p>An example, custom <code class="docutils literal notranslate"><span class="pre">dseg.tsv</span></code> that defines three labels:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>index   name            abbreviation    color       mapping
+100     Gray Matter     GM              #ff53bb     1
+101     White Matter    WM              #2f8bbe     2
+102     Brainstem       BS              #36de72     11
+</pre></div>
+</div>
+<p>The following example <code class="docutils literal notranslate"><span class="pre">dseg.tsv</span></code> defines regions that are not part of the
+standard BIDS labels:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>index   name                abbreviation
+137     pars opercularis    IFGop
+138     pars triangularis   IFGtr
+139     pars orbitalis      IFGor
+</pre></div>
+</div>
+<!-- Link Definitions -->
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/05-derivatives"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-common-data-types.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Common data types and metadata</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../06-longitudinal-and-multi-site-studies.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Longitudinal and multi-site studies</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

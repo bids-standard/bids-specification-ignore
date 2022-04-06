@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix I: Contributors &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix II: Licenses" href="02-licenses.html" />
+    <link rel="prev" title="Appendices" href="../99-appendices.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/99-appendices/01-contributors.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/01-contributors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Appendix I: Contributors</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-i-contributors">
+<h1>Appendix I: Contributors<a class="headerlink" href="#appendix-i-contributors" title="Permalink to this headline">¶</a></h1>
+<p>Legend (source:
+<a class="reference external" href="https://allcontributors.org/docs/en/emoji-key">https://allcontributors.org/docs/en/emoji-key</a>)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Emoji</strong></p></th>
+<th class="head"><p><strong>Represents</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>💬</p></td>
+<td><p>Answering Questions (on the mailing list, NeuroStars, GitHub, or in person, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>🐛</p></td>
+<td><p>Bug reports</p></td>
+</tr>
+<tr class="row-even"><td><p>📝</p></td>
+<td><p>Blogposts</p></td>
+</tr>
+<tr class="row-odd"><td><p>💻</p></td>
+<td><p>Code</p></td>
+</tr>
+<tr class="row-even"><td><p>🖋</p></td>
+<td><p>Content (separate from Blogposts, for example Website news)</p></td>
+</tr>
+<tr class="row-odd"><td><p>📖</p></td>
+<td><p>Documentation and specification</p></td>
+</tr>
+<tr class="row-even"><td><p>🔣</p></td>
+<td><p>Data (example datasets)</p></td>
+</tr>
+<tr class="row-odd"><td><p>🎨</p></td>
+<td><p>Design</p></td>
+</tr>
+<tr class="row-even"><td><p>💡</p></td>
+<td><p>Examples (for example datasets, use <code class="docutils literal notranslate"><span class="pre">Data</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>📋</p></td>
+<td><p>Event Organizers</p></td>
+</tr>
+<tr class="row-even"><td><p>💵</p></td>
+<td><p>Financial Support</p></td>
+</tr>
+<tr class="row-odd"><td><p>🔍</p></td>
+<td><p>Funding/Grant Finders</p></td>
+</tr>
+<tr class="row-even"><td><p>🤔</p></td>
+<td><p>Ideas &amp; Planning</p></td>
+</tr>
+<tr class="row-odd"><td><p>🚇</p></td>
+<td><p>Infrastructure (hosting, build-tools, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p>🚧</p></td>
+<td><p>Maintenance of the BIDS standard</p></td>
+</tr>
+<tr class="row-odd"><td><p>🧑‍🏫</p></td>
+<td><p>Mentoring new contributors</p></td>
+</tr>
+<tr class="row-even"><td><p>🔌</p></td>
+<td><p>Plugin/utility libraries</p></td>
+</tr>
+<tr class="row-odd"><td><p>📆</p></td>
+<td><p>Project management</p></td>
+</tr>
+<tr class="row-even"><td><p>👀</p></td>
+<td><p>Reviewed Pull Requests</p></td>
+</tr>
+<tr class="row-odd"><td><p>🔧</p></td>
+<td><p>Tools</p></td>
+</tr>
+<tr class="row-even"><td><p>🌍</p></td>
+<td><p>Translation</p></td>
+</tr>
+<tr class="row-odd"><td><p>⚠️</p></td>
+<td><p>Tests</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>Tutorials</p></td>
+</tr>
+<tr class="row-odd"><td><p>📢</p></td>
+<td><p>Talks</p></td>
+</tr>
+<tr class="row-even"><td><p>📓</p></td>
+<td><p>User testing (of new features, tools, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>📹</p></td>
+<td><p>Videos</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following individuals have contributed to the Brain Imaging Data Structure
+ecosystem (in alphabetical order).
+If you contributed to the BIDS ecosystem and your name is not listed, please add it.</p>
+<ul class="simple">
+<li><p>Eric Achten 📖🔣📓</p></li>
+<li><p>Azeez Adebimpe 📖</p></li>
+<li><p>Rémi Adon 📖</p></li>
+<li><p>Fidel Alfaro Almagro 💬📖💡🔌</p></li>
+<li><p>David Alsop 📖</p></li>
+<li><p>Stefan Appelhoff 📖💬🤔🐛💡💻👀⚠️📢✅🔧🔌📝🚧🔣</p></li>
+<li><p>Yoni Ashar 📖</p></li>
+<li><p>Tal Pal Attia 📖</p></li>
+<li><p>Tibor Auer 💬📖💡🔧📢🐛🤔</p></li>
+<li><p>Sylvain Baillet 📖🔍</p></li>
+<li><p>Shashank Bansal 📖</p></li>
+<li><p>Arshitha Basavaraj 📖🚇💻</p></li>
+<li><p>Leandro Beltrachini 📖</p></li>
+<li><p>Chris Benjamin 📖</p></li>
+<li><p>Timo Berg 📖</p></li>
+<li><p>Étienne Bergeron 🔣💻</p></li>
+<li><p>Suyash Bhogawar 📖💡⚠️🔧💬</p></li>
+<li><p>Stephan Bickel 📖</p></li>
+<li><p>Ulrike Bingel 📖</p></li>
+<li><p>Ethan Blackwood 👀📖</p></li>
+<li><p>David Boas 📖</p></li>
+<li><p>Elizabeth Bock 📖💡</p></li>
+<li><p>Hugo Boniface 📖</p></li>
+<li><p>Kristofer Bouchard 📖</p></li>
+<li><p>Mathieu Boudreau 💬🤔📢</p></li>
+<li><p>Marie-Hélène Bourget 📖🔣💻🤔</p></li>
+<li><p>Eric Bridgeford 📖🔧</p></li>
+<li><p>Teon L. Brooks 📖💻⚠️💬👀🤔🔧🐛📢</p></li>
+<li><p>Christian Büchel 📖</p></li>
+<li><p>Vince D. Calhoun 📖</p></li>
+<li><p>Giulio Castegnaro 📖</p></li>
+<li><p>Marco Castellaro 💬🐛💻📖💡⚠️📢🚇</p></li>
+<li><p>Filippo Maria Castelli 📖🔣</p></li>
+<li><p>Michael Chappell 📖🔣📆</p></li>
+<li><p>Gang Chen 📖</p></li>
+<li><p>William Clarke 📖</p></li>
+<li><p>Patricia Clement 💬🐛💻📖🔣💡📋🤔📆⚠️📢</p></li>
+<li><p>Helena Cockx 📖</p></li>
+<li><p>Alexander L. Cohen 🐛💻📖💬</p></li>
+<li><p>Julien Cohen-Adad 📖🔣🤔</p></li>
+<li><p>R. Cameron Craddock 📖📢</p></li>
+<li><p>Martin Craig 🔣</p></li>
+<li><p>Sasha D’Ambrosio 📖</p></li>
+<li><p>Samir Das 📖</p></li>
+<li><p>Olivier David 📖</p></li>
+<li><p>Orrin Devinsky 📖</p></li>
+<li><p>Gilles de Hollander 📖</p></li>
+<li><p>Alejandro de la Vega 🐛💻⚠️</p></li>
+<li><p>Arnaud Delorme 📖💡</p></li>
+<li><p>John Detre 📖</p></li>
+<li><p>Benjamin Dichter 📖</p></li>
+<li><p>Erin W. Dickie 📖🤔👀📢💬</p></li>
+<li><p>Timo Dickscheid 📖</p></li>
+<li><p>Dejan Draschkow 📖</p></li>
+<li><p>Eugene P. Duff 📖</p></li>
+<li><p>Elizabeth DuPre 📖💡🔍🤔💬</p></li>
+<li><p>Joke Durnez 📖🔧💻</p></li>
+<li><p>Eric Earl 📖💬🐛🚧🔧🤔</p></li>
+<li><p>Anders Eklund 📖📢💻</p></li>
+<li><p>Sara Elgayar 📖</p></li>
+<li><p>Oscar Esteban 📖🔧🤔💬💻</p></li>
+<li><p>Franklin W. Feingold 📋📝✅💬🤔🎨📢👀🚇🖋📆</p></li>
+<li><p>Guillaume Flandin 📖💻</p></li>
+<li><p>Adeen Flinker 📖</p></li>
+<li><p>Alexandru Foias 📖🔣</p></li>
+<li><p>Brett L. Foster 📖</p></li>
+<li><p>Ana Fouto 📓</p></li>
+<li><p>Benjamin Gagl 📖</p></li>
+<li><p>Chris Gahnström 📖</p></li>
+<li><p>Anthony Galassi 📖</p></li>
+<li><p>Giuseppe Gallitto 📖</p></li>
+<li><p>Melanie Ganz-Benjaminsen 📖🔣💻🤔📆🔍📢</p></li>
+<li><p>Samuel Garcia 🤔👀📖</p></li>
+<li><p>Remi Gau 📖💻💬📢🐛💻🚇👀🔧🤔</p></li>
+<li><p>James Gholam 📖</p></li>
+<li><p>Satrajit S. Ghosh 📖💻</p></li>
+<li><p>Ashley G. Gillman 📖</p></li>
+<li><p>Greydon Gilmore 📖</p></li>
+<li><p>Tristan Glatard 📖💻</p></li>
+<li><p>Mathias Goncalves 💻🔧📢</p></li>
+<li><p>Krzysztof J. Gorgolewski 📖💻💬🤔🔍📢📝💡🔌</p></li>
+<li><p>Alexandre Gramfort 📖💡</p></li>
+<li><p>Klara Gregorova 📖</p></li>
+<li><p>Jeffrey S. Grethe 💬🐛✅📢</p></li>
+<li><p>Iris Groen 📖</p></li>
+<li><p>David Groppe 📖</p></li>
+<li><p>Sören Grothkopp 📖</p></li>
+<li><p>Aysegul Gunduz 📖</p></li>
+<li><p>Matthias Günther 📖</p></li>
+<li><p>Yaroslav O. Halchenko 📖📢🔧💬🐛</p></li>
+<li><p>Liberty Hamilton 📖</p></li>
+<li><p>Tom Hampshire 📖</p></li>
+<li><p>Daniel A. Handwerker 📖</p></li>
+<li><p>Michael Hanke 📖🤔🔧🐛📢</p></li>
+<li><p>Michael P. Harms 📖⚠️🔧</p></li>
+<li><p>Soichi Hayashi 📖🔧🐛</p></li>
+<li><p>Richard N. Henson 📖</p></li>
+<li><p>Peer Herholz 💬📖👀🔧✅📢</p></li>
+<li><p>Dora Hermes 📖💻✅🔍🤔</p></li>
+<li><p>Luis Hernandez-Garcia 📖📓</p></li>
+<li><p>Katja Heuer 🔧</p></li>
+<li><p>Dorien Huijser 📖</p></li>
+<li><p>Alexandre Hutton 📖</p></li>
+<li><p>Richard Höchenberger 📖</p></li>
+<li><p>Chris Holdgraf 📖🤔</p></li>
+<li><p>Christopher J. Honey 📖</p></li>
+<li><p>Andrew Hoopes 📖</p></li>
+<li><p>Christian Horea 📖</p></li>
+<li><p>Jean-Christophe Houde 📖</p></li>
+<li><p>Maria de la Iglesia 📖</p></li>
+<li><p>Ilkay Isik 📖</p></li>
+<li><p>Hamish Innes-Brown 📖</p></li>
+<li><p>International Neuroinformatics Coordinating Facility 💵📋</p></li>
+<li><p>Andrew Jahn 📓</p></li>
+<li><p>Andrew Janke 📖💻</p></li>
+<li><p>Mainak Jas 📖💻</p></li>
+<li><p>Sein Jeung 📖</p></li>
+<li><p>Alexander Jones 💻🐛</p></li>
+<li><p>Tamás Józsa 📓</p></li>
+<li><p>Jakub Kaczmarzyk 📖🔧🚇</p></li>
+<li><p>Lee Kamentsky 📖</p></li>
+<li><p>Agah Karakuzu 💬📖🔣🤔</p></li>
+<li><p>David Keator 📖</p></li>
+<li><p>James Kent 💬💻</p></li>
+<li><p>Ali Khan 📖</p></li>
+<li><p>Gregory Kiar 📖💻🎨🔧</p></li>
+<li><p>Balint Kincses 📖</p></li>
+<li><p>Thomas Kirk 📖</p></li>
+<li><p>Robert Knight 📖</p></li>
+<li><p>Joost Kuijer 📖</p></li>
+<li><p>Jean-Philippe Lachaux 📖</p></li>
+<li><p>Marc Lalancette 📖</p></li>
+<li><p>Pamela LaMontagne 📖💡</p></li>
+<li><p>Kevin Larcher 💬</p></li>
+<li><p>Jonathan C. Lau 📖</p></li>
+<li><p>Laura and John Arnold Foundation 💵</p></li>
+<li><p>Alexander von Lautz 📖</p></li>
+<li><p>Alberto Lazari 📖</p></li>
+<li><p>Kangjoo Lee 📖</p></li>
+<li><p>Christopher Lee-Messer 📖</p></li>
+<li><p>Jon Haitz Legarreta 💻📖</p></li>
+<li><p>Dan Levitas 📖</p></li>
+<li><p>Adam Li 📖💻</p></li>
+<li><p>Xiangrui Li 📖💻</p></li>
+<li><p>Ilona Lipp 📖</p></li>
+<li><p>Vladimir Litvak 📖</p></li>
+<li><p>Hanzhang Lu 📖</p></li>
+<li><p>Robert Luke 📖</p></li>
+<li><p>Brian N. Lundstrom 📖</p></li>
+<li><p>Dan Lurie 🤔📖🔧🔌💻💬</p></li>
+<li><p>Camille Maumet 📖</p></li>
+<li><p>Christopher J. Markiewicz 💬🐛💻📖🎨💡🤔🔌👀🔧📢🔣📋🚧</p></li>
+<li><p>Giacomo Mazzamuto 📖🔣</p></li>
+<li><p>David McAlpine 📖</p></li>
+<li><p>Manuel Mercier 📖🤔</p></li>
+<li><p>Mark Mikkelsen 📖</p></li>
+<li><p>Kai J. Miller 📖</p></li>
+<li><p>Markus Morawski 📖</p></li>
+<li><p>Clara Moreau 📖</p></li>
+<li><p>Jeremy Moreau 📖💡</p></li>
+<li><p>Zachary Michael 📖</p></li>
+<li><p>Ezequiel Mikulan 📖💻</p></li>
+<li><p>Michael P. Milham 💡🔍</p></li>
+<li><p>Jeanette Mumford 📖</p></li>
+<li><p>Athanasia Monika Mowinckel 📖</p></li>
+<li><p>Henk Mutsaerts 💬🐛💻📖💡📋🤔📆📢📓</p></li>
+<li><p>Manjari Narayan 📖</p></li>
+<li><p>National Institute of Mental Health 💵</p></li>
+<li><p>Mikael Naveau 🐛</p></li>
+<li><p>B. Nolan Nichols 📖</p></li>
+<li><p>Thomas E. Nichols 📖📢🔧👀🚧</p></li>
+<li><p>Dylan Nielson 📖💻🔧</p></li>
+<li><p>Aki Nikolaidis 📖</p></li>
+<li><p>Gustav Nilsonne 📖</p></li>
+<li><p>Guiomar Niso 🤔🎨🔍👀📋📝🔧🐛💻🔣✅💬📖💡📢</p></li>
+<li><p>Martin Noergaard 📖🔣💻🤔📢</p></li>
+<li><p>Michael P. Notter 💬📝✅📢📖</p></li>
+<li><p>Jeffrey G. Ojemann 📖</p></li>
+<li><p>Thomas Okell 📖</p></li>
+<li><p>Aaron Oliver-Taylor 📖</p></li>
+<li><p>Hernando Ombao 📖</p></li>
+<li><p>Robert Oostenveld 📖🔧📢💡✅⚠️🤔💬🐛📝💻🖋🔣🎨📋🚇👀📓📹</p></li>
+<li><p>Dimitri Papadopoulos Orfanos 📖💡🤔💬</p></li>
+<li><p>Felipe Orihuela-Espina 📖</p></li>
+<li><p>Eduard Ort 📖</p></li>
+<li><p>Patrick Park 📖💡💬</p></li>
+<li><p>Maurice Pasternak 📓</p></li>
+<li><p>Chloé Pasturel 📖</p></li>
+<li><p>Dianne Patterson 📖</p></li>
+<li><p>John Pellman 📖</p></li>
+<li><p>Cyril Pernet 💬📝📖🎨💡📋🤔📢</p></li>
+<li><p>Franco Pestilli 📖💻🎨💡🤔👀🔧📋🔍🚇</p></li>
+<li><p>Jan Petr 💬🐛💻📖🔣💡📋🤔📆⚠️📢</p></li>
+<li><p>Natalia Petridou 📖</p></li>
+<li><p>Dmitry Petrov 📖💻</p></li>
+<li><p>Christophe Phillips 📖</p></li>
+<li><p>Gio Piantoni 📖</p></li>
+<li><p>Andrea Pigorini 📖</p></li>
+<li><p>Russell A. Poldrack 📖🔍📢</p></li>
+<li><p>Jean-Baptiste Poline 📖📢🤔🎨</p></li>
+<li><p>Luca Pollonini 📖</p></li>
+<li><p>Wouter V. Potters 📖</p></li>
+<li><p>Nader Pouratian 📖</p></li>
+<li><p>Pradeep Reddy Raamana 💻🔧</p></li>
+<li><p>Vasudev Raguram 💻🎨📖🔧</p></li>
+<li><p>Nick F. Ramsey 📖</p></li>
+<li><p>Travis Riddle 📖🔧🐛</p></li>
+<li><p>Pierre Rioux 📖</p></li>
+<li><p>Petra Ritter 📖</p></li>
+<li><p>Kay Robbins 💻📖🐛</p></li>
+<li><p>Alex Rockhill 📖🔧</p></li>
+<li><p>Ariel Rokem 📖</p></li>
+<li><p>Chris Rorden 📖💻</p></li>
+<li><p>Jose Manuel Saborit 📖</p></li>
+<li><p>Taylor Salo 💬📖🔌</p></li>
+<li><p>Matt Sanderson 📖💻</p></li>
+<li><p>Gunnar Schaefer 📖</p></li>
+<li><p>Michael Schirner 📖</p></li>
+<li><p>Jan-Mathijs Schoffelen 📖</p></li>
+<li><p>Graham Searle 📖</p></li>
+<li><p>Parul Sethi 📖🔧⚠️💻</p></li>
+<li><p>Maureen J Shader 📖</p></li>
+<li><p>Robert E. Smith 💻📖</p></li>
+<li><p>Vanessa Sochat 📖</p></li>
+<li><p>Tamas Spisak 📖</p></li>
+<li><p>Julia Sprenger 📖</p></li>
+<li><p>Isla Staden 📖</p></li>
+<li><p>Arjen Stolk 📖</p></li>
+<li><p>Nicole C. Swann 📖</p></li>
+<li><p>Filip Szczepankiewicz 📖</p></li>
+<li><p>Martin Szinte 📖</p></li>
+<li><p>François Tadel 📖🔌💡</p></li>
+<li><p>Sylvain Takerkart 📖</p></li>
+<li><p>Bertrand Thirion 📖</p></li>
+<li><p>David Thomas 📖🔣</p></li>
+<li><p>Roberto Toro 🔧</p></li>
+<li><p>Sébastien Tourbier 🤔👀📢🐛💻📖</p></li>
+<li><p>Paule-Joanne Toussaint 📖</p></li>
+<li><p>Nicholas Traut 📖🔧💻</p></li>
+<li><p>William Triplett 📖</p></li>
+<li><p>Jessica A. Turner 📖</p></li>
+<li><p>Pieter Vandemaele 📖💻</p></li>
+<li><p>Max A. van den Boom 💻👀📖</p></li>
+<li><p>Wietske van der Zwaag 🔣💬</p></li>
+<li><p>Matthias Van Osch 📖</p></li>
+<li><p>Gaël Varoquaux 📖</p></li>
+<li><p>Jaap von der Aar 📖</p></li>
+<li><p>Sjoerd Vos 📖</p></li>
+<li><p>Bradley Voytek 📖</p></li>
+<li><p>Tor Wager 📖</p></li>
+<li><p>Adina S. Wagner 🎨</p></li>
+<li><p>Lennart Walger 📖</p></li>
+<li><p>Brian A. Wandell 📖</p></li>
+<li><p>Hao Ting Wang 📖🐛</p></li>
+<li><p>Yuan Wang 💻</p></li>
+<li><p>Julius Welzel 📖</p></li>
+<li><p>Joseph Wexler 📖💡</p></li>
+<li><p>Kirstie Whitaker 📖💡🔍🤔📢💬</p></li>
+<li><p>Martin Wilson 📖</p></li>
+<li><p>Jonathan Winawer 📖</p></li>
+<li><p>Lennart Wittkuhn 📖</p></li>
+<li><p>Joseph Woods 📖</p></li>
+<li><p>Tal Yarkoni 💻📖🤔🔍🔌👀📢🐛🎨</p></li>
+<li><p>Lyuba Zehl 📖</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/99-appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../99-appendices.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Appendices</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-licenses.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix II: Licenses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

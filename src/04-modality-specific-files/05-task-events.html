@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task events &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Physiological and other continuous recordings" href="06-physiological-and-other-continuous-recordings.html" />
+    <link rel="prev" title="Intracranial Electroencephalography" href="04-intracranial-electroencephalography.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/src/04-modality-specific-files/05-task-events.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/04-modality-specific-files/05-task-events.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/04-modality-specific-files/05-task-events.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/04-modality-specific-files/05-task-events.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stimuli">
+   Stimuli
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimuli-directory">
+     Stimuli directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimuli-databases">
+     Stimuli databases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimulus-presentation-details">
+     Stimulus presentation details
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Task events</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stimuli">
+   Stimuli
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimuli-directory">
+     Stimuli directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimuli-databases">
+     Stimuli databases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stimulus-presentation-details">
+     Stimulus presentation details
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="task-events">
+<h1>Task events<a class="headerlink" href="#task-events" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this file is to describe timing and other properties of events
+recorded during a run.
+Events are, for example, stimuli presented to the participant or participant responses
+(see <a class="reference external" href="../02-common-principles.md#definitions">Definitions</a>).
+A single event file MAY include any combination of stimulus, response, and other events.
+Events MAY overlap in time.
+Please mind that this does not imply that only so called “event related” study designs
+are supported (in contrast to “block” designs) - each “block of events” can be
+represented by an individual row in the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> file (with a long
+duration).</p>
+<p>Template:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>sub-&lt;label&gt;/[ses-&lt;label&gt;]
+    &lt;data_type&gt;/
+        &lt;matches&gt;_events.tsv
+        &lt;matches&gt;_events.json
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;matches&gt;</span></code> corresponds to task filename. For example:
+<code class="docutils literal notranslate"><span class="pre">sub-control01_task-nback</span></code>.</p>
+<p>Each task events file REQUIRES a corresponding task data file.
+It is also possible to have a single <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> file describing events
+for all participants and runs (see
+<a class="reference external" href="../02-common-principles.md#the-inheritance-principle">Inheritance Principle</a>).
+As with all other tabular data, <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> files MAY be accompanied by a JSON
+file describing the columns in detail (see
+<a class="reference external" href="../02-common-principles.md#tabular-files">Tabular Files</a>).</p>
+<p>The tabular files consists of one row per event and a set of REQUIRED
+and OPTIONAL columns:</p>
+<p></p>
+<p><sup>5</sup> Note for MRI data:
+If any acquired scans have been discarded before forming the imaging data file,
+ensure that an <code class="docutils literal notranslate"><span class="pre">onset</span></code> of 0 corresponds to the time the first image was stored.
+For example in case there is an in scanner training phase that
+begins before the scanning sequence has started events from this sequence should
+have negative onset time counting down to the beginning of the acquisition of
+the first volume.</p>
+<p>An arbitrary number of additional columns can be added. Those allow describing
+other properties of events that could be later referred in modelling and
+hypothesis extensions of BIDS.
+Note that the <code class="docutils literal notranslate"><span class="pre">trial_type</span></code> and any additional columns in a TSV file
+SHOULD be documented in an accompanying JSON sidecar file.</p>
+<p>Example:</p>
+<p></p>
+<p>Example of the content of the TSV file:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>onset	duration	trial_type	response_time	stim_file
+1.23	0.65	start	1.435	images/red_square.jpg
+5.65	0.65	stop	1.739	images/blue_square.jpg
+</pre></div>
+</div>
+<p>In the accompanying JSON sidecar, the <code class="docutils literal notranslate"><span class="pre">trial_type</span></code> column might look as follows:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;trial_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;LongName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Event category&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Indicator of type of action that is expected&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Levels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A red square is displayed to indicate starting&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;stop&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A blue square is displayed to indicate stopping&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that all other columns SHOULD also be described but are omitted for the
+sake of brevity.</p>
+<p>For multi-echo files, the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> file is applicable to all echos of
+a particular run:</p>
+<p></p>
+<p>Note: Events can also be documented in machine-actionable form
+using HED (Hierarchical Event Descriptor) tags.
+This type of documentation is particularly useful for datasets likely to be used
+in event-related analyses.
+See <a class="reference internal" href="../99-appendices/03-hed.html"><span class="doc std std-doc">Hierarchical Event Descriptors</span></a>
+for additional information and examples.</p>
+<div class="section" id="stimuli">
+<h2>Stimuli<a class="headerlink" href="#stimuli" title="Permalink to this headline">¶</a></h2>
+<p>Additional information about the stimuli can be added in the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code>
+and <code class="docutils literal notranslate"><span class="pre">events.json</span></code> files.</p>
+<p>This can be done by using a <code class="docutils literal notranslate"><span class="pre">/stimuli</span></code> directory or by reference to a stimuli database.</p>
+<div class="section" id="stimuli-directory">
+<h3>Stimuli directory<a class="headerlink" href="#stimuli-directory" title="Permalink to this headline">¶</a></h3>
+<p>The stimulus files can be added in a <code class="docutils literal notranslate"><span class="pre">/stimuli</span></code> directory
+(under the root directory of the dataset; with optional subdirectories) AND using a
+<code class="docutils literal notranslate"><span class="pre">stim_file</span></code> column in <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> mentioning which stimulus file was used
+for a given event,</p>
+<p>There are no restrictions on the file formats of the stimuli files,
+but they should be stored in the <code class="docutils literal notranslate"><span class="pre">/stimuli</span></code> directory.</p>
+<p></p>
+</div>
+<div class="section" id="stimuli-databases">
+<h3>Stimuli databases<a class="headerlink" href="#stimuli-databases" title="Permalink to this headline">¶</a></h3>
+<p>References to existing databases can also be encoded using additional columns.
+The following example includes references to the
+<a class="reference external" href="https://www.emotionlab.se/resources/kdef">Karolinska Directed Emotional Faces (KDEF) database</a>.</p>
+<p>Example:</p>
+<p></p>
+<p>Example of the content of the TSV file:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>onset duration  trial_type  identifier  database  response_time
+1.2 0.6 afraid  AF01AFAF  kdef  1.435
+5.6 0.6 angry AM01AFAN  kdef  1.739
+5.6 0.6 sad AF01ANSA  kdef  1.739
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">trial_type</span></code> and <code class="docutils literal notranslate"><span class="pre">identifier</span></code> columns from the <code class="docutils literal notranslate"><span class="pre">events.tsv</span></code> files might be described
+in the accompanying JSON sidecar as follows:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;trial_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;LongName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Emotion image type&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Type of emotional face from Karolinska database that is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Levels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;afraid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A face showing fear is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;angry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A face showing anger is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;sad&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A face showing sadness is displayed&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;LongName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karolinska (KDEF) database identifier&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID from KDEF database used to identify the displayed image&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that all other columns SHOULD also be described but are omitted for the
+sake of brevity.</p>
+</div>
+<div class="section" id="stimulus-presentation-details">
+<h3>Stimulus presentation details<a class="headerlink" href="#stimulus-presentation-details" title="Permalink to this headline">¶</a></h3>
+<p>It is RECOMMENDED to include details of the stimulus presentation software,
+when applicable:</p>
+<p></p>
+<p>The object supplied for <code class="docutils literal notranslate"><span class="pre">StimulusPresentation</span></code> SHOULD include the following key-value pairs:</p>
+<p></p>
+<p>The operating system description SHOULD include the following attributes:</p>
+<ul class="simple">
+<li><p>type (for example, Windows, macOS, Linux)</p></li>
+<li><p>distribution (if applicable, for example, Ubuntu, Debian, CentOS)</p></li>
+<li><p>the version number (for example, 18.04.5)</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Windows 10, Version 2004</p></li>
+<li><p>macOS 10.15.6</p></li>
+<li><p>Linux Ubuntu 18.04.5</p></li>
+</ul>
+<p>The amount of information supplied for the <code class="docutils literal notranslate"><span class="pre">OperatingSystem</span></code> SHOULD be sufficient
+to re-run the code under maximally similar conditions.</p>
+<p>The information related to stimulus presentation might be described
+in the accompanying JSON sidecar as follows (based on the example of the previous section):</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;trial_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;LongName&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Emotion image type&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Type of emotional face from Karolinska database that is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Levels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;afraid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A face showing fear is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;angry&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A face showing anger is displayed&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;sad&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;A face showing sadness is displayed&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;LongName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unique identifier from Karolinska (KDEF) database&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID from KDEF database used to identify the displayed image&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;StimulusPresentation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;OperatingSystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux Ubuntu 18.04.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SoftwareName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Psychtoolbox&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SoftwareRRID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SCR_002881&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SoftwareVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.0.14&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doi:10.5281/zenodo.3361717&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/04-modality-specific-files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04-intracranial-electroencephalography.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intracranial Electroencephalography</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06-physiological-and-other-continuous-recordings.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Physiological and other continuous recordings</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microscopy &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Derivatives" href="../05-derivatives.html" />
+    <link rel="prev" title="Positron Emission Tomography" href="09-positron-emission-tomography.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/src/04-modality-specific-files/10-microscopy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/04-modality-specific-files/10-microscopy.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/04-modality-specific-files/10-microscopy.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/04-modality-specific-files/10-microscopy.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#microscopy-imaging-data">
+   Microscopy imaging data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-formats">
+     File formats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modality-suffixes">
+     Modality suffixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filename-entities">
+     Filename entities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#microscopy-metadata-sidecar-json">
+     Microscopy metadata (Sidecar JSON)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#device-hardware">
+       Device Hardware
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#image-acquisition">
+       Image Acquisition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample">
+       Sample
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chunk-transformations">
+       Chunk Transformations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-of-sidecar-json-file-suffix-json">
+       Example of sidecar JSON file (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         *_&lt;suffix&gt;.json
+        </span>
+       </code>
+       )
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-samples-file">
+   Required Samples file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-participants-data">
+   Recommended Participants data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photos-of-the-samples-photo-extension">
+   Photos of the samples (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_photo.&lt;extension&gt;
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Microscopy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#microscopy-imaging-data">
+   Microscopy imaging data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-formats">
+     File formats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modality-suffixes">
+     Modality suffixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filename-entities">
+     Filename entities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#microscopy-metadata-sidecar-json">
+     Microscopy metadata (Sidecar JSON)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#device-hardware">
+       Device Hardware
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#image-acquisition">
+       Image Acquisition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample">
+       Sample
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chunk-transformations">
+       Chunk Transformations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-of-sidecar-json-file-suffix-json">
+       Example of sidecar JSON file (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         *_&lt;suffix&gt;.json
+        </span>
+       </code>
+       )
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-samples-file">
+   Required Samples file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-participants-data">
+   Recommended Participants data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photos-of-the-samples-photo-extension">
+   Photos of the samples (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_photo.&lt;extension&gt;
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="microscopy">
+<h1>Microscopy<a class="headerlink" href="#microscopy" title="Permalink to this headline">¶</a></h1>
+<p>Support for Microscopy was developed as a
+<a class="reference external" href="../07-extensions.md#bids-extension-proposals">BIDS Extension Proposal</a>.</p>
+<p>Please see <a class="reference external" href="../01-introduction.md#citing-bids">Citing BIDS</a>
+on how to appropriately credit this extension when referring to it in the
+context of the academic literature.</p>
+<p>Microscopy datasets formatted using this specification are available on the
+<a class="reference external" href="https://github.com/bids-standard/bids-examples#microscopy-datasets">BIDS examples repository</a>
+and can be used for practical guidance when curating a new dataset.</p>
+<p>Further Microscopy datasets are available:</p>
+<ul class="simple">
+<li><p>In PNG format:  <a class="reference external" href="https://doi.org/10.5281/zenodo.5498378"><code class="docutils literal notranslate"><span class="pre">data_axondeepseg_sem</span></code></a></p></li>
+<li><p>In OME-TIFF format: <a class="reference external" href="https://doi.org/10.5281/zenodo.5517223"><code class="docutils literal notranslate"><span class="pre">Broca's</span> <span class="pre">Area</span> <span class="pre">Light-Sheet</span> <span class="pre">Microscopy</span></code></a></p></li>
+</ul>
+<div class="section" id="microscopy-imaging-data">
+<h2>Microscopy imaging data<a class="headerlink" href="#microscopy-imaging-data" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<p>Microscopy data MUST be stored in the <code class="docutils literal notranslate"><span class="pre">micr</span></code> directory.</p>
+<div class="section" id="file-formats">
+<h3>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h3>
+<p>The Microscopy community uses a variety of formats for storing raw data, and there is no single
+standard that all researchers agree on. However, a standardized file structure has been developed
+by the <a class="reference external" href="https://www.openmicroscopy.org/">Open Microscopy Environment</a> for whole-slide imaging with
+the <a class="reference external" href="https://docs.openmicroscopy.org/ome-model/6.1.2/ome-tiff/file-structure.html">OME-TIFF file specifications</a>.
+The OME-TIFF file allows for multi-page TIFF files to store multiple image planes and supports
+multi-resolution pyramidal tiled images. An OME-XML data block is also embedded inside the
+file’s header.</p>
+<p>The BIDS standard accepts microscopy data in a number of file formats to accommodate datasets
+stored in 2D image formats and whole-slide imaging formats, to accommodate lossless and lossy
+compression, and to avoid unnecessary conversions of the original data from a non-tiled to a
+tiled format, or vice-versa.</p>
+<p>Microscopy raw data MUST be stored in one of the following formats:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.libpng.org/pub/png/">Portable Network Graphics</a> (<code class="docutils literal notranslate"><span class="pre">.png</span></code>)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/TIFF">Tag Image File Format</a> (<code class="docutils literal notranslate"><span class="pre">.tif</span></code>)</p></li>
+<li><p><a class="reference external" href="https://docs.openmicroscopy.org/ome-model/6.1.2/ome-tiff/specification.html">OME-TIFF</a>
+(<code class="docutils literal notranslate"><span class="pre">.ome.tif</span></code> for standard TIFF files or <code class="docutils literal notranslate"><span class="pre">.ome.btf</span></code> for
+<a class="reference external" href="https://www.awaresystems.be/imaging/tiff/bigtiff.html">BigTIFF</a> files)</p></li>
+</ul>
+<p>If different from PNG, TIFF or OME-TIFF, the original unprocessed data in the native format MAY be
+stored in the <a class="reference external" href="../02-common-principles.md#source-vs-raw-vs-derived-data"><code class="docutils literal notranslate"><span class="pre">/sourcedata</span></code> directory</a>.</p>
+<p>Future versions may extend this list of supported file formats, for example with the
+Next-Generation File Formats currently developed by OME (<a class="reference external" href="https://ngff.openmicroscopy.org/latest/">OME-NGFF</a>)
+as a successor to OME-TIFF for better remote sharing of large datasets.</p>
+</div>
+<div class="section" id="modality-suffixes">
+<h3>Modality suffixes<a class="headerlink" href="#modality-suffixes" title="Permalink to this headline">¶</a></h3>
+<p>Microscopy data currently support the following imaging modalities:</p>
+<p></p>
+</div>
+<div class="section" id="filename-entities">
+<h3>Filename entities<a class="headerlink" href="#filename-entities" title="Permalink to this headline">¶</a></h3>
+<p>In the context of Microscopy, a session (<a class="reference external" href="../99-appendices/09-entities.md#ses"><code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code></a>)
+can refer to all the acquisitions between the start and the end of an imaging experiment
+for ex vivo imaging, or a subject lab visit for biopsy procedure and/or in vivo imaging.
+Consistent with other data types in BIDS, the session entity is optional.</p>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#sample"><code class="docutils literal notranslate"><span class="pre">sample-&lt;label&gt;</span></code></a> entity is REQUIRED for
+Microscopy data and is used to distinguish between different samples from the same subject.
+The label MUST be unique per subject and is RECOMMENDED to be unique throughout the dataset.</p>
+<p>For example: Three brain slices (<code class="docutils literal notranslate"><span class="pre">sample-01</span></code> to <code class="docutils literal notranslate"><span class="pre">sample-03</span></code>) extracted from subject <code class="docutils literal notranslate"><span class="pre">sub-01</span></code>,
+imaged by scanning electron microscopy (SEM) in PNG format</p>
+<p></p>
+<p>In this example, the JSON metadata is common for all samples of <code class="docutils literal notranslate"><span class="pre">sub-01</span></code>.
+JSON metadata may be defined per subject or per sample as appropriate, as per the
+<a class="reference external" href="../02-common-principles.md#the-inheritance-principle">inheritance principle</a>.</p>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#acq"><code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code></a> entity corresponds to a custom label that
+MAY be used to distinguish a different set of parameters used for acquiring the same modality.
+For example, two images of the same sample acquired by bright-field microscopy (BF) in PNG format at
+different magnification of 40x and 60x.
+In such case two files could have the following names: <code class="docutils literal notranslate"><span class="pre">sub-01_sample-01_acq-40x_BF.png</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sub-01_sample-01_acq-60x_BF.png</span></code>, however the user is free to choose any other label as long as
+they are consistent across subjects and sessions.</p>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#stain"><code class="docutils literal notranslate"><span class="pre">stain-&lt;label&gt;</span></code></a> entity MAY be used to distinguish
+image files from the same sample using different stains or antibodies for contrast enhancement.</p>
+<p>For example: One brain slice (<code class="docutils literal notranslate"><span class="pre">sample-01</span></code>) extracted from subject <code class="docutils literal notranslate"><span class="pre">sub-01</span></code> with three
+stains (<code class="docutils literal notranslate"><span class="pre">stain-01</span></code>, <code class="docutils literal notranslate"><span class="pre">stain-02</span></code> and <code class="docutils literal notranslate"><span class="pre">stain-03</span></code>) in three separate files, imaged by selective plane
+illumination microscopy (SPIM) in OME-TIFF format</p>
+<p></p>
+<p>In this example, the entity stain is used to distinguish images with different
+stains in separate files from the same sample.
+In the case where a single file contains different staining in each channel, the
+<code class="docutils literal notranslate"><span class="pre">stain-&lt;label&gt;</span></code> is omitted.</p>
+<p>Stains SHOULD be indicated in the <code class="docutils literal notranslate"><span class="pre">&quot;SampleStaining&quot;</span></code> key in the sidecar JSON file,
+although the label may be different.
+Description of antibodies SHOULD also be indicated in <code class="docutils literal notranslate"><span class="pre">&quot;SamplePrimaryAntibodies&quot;</span></code>
+and/or <code class="docutils literal notranslate"><span class="pre">&quot;SampleSecondaryAntobodies&quot;</span></code> as appropriate.</p>
+<p>If more than one run of the same sample, acquisition and stain are acquired during the same
+session, the <a class="reference external" href="../99-appendices/09-entities.md#run"><code class="docutils literal notranslate"><span class="pre">run-&lt;index&gt;</span></code></a> entity MUST be used:
+<code class="docutils literal notranslate"><span class="pre">_run-1</span></code>, <code class="docutils literal notranslate"><span class="pre">_run-2</span></code>, <code class="docutils literal notranslate"><span class="pre">_run-3</span></code>, and so on.
+If only one run was acquired the <code class="docutils literal notranslate"><span class="pre">run-&lt;index&gt;</span></code> can be omitted.</p>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#chunk"><code class="docutils literal notranslate"><span class="pre">chunk-&lt;index&gt;</span></code></a> entity is used when multiples
+regions (2D images or 3D volumes files) of the same physical sample are imaged with different
+fields of view, regardless if they overlap or not.</p>
+<p>In some cases, the chunks can be “ordered” and, for example, correspond to the displacement of the
+microscope stage.
+In other cases, the chunks can be different images of the same sample with no explicit
+spatial relation between them.</p>
+<p>Examples of different chunks configurations can be seen in Figure 1.
+<img alt="Figure 1" src="../../_images/microscopy_chunks1.png" /></p>
+<p>Figure 1: Examples of chunks configurations.</p>
+<ul class="simple">
+<li><p>a) ordered 2D chunks without overlap,</p></li>
+<li><p>b) ordered 2D chunks with overlap,</p></li>
+<li><p>c) unordered 2D chunks with and without overlap,</p></li>
+<li><p>d) and e) ordered 2D chunks on different 3D planes,</p></li>
+<li><p>f) ordered 3D chunks.</p></li>
+</ul>
+<p>For example: Four chunks (<code class="docutils literal notranslate"><span class="pre">chunk-01</span></code> to <code class="docutils literal notranslate"><span class="pre">chunk-04</span></code>) from the same brain sample (<code class="docutils literal notranslate"><span class="pre">sample-01</span></code>)
+of subject <code class="docutils literal notranslate"><span class="pre">sub-01</span></code>, imaged by confocal microscopy (CONF) in OME-TIFF format</p>
+<p></p>
+<p>The index number can be assigned arbitrarily and, in the case of “ordered” chunks, the chunks’
+relative positions (in terms of scaling and translation) SHOULD be defined by an affine
+transformation matrix in the JSON sidecar file of each chunk, as described in
+<a class="reference external" href="10-microscopy.md#chunk-transformations">Chunk Transformations</a>.</p>
+<p>In this example, the JSON metadata is different for each chunk of <code class="docutils literal notranslate"><span class="pre">sub-01_sample-01</span></code>.
+JSON metadata may be defined per sample or per chunk as appropriate, as per the
+<a class="reference external" href="../02-common-principles.md#the-inheritance-principle">inheritance principle</a>.</p>
+<p>In microscopy, many pyramidal file formats store multiple resolutions for the same acquisition.
+In the case where a multiple resolutions file format is converted to single resolution file format,
+only the higher resolution file is present in the raw data.
+Lower resolutions files MUST be placed under the <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> directory and use the
+<a class="reference external" href="../99-appendices/09-entities.md#res"><code class="docutils literal notranslate"><span class="pre">res-&lt;label&gt;</span></code></a> entity.</p>
+<p>For example:</p>
+<p></p>
+<p>See <a class="reference external" href="../05-derivatives/03-imaging.md#preprocessed-coregistered-andor-resampled-volumes">Preprocessed, coregistered and/or resampled volumes</a>
+for details.</p>
+</div>
+<div class="section" id="microscopy-metadata-sidecar-json">
+<h3>Microscopy metadata (Sidecar JSON)<a class="headerlink" href="#microscopy-metadata-sidecar-json" title="Permalink to this headline">¶</a></h3>
+<p>Microscopy data MUST be described by metadata fields, stored in sidecar JSON files.</p>
+<div class="section" id="device-hardware">
+<h4>Device Hardware<a class="headerlink" href="#device-hardware" title="Permalink to this headline">¶</a></h4>
+<p></p>
+</div>
+<div class="section" id="image-acquisition">
+<h4>Image Acquisition<a class="headerlink" href="#image-acquisition" title="Permalink to this headline">¶</a></h4>
+<p></p>
+</div>
+<div class="section" id="sample">
+<h4>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
+<p></p>
+</div>
+<div class="section" id="chunk-transformations">
+<h4>Chunk Transformations<a class="headerlink" href="#chunk-transformations" title="Permalink to this headline">¶</a></h4>
+<p>Chunk transformations metadata describes the spatial relation between chunks
+of the same sample in an implicit coordinate system.</p>
+<ul class="simple">
+<li><p>The source frame of reference is the frame of reference of the associated image.</p></li>
+<li><p>The target frame of reference is the implicit coordinate system of the transform.</p></li>
+<li><p>The target frame of reference has the same units as the <code class="docutils literal notranslate"><span class="pre">PixelSizeUnits</span></code> metadata.</p></li>
+<li><p>The chunk transformation is described by 2 metadata fields: an affine transformation matrix
+and a description of the axis of the matrix.</p></li>
+<li><p>Other transformations should be described in derivatives.</p></li>
+</ul>
+<p></p>
+<p>An example of chunk transformations JSON metadata for <code class="docutils literal notranslate"><span class="pre">chunk-01</span></code> and <code class="docutils literal notranslate"><span class="pre">chunk-05</span></code> of Figure 2
+is shown below:</p>
+<p><img alt="Figure 2" src="../../_images/microscopy_chunks2.png" /></p>
+<p>Figure 2: Example figure for chunks transformations.</p>
+<p>In this example, there is no scaling and <code class="docutils literal notranslate"><span class="pre">chunk-01</span></code> is at the origin.
+<code class="docutils literal notranslate"><span class="pre">chunk-05</span></code> is translated by 5 um along <code class="docutils literal notranslate"><span class="pre">X+</span></code> and by 3 um along <code class="docutils literal notranslate"><span class="pre">Y+</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">*_chunk-01_&lt;suffix&gt;.json</span></code></strong>:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSizeUnits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;um&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ChunkTransformationMatrix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"></span>
+<span class="w">                                      </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"></span>
+<span class="w">                                      </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ChunkTransformationMatrixAxis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">*_chunk-05_&lt;suffix&gt;.json</span></code></strong>:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSizeUnits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;um&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ChunkTransformationMatrix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">],</span><span class="w"></span>
+<span class="w">                                      </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w"></span>
+<span class="w">                                      </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ChunkTransformationMatrixAxis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-of-sidecar-json-file-suffix-json">
+<h4>Example of sidecar JSON file (<code class="docutils literal notranslate"><span class="pre">*_&lt;suffix&gt;.json</span></code>)<a class="headerlink" href="#example-of-sidecar-json-file-suffix-json" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Manufacturer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hamamatsu&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ManufacturersModelName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C9600-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.23</span><span class="p">,</span><span class="w"> </span><span class="mf">0.23</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;PixelSizeUnits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;um&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Magnification&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;BodyPart&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BRAIN&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;BodyPartDetails&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;corpus callosum&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SampleEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ex vivo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SampleFixation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4% paraformaldehyde, 2% glutaraldehyde&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SampleStaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LFB&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;SliceThickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;TissueDeformationScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">97</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="required-samples-file">
+<h2>Required Samples file<a class="headerlink" href="#required-samples-file" title="Permalink to this headline">¶</a></h2>
+<p>For Microscopy data, the <a class="reference external" href="../03-modality-agnostic-files.md#samples-file">Samples file</a>
+<code class="docutils literal notranslate"><span class="pre">samples.tsv</span></code> is REQUIRED and its associated sidecar <code class="docutils literal notranslate"><span class="pre">samples.json</span></code> file is RECOMMENDED.</p>
+<p>Additional optional columns MAY be used to describe other samples’ attributes.</p>
+</div>
+<div class="section" id="recommended-participants-data">
+<h2>Recommended Participants data<a class="headerlink" href="#recommended-participants-data" title="Permalink to this headline">¶</a></h2>
+<p>For Microscopy data, we RECOMMEND to make use of the columns <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">strain</span></code> and
+<code class="docutils literal notranslate"><span class="pre">strain_rrid</span></code> in the <a class="reference external" href="../03-modality-agnostic-files.md#participants-file">Participants file</a>
+when applicable.</p>
+<p>Additional optional columns MAY be used to describe other subjects’ attributes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">participants.tsv</span></code> example:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>participant_id species strain strain_rrid
+sub-01 mus musculus C57BL/6J RRID:IMSR_JAX:000664
+sub-02 mus musculus C57BL/6J RRID:IMSR_JAX:000664
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">participants.json</span></code> example:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;species&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;binomial species name from the NCBI Taxonomy (https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;strain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name of the strain of the species&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;strain_rrid&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;research resource identifier (RRID) of the strain (https://scicrunch.org/resources/Organisms/search)&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="photos-of-the-samples-photo-extension">
+<h2>Photos of the samples (<code class="docutils literal notranslate"><span class="pre">*_photo.&lt;extension&gt;</span></code>)<a class="headerlink" href="#photos-of-the-samples-photo-extension" title="Permalink to this headline">¶</a></h2>
+<p>Photos of the tissue sample, overview microscopy scans or blockface images from cutting
+MAY be included for visualization of large samples or to indicate the location of chunks
+in a sample.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">&lt;extension&gt;</span></code> for photos MUST be either <code class="docutils literal notranslate"><span class="pre">.jpg</span></code>, <code class="docutils literal notranslate"><span class="pre">.png</span></code> or <code class="docutils literal notranslate"><span class="pre">.tif</span></code>.</p>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#acq"><code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code></a> entity MAY be used to indicate
+acquisition of different photos of the same sample.</p>
+<p>For example:</p>
+<p></p>
+<p>Below is an example of a spinal cord SEM overview, modified from Zaimi et al., 2018.
+<a class="reference external" href="https://doi.org/10.1038/s41598-018-22181-4">doi:10.1038/s41598-018-22181-4</a>.</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>    sub-01_sample-01_photo.jpg
+</pre></div>
+</div>
+<p><img alt="SEM overview" src="../../_images/microscopy_sem_overview.jpg" /></p>
+<!-- Link Definitions --></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/04-modality-specific-files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="09-positron-emission-tomography.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Positron Emission Tomography</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05-derivatives.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Derivatives</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

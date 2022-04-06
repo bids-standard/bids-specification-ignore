@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intracranial Electroencephalography &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Task events" href="05-task-events.html" />
+    <link rel="prev" title="Electroencephalography" href="03-electroencephalography.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/src/04-modality-specific-files/04-intracranial-electroencephalography.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/04-modality-specific-files/04-intracranial-electroencephalography.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/04-modality-specific-files/04-intracranial-electroencephalography.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/04-modality-specific-files/04-intracranial-electroencephalography.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ieeg-recording-data">
+   iEEG recording data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terminology-electrodes-vs-channels">
+     Terminology: Electrodes vs. Channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sidecar-json-ieeg-json">
+     Sidecar JSON (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *_ieeg.json
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#channels-description-channels-tsv">
+   Channels description (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_channels.tsv
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electrode-description-electrodes-tsv">
+   Electrode description (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_electrodes.tsv
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coordinate-system-json-coordsystem-json">
+   Coordinate System JSON (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_coordsystem.json
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-3d-coordinate-systems">
+     Recommended 3D coordinate systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allowed-2d-coordinate-systems">
+     Allowed 2D coordinate systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-coordinate-systems">
+     Multiple coordinate systems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photos-of-the-electrode-positions-photo-jpg">
+   Photos of the electrode positions (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_photo.jpg
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electrical-stimulation">
+   Electrical stimulation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intracranial Electroencephalography</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ieeg-recording-data">
+   iEEG recording data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terminology-electrodes-vs-channels">
+     Terminology: Electrodes vs. Channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sidecar-json-ieeg-json">
+     Sidecar JSON (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *_ieeg.json
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#channels-description-channels-tsv">
+   Channels description (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_channels.tsv
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electrode-description-electrodes-tsv">
+   Electrode description (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_electrodes.tsv
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coordinate-system-json-coordsystem-json">
+   Coordinate System JSON (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_coordsystem.json
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-3d-coordinate-systems">
+     Recommended 3D coordinate systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allowed-2d-coordinate-systems">
+     Allowed 2D coordinate systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-coordinate-systems">
+     Multiple coordinate systems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photos-of-the-electrode-positions-photo-jpg">
+   Photos of the electrode positions (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     *_photo.jpg
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electrical-stimulation">
+   Electrical stimulation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intracranial-electroencephalography">
+<h1>Intracranial Electroencephalography<a class="headerlink" href="#intracranial-electroencephalography" title="Permalink to this headline">¶</a></h1>
+<p>Support Intracranial Electroencephalography (iEEG) was developed as a
+<a class="reference external" href="../07-extensions.md#bids-extension-proposals">BIDS Extension Proposal</a>.
+Please see <a class="reference external" href="../01-introduction.md#citing-bids">Citing BIDS</a>
+on how to appropriately credit this extension when referring to it in the
+context of the academic literature.</p>
+<p>Several <a class="reference external" href="https://github.com/bids-standard/bids-examples#ieeg-datasets">example iEEG datasets</a>
+have been formatted using this specification
+and can be used for practical guidance when curating a new dataset.</p>
+<div class="section" id="ieeg-recording-data">
+<h2>iEEG recording data<a class="headerlink" href="#ieeg-recording-data" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<p>The iEEG community uses a variety of formats for storing raw data, and there is
+no single standard that all researchers agree on. For BIDS, iEEG data MUST be
+stored in one of the following formats:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Format</strong></p></th>
+<th class="head"><p><strong>Extension(s)</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.edfplus.info/">European data format</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.edf</span></code></p></td>
+<td><p>Each recording consists of a <code class="docutils literal notranslate"><span class="pre">.edf</span></code> single file. <a class="reference external" href="https://www.edfplus.info/specs/edfplus.html"><code class="docutils literal notranslate"><span class="pre">edf+</span></code></a> files are permitted. The capital <code class="docutils literal notranslate"><span class="pre">.EDF</span></code> extension MUST NOT be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.brainproducts.com/productdetails.php?id=21&amp;tab=5">BrainVision Core Data Format</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.vhdr</span></code>, <code class="docutils literal notranslate"><span class="pre">.vmrk</span></code>, <code class="docutils literal notranslate"><span class="pre">.eeg</span></code></p></td>
+<td><p>Each recording consists of a  <code class="docutils literal notranslate"><span class="pre">.vhdr</span></code>, <code class="docutils literal notranslate"><span class="pre">.vmrk</span></code>, <code class="docutils literal notranslate"><span class="pre">.eeg</span></code> file triplet.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://sccn.ucsd.edu/eeglab">EEGLAB</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.set</span></code>, <code class="docutils literal notranslate"><span class="pre">.fdt</span></code></p></td>
+<td><p>The format used by the MATLAB toolbox <a class="reference external" href="https://sccn.ucsd.edu/eeglab">EEGLAB</a>. Each recording consists of a <code class="docutils literal notranslate"><span class="pre">.set</span></code> file with an optional <code class="docutils literal notranslate"><span class="pre">.fdt</span></code> file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://nwb-schema.readthedocs.io">Neurodata Without Borders</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.nwb</span></code></p></td>
+<td><p>Each recording consists of a single <code class="docutils literal notranslate"><span class="pre">.nwb</span></code> file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://osf.io/e3sf9/">MEF3</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.mefd</span></code></p></td>
+<td><p>Each recording consists of a <code class="docutils literal notranslate"><span class="pre">.mefd</span></code> directory.</p></td>
+</tr>
+</tbody>
+</table>
+<p>It is RECOMMENDED to use the European data format, or the BrainVision data
+format. It is furthermore discouraged to use the other accepted formats over
+these RECOMMENDED formats, particularly because there are conversion scripts
+available in most commonly used programming languages to convert data into the
+RECOMMENDED formats.</p>
+<p>Future versions of BIDS may extend this list of supported file formats. File
+formats for future consideration MUST have open access documentation, MUST have
+open source implementation for both reading and writing in at least two
+programming languages and SHOULD be widely supported in multiple software
+packages. Other formats that may be considered in the future should have a clear
+added advantage over the existing formats and should have wide adoption in the
+BIDS community.</p>
+<p>The data format in which the data was originally stored is especially valuable
+in case conversion elicits the loss of crucial metadata specific to
+manufacturers and specific iEEG systems. We also encourage users to provide
+additional meta information extracted from the manufacturer-specific data files
+in the sidecar JSON file. Other relevant files MAY be included alongside the
+original iEEG data in the <a class="reference external" href="../02-common-principles.md#source-vs-raw-vs-derived-data"><code class="docutils literal notranslate"><span class="pre">/sourcedata</span></code> directory</a>.</p>
+<p>Note the RecordingType, which depends on whether the data stream on disk is interrupted or not.
+Continuous data is by definition 1 segment without interruption.
+Epoched data consists of multiple segments that all have the same length
+(for example, corresponding to trials) and that have gaps in between.
+Discontinuous data consists of multiple segments of different length,
+for example due to a pause in the acquisition.</p>
+<div class="section" id="terminology-electrodes-vs-channels">
+<h3>Terminology: Electrodes vs. Channels<a class="headerlink" href="#terminology-electrodes-vs-channels" title="Permalink to this headline">¶</a></h3>
+<p>For proper documentation of iEEG recording metadata it is important to
+understand the difference between electrode and channel: an iEEG electrode
+is placed on or in the brain, whereas a channel is the combination of the analog
+differential amplifier and analog-to-digital converter that result in a
+potential (voltage) difference that is stored in the iEEG dataset. We employ the
+following short definitions:</p>
+<ul class="simple">
+<li><p>Electrode = A single point of contact between the acquisition system and the
+recording site (for example, scalp, neural tissue, …). Multiple electrodes can be
+organized as arrays, grids, leads, strips, probes, shafts, caps (for EEG),
+and so forth.</p></li>
+<li><p>Channel = A single analog-to-digital converter in the recording system that
+regularly samples the value of a transducer, which results in the signal
+being represented as a time series in the digitized data. This can be
+connected to two electrodes (to measure the potential difference between
+them), a magnetic field or magnetic gradient sensor, temperature sensor,
+accelerometer, and so forth.</p></li>
+</ul>
+<p>Although the <em>reference</em> and <em>ground</em> electrodes are often referred to as
+channels, they are in most common iEEG systems not recorded by themselves.
+Therefore they are not represented as channels in the data. The type of
+referencing for all channels and optionally the location of the reference
+electrode and the location of the ground electrode MAY be specified.</p>
+</div>
+<div class="section" id="sidecar-json-ieeg-json">
+<h3>Sidecar JSON (<code class="docutils literal notranslate"><span class="pre">*_ieeg.json</span></code>)<a class="headerlink" href="#sidecar-json-ieeg-json" title="Permalink to this headline">¶</a></h3>
+<p>For consistency between studies and institutions, we encourage users to extract
+the values of metadata fields from the actual raw data. Whenever possible,
+please avoid using ad hoc wording.</p>
+<p>Generic fields MUST be present:</p>
+<p></p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">TaskName</span></code> field does not have to be a “behavioral task” that subjects perform, but can reflect some information about the conditions present when the data was acquired (for example, <code class="docutils literal notranslate"><span class="pre">&quot;rest&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sleep&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;seizure&quot;</span></code>).</p>
+<p>SHOULD be present: For consistency between studies and institutions, we
+encourage users to extract the values of these fields from the actual raw data.
+Whenever possible, please avoid using ad hoc wording.</p>
+<p></p>
+<p>Specific iEEG fields MUST be present:</p>
+<p></p>
+<p>Specific iEEG fields SHOULD be present:</p>
+<p></p>
+<p>Specific iEEG fields MAY be present:</p>
+<p></p>
+<p>Example:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;TaskName&quot;</span><span class="p">:</span><span class="s2">&quot;visual&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;InstitutionName&quot;</span><span class="p">:</span><span class="s2">&quot;Stanford Hospital and Clinics&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;InstitutionAddress&quot;</span><span class="p">:</span><span class="s2">&quot;300 Pasteur Dr, Stanford, CA 94305&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Manufacturer&quot;</span><span class="p">:</span><span class="s2">&quot;Tucker Davis Technologies&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ManufacturersModelName&quot;</span><span class="p">:</span><span class="s2">&quot;n/a&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;TaskDescription&quot;</span><span class="p">:</span><span class="s2">&quot;visual gratings and noise patterns&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Instructions&quot;</span><span class="p">:</span><span class="s2">&quot;look at the dot in the center of the screen and press the button when it changes color&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iEEGReference&quot;</span><span class="p">:</span><span class="s2">&quot;left mastoid&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SamplingFrequency&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;PowerLineFrequency&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SoftwareFilters&quot;</span><span class="p">:</span><span class="s2">&quot;n/a&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;HardwareFilters&quot;</span><span class="p">:{</span><span class="nt">&quot;Highpass RC filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Half amplitude cutoff (Hz)&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0159</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Roll-off&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6dBOctave&quot;</span><span class="p">}},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ElectrodeManufacturer&quot;</span><span class="p">:</span><span class="s2">&quot;AdTech&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ECOGChannelCount&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SEEGChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;EEGChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;EOGChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ECGChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;EMGChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;MiscChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;TriggerChannelCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;RecordingDuration&quot;</span><span class="p">:</span><span class="mf">233.639</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;RecordingType&quot;</span><span class="p">:</span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iEEGGround&quot;</span><span class="p">:</span><span class="s2">&quot;placed on the right mastoid&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iEEGPlacementScheme&quot;</span><span class="p">:</span><span class="s2">&quot;right occipital temporal surface&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ElectricalStimulation&quot;</span><span class="p">:</span><span class="kc">false</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that the date and time information SHOULD be stored in the Study key file
+(<a class="reference external" href="../03-modality-agnostic-files.md#scans-file"><code class="docutils literal notranslate"><span class="pre">scans.tsv</span></code></a>).
+Date time information MUST be expressed as indicated in <a class="reference external" href="../02-common-principles.md#units">Units</a></p>
+</div>
+</div>
+<div class="section" id="channels-description-channels-tsv">
+<h2>Channels description (<code class="docutils literal notranslate"><span class="pre">*_channels.tsv</span></code>)<a class="headerlink" href="#channels-description-channels-tsv" title="Permalink to this headline">¶</a></h2>
+<p>A channel represents one time series recorded with the recording system
+(for example, there can be a bipolar channel, recorded from two electrodes or contact points on the tissue).
+Although this information can often be extracted from the iEEG recording,
+listing it in a simple <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> document makes it easy to browse or search
+(for example, searching for recordings with a sampling frequency of &gt;=1000 Hz).
+Hence, the <code class="docutils literal notranslate"><span class="pre">channels.tsv</span></code> file is RECOMMENDED.
+Channels SHOULD appear in the table in the same order they do in the iEEG data file.
+Any number of additional columns MAY be provided to provide additional information about the channels.
+Note that electrode positions SHOULD NOT be added to this file but to <code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code>.</p>
+<p>The columns of the channels description table stored in <code class="docutils literal notranslate"><span class="pre">*_channels.tsv</span></code> are:</p>
+<p>MUST be present <strong>in this specific order</strong>:</p>
+<p></p>
+<p>SHOULD be present:</p>
+<p></p>
+<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">sub-01_channels.tsv</span></code>:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>name  type  units low_cutoff  high_cutoff status  status_description
+LT01  ECOG  uV    300         0.11        good    n/a
+LT02  ECOG  uV    300         0.11        bad     broken
+H01   SEEG  uV    300         0.11        bad     line_noise
+ECG1  ECG   uV    n/a         0.11        good    n/a
+TR1   TRIG  n/a   n/a         n/a         good    n/a
+</pre></div>
+</div>
+<p>Restricted keyword list for field type in alphabetic order (shared with the MEG
+and EEG modality; however, only types that are common in iEEG data are listed here).
+Note that upper-case is REQUIRED:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Keyword</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EEG</p></td>
+<td><p>Electrode channel from electroencephalogram</p></td>
+</tr>
+<tr class="row-odd"><td><p>ECOG</p></td>
+<td><p>Electrode channel from electrocorticogram (intracranial)</p></td>
+</tr>
+<tr class="row-even"><td><p>SEEG</p></td>
+<td><p>Electrode channel from stereo-electroencephalogram (intracranial)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DBS</p></td>
+<td><p>Electrode channel from deep brain stimulation electrode (intracranial)</p></td>
+</tr>
+<tr class="row-even"><td><p>VEOG</p></td>
+<td><p>Vertical EOG (electrooculogram)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HEOG</p></td>
+<td><p>Horizontal EOG</p></td>
+</tr>
+<tr class="row-even"><td><p>EOG</p></td>
+<td><p>Generic EOG channel if HEOG or VEOG information not available</p></td>
+</tr>
+<tr class="row-odd"><td><p>ECG</p></td>
+<td><p>ElectroCardioGram (heart)</p></td>
+</tr>
+<tr class="row-even"><td><p>EMG</p></td>
+<td><p>ElectroMyoGram (muscle)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRIG</p></td>
+<td><p>System Triggers</p></td>
+</tr>
+<tr class="row-even"><td><p>AUDIO</p></td>
+<td><p>Audio signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>PD</p></td>
+<td><p>Photodiode</p></td>
+</tr>
+<tr class="row-even"><td><p>EYEGAZE</p></td>
+<td><p>Eye Tracker gaze</p></td>
+</tr>
+<tr class="row-odd"><td><p>PUPIL</p></td>
+<td><p>Eye Tracker pupil diameter</p></td>
+</tr>
+<tr class="row-even"><td><p>MISC</p></td>
+<td><p>Miscellaneous</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYSCLOCK</p></td>
+<td><p>System time showing elapsed time since trial started</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC</p></td>
+<td><p>Analog to Digital input</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC</p></td>
+<td><p>Digital to Analog output</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>Reference channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>OTHER</p></td>
+<td><p>Any other type of channel</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example of free-form text for field <code class="docutils literal notranslate"><span class="pre">description</span></code>:</p>
+<ul class="simple">
+<li><p>intracranial, stimulus, response, vertical EOG, skin conductance</p></li>
+</ul>
+</div>
+<div class="section" id="electrode-description-electrodes-tsv">
+<h2>Electrode description (<code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code>)<a class="headerlink" href="#electrode-description-electrodes-tsv" title="Permalink to this headline">¶</a></h2>
+<p>File that gives the location, size and other properties of iEEG electrodes. Note
+that coordinates are expected in cartesian coordinates according to the
+<code class="docutils literal notranslate"><span class="pre">iEEGCoordinateSystem</span></code> and <code class="docutils literal notranslate"><span class="pre">iEEGCoordinateUnits</span></code> fields in
+<code class="docutils literal notranslate"><span class="pre">*_coordsystem.json</span></code>. If an <code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code> file is specified, a
+<code class="docutils literal notranslate"><span class="pre">*_coordsystem.json</span></code> file MUST be specified as well.</p>
+<p>The optional <a class="reference external" href="../99-appendices/09-entities.md#space"><code class="docutils literal notranslate"><span class="pre">space-&lt;label&gt;</span></code></a> entity (<code class="docutils literal notranslate"><span class="pre">*[_space-&lt;label&gt;]_electrodes.tsv</span></code>) can be used to
+indicate the way in which electrode positions are interpreted.
+The space <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> MUST be taken from one of the modality specific lists in
+<a class="reference internal" href="../99-appendices/08-coordinate-systems.html"><span class="doc std std-doc">Appendix VIII</span></a>.
+For example for iEEG data, the restricted keywords listed under
+<a class="reference external" href="../99-appendices/08-coordinate-systems.md#ieeg-specific-coordinate-systems">iEEG Specific Coordinate Systems</a>
+are acceptable for <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>.</p>
+<p>For examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_space-MNI152Lin</span></code> (electrodes are coregistred and scaled to a specific MNI
+template)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_space-Talairach</span></code> (electrodes are coregistred and scaled to Talairach
+space)</p></li>
+</ul>
+<p>When referring to the <code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code> file in a certain <em>space</em> as defined
+above, the <a class="reference external" href="../99-appendices/09-entities.md#space"><code class="docutils literal notranslate"><span class="pre">space-&lt;label&gt;</span></code></a> of the accompanying <code class="docutils literal notranslate"><span class="pre">*_coordsystem.json</span></code> MUST
+correspond.</p>
+<p>For example:</p>
+<p></p>
+<p>The order of the required columns in the <code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code> file MUST be as listed below.
+The <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> columns indicate the positions of the center of each electrode in Cartesian coordinates.
+Units are specified in <code class="docutils literal notranslate"><span class="pre">space-&lt;label&gt;_coordsystem.json</span></code>.</p>
+<p>MUST be present <strong>in this specific order</strong>:</p>
+<p></p>
+<p>SHOULD be present:</p>
+<p></p>
+<p>MAY be present:</p>
+<p></p>
+<p>Example:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>name  x   y    z    size   manufacturer
+LT01  19  -39  -16  2.3    Integra
+LT02  23  -40  -19  2.3    Integra
+H01   27  -42  -21  5      AdTech
+</pre></div>
+</div>
+</div>
+<div class="section" id="coordinate-system-json-coordsystem-json">
+<h2>Coordinate System JSON (<code class="docutils literal notranslate"><span class="pre">*_coordsystem.json</span></code>)<a class="headerlink" href="#coordinate-system-json-coordsystem-json" title="Permalink to this headline">¶</a></h2>
+<p>This <code class="docutils literal notranslate"><span class="pre">_coordsystem.json</span></code> file contains the coordinate system in which electrode
+positions are expressed. The associated MRI, CT, X-Ray, or operative photo can
+also be specified.</p>
+<p>General fields:</p>
+<p></p>
+<p>Fields relating to the iEEG electrode positions:</p>
+<p></p>
+<div class="section" id="recommended-3d-coordinate-systems">
+<h3>Recommended 3D coordinate systems<a class="headerlink" href="#recommended-3d-coordinate-systems" title="Permalink to this headline">¶</a></h3>
+<p>It is preferred that electrodes are localized in a 3D coordinate system (with
+respect to a pre- and/or post-operative anatomical MRI or CT scans or in a
+standard space as specified in BIDS <a class="reference internal" href="../99-appendices/08-coordinate-systems.html"><span class="doc std std-doc">Appendix VIII</span></a>
+about preferred names of coordinate systems, such as ACPC).</p>
+</div>
+<div class="section" id="allowed-2d-coordinate-systems">
+<h3>Allowed 2D coordinate systems<a class="headerlink" href="#allowed-2d-coordinate-systems" title="Permalink to this headline">¶</a></h3>
+<p>If electrodes are localized in 2D space (only x and y are specified and z is <code class="docutils literal notranslate"><span class="pre">&quot;n/a&quot;</span></code>),
+then the positions in this file MUST correspond to the locations expressed
+in pixels on the photo/drawing/rendering of the electrodes on the brain.
+In this case, <code class="docutils literal notranslate"><span class="pre">iEEGCoordinateSystem</span></code> MUST be defined as <code class="docutils literal notranslate"><span class="pre">&quot;Pixels&quot;</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">iEEGCoordinateUnits</span></code> MUST be defined as <code class="docutils literal notranslate"><span class="pre">&quot;pixels&quot;</span></code>
+(note the difference in capitalization).
+Furthermore, the coordinates MUST be (row,column) pairs,
+with (0,0) corresponding to the upper left pixel and (N,0) corresponding to the lower left pixel.</p>
+</div>
+<div class="section" id="multiple-coordinate-systems">
+<h3>Multiple coordinate systems<a class="headerlink" href="#multiple-coordinate-systems" title="Permalink to this headline">¶</a></h3>
+<p>If electrode positions are known in multiple coordinate systems (for example, MRI, CT
+and MNI), these spaces can be distinguished by the optional <a class="reference external" href="../99-appendices/09-entities.md#space"><code class="docutils literal notranslate"><span class="pre">space-&lt;label&gt;</span></code></a>
+field, see the <a class="reference external" href="#electrode-description-_electrodestsv"><code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code>-section</a>
+for more information.
+Note that the <a class="reference external" href="../99-appendices/09-entities.md#space"><code class="docutils literal notranslate"><span class="pre">space-&lt;label&gt;</span></code></a> fields must correspond
+between <code class="docutils literal notranslate"><span class="pre">*_electrodes.tsv</span></code> and <code class="docutils literal notranslate"><span class="pre">*_coordsystem.json</span></code> if they refer to the same
+data.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;IntendedFor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/sub-01/ses-01/anat/sub-01_T1w.nii.gz&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iEEGCoordinateSystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACPC&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iEEGCoordinateUnits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iEEGCoordinateSystemDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Coordinate system with the origin at anterior commissure (AC), negative y-axis going through the posterior commissure (PC), z-axis going to a mid-hemisperic point which lies superior to the AC-PC line, x-axis going to the right&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iEEGCoordinateProcessingDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;surface_projection&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iEEGCoordinateProcessingReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hermes et al., 2010 JNeuroMeth&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="photos-of-the-electrode-positions-photo-jpg">
+<h2>Photos of the electrode positions (<code class="docutils literal notranslate"><span class="pre">*_photo.jpg</span></code>)<a class="headerlink" href="#photos-of-the-electrode-positions-photo-jpg" title="Permalink to this headline">¶</a></h2>
+<p>These can include photos of the electrodes on the brain surface, photos of
+anatomical features or landmarks (such as sulcal structure), and fiducials. Photos
+can also include an X-ray picture, a flatbed scan of a schematic drawing made
+during surgery, or screenshots of a brain rendering with electrode positions.
+The photos may need to be cropped and/or blurred to conceal identifying features
+or entirely omitted prior to sharing, depending on obtained consent.</p>
+<p>If there are photos of the electrodes, the <a class="reference external" href="../99-appendices/09-entities.md#acq"><code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code></a> entity should be specified
+with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*_photo.jpg</span></code> in case of an operative photo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*_acq-xray#_photo.jpg</span></code> in case of an x-ray picture</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*_acq-drawing#_photo.jpg</span></code> in case of a drawing or sketch of electrode
+placements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*_acq-render#_photo.jpg</span></code> in case of a rendering</p></li>
+</ul>
+<p>The <a class="reference external" href="../99-appendices/09-entities.md#ses"><code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code></a> entity may be used to specify when the photo was taken.</p>
+<p>Example of the operative photo of ECoG electrodes (here is an annotated example in
+which electrodes and vasculature are marked, taken from Hermes et al.,
+JNeuroMeth 2010).</p>
+<p></p>
+<p><img alt="operative photo of ECoG electrodes" src="../../_images/ieeg_electrodes1.png" /></p>
+<p>Below is an example of a volume rendering of the cortical surface with a
+superimposed subdural electrode implantation. This map is often provided by the</p>
+<p>EEG technician and provided to the epileptologists (for example, see Burneo JG et al.
+2014. <a class="reference external" href="https://doi.org/10.1016/j.clineuro.2014.03.020">doi:10.1016/j.clineuro.2014.03.020</a>).</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>    sub-0002_ses-01_acq-render_photo.jpg
+</pre></div>
+</div>
+<p><img alt="volume rendering of the cortical surface" src="../../_images/ieeg_electrodes2.png" /></p>
+</div>
+<div class="section" id="electrical-stimulation">
+<h2>Electrical stimulation<a class="headerlink" href="#electrical-stimulation" title="Permalink to this headline">¶</a></h2>
+<p>In case of electrical stimulation of brain tissue by passing current through the
+iEEG electrodes, and the electrical stimulation has an event structure (on-off,
+onset, duration), the <code class="docutils literal notranslate"><span class="pre">_events.tsv</span></code> file can contain the electrical stimulation
+parameters in addition to other events. Note that these can be intermixed with
+other task events. Electrical stimulation parameters can be described in columns
+called <code class="docutils literal notranslate"><span class="pre">electrical_stimulation_&lt;label&gt;</span></code>, with labels chosen by the researcher and
+optionally defined in more detail in an accompanying <code class="docutils literal notranslate"><span class="pre">_events.json</span></code> file (as
+per the main BIDS spec). Functions for complex stimulation patterns can, similar
+as when a video is presented, be stored in a directory in the <code class="docutils literal notranslate"><span class="pre">/stimuli/</span></code> directory.
+For example: <code class="docutils literal notranslate"><span class="pre">/stimuli/electrical_stimulation_functions/biphasic.tsv</span></code></p>
+<p>Example:</p>
+<div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>onset duration trial_type             electrical_stimulation_type electrical_stimulation_site electrical_stimulation_current
+1.2   0.001    electrical_stimulation biphasic                    LT01-LT02                   0.005
+1.3   0.001    electrical_stimulation biphasic                    LT01-LT02                   0.005
+2.2   0.001    electrical_stimulation biphasic                    LT02-LT03                   0.005
+4.2   1        electrical_stimulation complex                     LT02-LT03                   n/a
+15.2  3        auditory_stimulus      n/a                         n/a                         n/a
+</pre></div>
+</div>
+<!-- Link Definitions --></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/04-modality-specific-files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03-electroencephalography.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Electroencephalography</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-task-events.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Task events</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

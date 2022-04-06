@@ -1,0 +1,1868 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="src/04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="src/05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="src/99-appendices.html">
+   Appendices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/05-units.html">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="src/99-appendices/14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="Symbols">Symbols</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-.-extensions"><strong>.* (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.ave-extensions"><strong>.ave (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.bdf-extensions"><strong>.bdf (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.bval-extensions"><strong>.bval (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.bvec-extensions"><strong>.bvec (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.chn-extensions"><strong>.chn (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.con-extensions"><strong>.con (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.dat-extensions"><strong>.dat (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.ds-extensions"><strong>.ds/ (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.edf-extensions"><strong>.edf (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.eeg-extensions"><strong>.eeg (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.fdt-extensions"><strong>.fdt (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.fif-extensions"><strong>.fif (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.jpg-extensions"><strong>.jpg (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.json-extensions"><strong>.json (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.kdf-extensions"><strong>.kdf (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.md-extensions"><strong>.md (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.mefd-extensions"><strong>.mefd/ (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.mhd-extensions"><strong>.mhd (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.mrk-extensions"><strong>.mrk (extensions)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-.nii-extensions"><strong>.nii (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.nii.gz-extensions"><strong>.nii.gz (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.nwb-extensions"><strong>.nwb (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.ome.btf-extensions"><strong>.ome.btf (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.ome.tif-extensions"><strong>.ome.tif (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.png-extensions"><strong>.png (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.pos-extensions"><strong>.pos (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.raw-extensions"><strong>.raw (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.rst-extensions"><strong>.rst (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.set-extensions"><strong>.set (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.sqd-extensions"><strong>.sqd (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.tif-extensions"><strong>.tif (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.trg-extensions"><strong>.trg (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.tsv-extensions"><strong>.tsv (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.tsv.gz-extensions"><strong>.tsv.gz (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.txt-extensions"><strong>.txt (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.vhdr-extensions"><strong>.vhdr (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-.vmrk-extensions"><strong>.vmrk (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-extensions"><strong>/ (extensions)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-2PE-suffixes"><strong>2PE (suffixes)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-abbreviation-columns"><strong>abbreviation (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Acknowledgements-metadata"><strong>Acknowledgements (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-acq_time-sense-1-columns"><strong>acq_time sense 1 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-acq_time-sense-2-columns"><strong>acq_time sense 2 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-acquisition-entities"><strong>acquisition (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AcquisitionDuration-metadata"><strong>AcquisitionDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AcquisitionMode-metadata"><strong>AcquisitionMode (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AcquisitionVoxelSize-metadata"><strong>AcquisitionVoxelSize (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-age-columns"><strong>age (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Anaesthesia-metadata"><strong>Anaesthesia (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnalyticalApproach-metadata"><strong>AnalyticalApproach (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-anat-datatypes"><strong>anat (datatypes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnatomicalLandmarkCoordinates-sense-1-metadata"><strong>AnatomicalLandmarkCoordinates sense 1 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnatomicalLandmarkCoordinates-sense-2-metadata"><strong>AnatomicalLandmarkCoordinates sense 2 (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnatomicalLandmarkCoordinateSystem-metadata"><strong>AnatomicalLandmarkCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnatomicalLandmarkCoordinateSystemDescription-metadata"><strong>AnatomicalLandmarkCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AnatomicalLandmarkCoordinateUnits-metadata"><strong>AnatomicalLandmarkCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-angio-suffixes"><strong>angio (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ArterialSpinLabelingType-metadata"><strong>ArterialSpinLabelingType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-asl-suffixes"><strong>asl (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-aslcontext-suffixes"><strong>aslcontext (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-asllabeling-suffixes"><strong>asllabeling (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AssociatedEmptyRoom-metadata"><strong>AssociatedEmptyRoom (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-atlas-entities"><strong>atlas (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Atlas-metadata"><strong>Atlas (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AttenuationCorrection-metadata"><strong>AttenuationCorrection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-AttenuationCorrectionMethodReference-metadata"><strong>AttenuationCorrectionMethodReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Authors-metadata"><strong>Authors (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-B0FieldIdentifier-metadata"><strong>B0FieldIdentifier (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-B0FieldSource-metadata"><strong>B0FieldSource (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BackgroundSuppression-metadata"><strong>BackgroundSuppression (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BackgroundSuppressionNumberPulses-metadata"><strong>BackgroundSuppressionNumberPulses (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BackgroundSuppressionPulseTime-metadata"><strong>BackgroundSuppressionPulseTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BasedOn-metadata"><strong>BasedOn (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-beh-datatypes"><strong>beh (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-beh-modalities"><strong>(modalities)</strong></a>
+</li>
+        <li><a href="src/99-appendices/14-glossary.html#term-beh-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BF-suffixes"><strong>BF (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-bids_uri-formats"><strong>bids_uri (formats)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-BIDSVersion-metadata"><strong>BIDSVersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-blood-suffixes"><strong>blood (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BloodDensity-metadata"><strong>BloodDensity (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BodyPart-metadata"><strong>BodyPart (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BodyPartDetails-metadata"><strong>BodyPartDetails (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BodyPartDetailsOntology-metadata"><strong>BodyPartDetailsOntology (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-bold-suffixes"><strong>bold (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BolusCutOffDelayTime-metadata"><strong>BolusCutOffDelayTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BolusCutOffFlag-metadata"><strong>BolusCutOffFlag (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BolusCutOffTechnique-metadata"><strong>BolusCutOffTechnique (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-boolean-formats"><strong>boolean (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-BrainLocation-metadata"><strong>BrainLocation (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-CapManufacturer-metadata"><strong>CapManufacturer (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CapManufacturersModelName-metadata"><strong>CapManufacturersModelName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-cardiac-columns"><strong>cardiac (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CARS-suffixes"><strong>CARS (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CASLType-metadata"><strong>CASLType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-cbv-suffixes"><strong>cbv (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ceagent-entities"><strong>ceagent (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CellType-metadata"><strong>CellType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CHANGES-top_level_files"><strong>CHANGES (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-channels-suffixes"><strong>channels (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Chimap-suffixes"><strong>Chimap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-chunk-entities"><strong>chunk (entities)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-ChunkTransformationMatrix-metadata"><strong>ChunkTransformationMatrix (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ChunkTransformationMatrixAxis-metadata"><strong>ChunkTransformationMatrixAxis (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-code-associated_data"><strong>code (associated_data)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Code-metadata"><strong>Code (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CogAtlasID-metadata"><strong>CogAtlasID (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CogPOID-metadata"><strong>CogPOID (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CoilCombinationMethod-metadata"><strong>CoilCombinationMethod (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-color-columns"><strong>color (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Columns-metadata"><strong>Columns (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-CONF-suffixes"><strong>CONF (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ContinuousHeadLocalization-metadata"><strong>ContinuousHeadLocalization (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ContrastBolusIngredient-metadata"><strong>ContrastBolusIngredient (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-coordsystem-suffixes"><strong>coordsystem (suffixes)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-dataset_description-top_level_files"><strong>dataset_description (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-dataset_relative-formats"><strong>dataset_relative (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DatasetDOI-metadata"><strong>DatasetDOI (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DatasetType-metadata"><strong>DatasetType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-date-formats"><strong>date (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-datetime-formats"><strong>datetime (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DCOffsetCorrection-metadata"><strong>DCOffsetCorrection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DecayCorrectionFactor-metadata"><strong>DecayCorrectionFactor (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-defacemask-suffixes"><strong>defacemask (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DelayAfterTrigger-metadata"><strong>DelayAfterTrigger (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DelayTime-metadata"><strong>DelayTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-density-entities"><strong>density (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Density-metadata"><strong>Density (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Derivative-metadata"><strong>Derivative (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-derivatives-associated_data"><strong>derivatives (associated_data)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-derived_from-columns"><strong>derived_from (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-description-columns"><strong>description (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-description-entities"><strong>(entities)</strong></a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-Description-metadata"><strong>Description (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DeviceSerialNumber-metadata"><strong>DeviceSerialNumber (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DewarPosition-metadata"><strong>DewarPosition (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DF-suffixes"><strong>DF (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DIC-suffixes"><strong>DIC (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DigitizedHeadPoints-metadata"><strong>DigitizedHeadPoints (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DigitizedHeadPointsCoordinateSystem-metadata"><strong>DigitizedHeadPointsCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DigitizedHeadPointsCoordinateSystemDescription-metadata"><strong>DigitizedHeadPointsCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DigitizedHeadPointsCoordinateUnits-metadata"><strong>DigitizedHeadPointsCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DigitizedLandmarks-metadata"><strong>DigitizedLandmarks (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-dimension-columns"><strong>dimension (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-direction-entities"><strong>direction (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DispersionConstant-metadata"><strong>DispersionConstant (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DispersionCorrected-metadata"><strong>DispersionCorrected (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DoseCalibrationFactor-metadata"><strong>DoseCalibrationFactor (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-duration-columns"><strong>duration (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-DwellTime-metadata"><strong>DwellTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-dwi-datatypes"><strong>dwi (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-dwi-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-ECGChannelCount-metadata"><strong>ECGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-echo-entities"><strong>echo (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EchoTime-sense-1-metadata"><strong>EchoTime sense 1 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EchoTime-sense-2-metadata"><strong>EchoTime sense 2 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EchoTime1-metadata"><strong>EchoTime1 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EchoTime2-metadata"><strong>EchoTime2 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ECOGChannelCount-metadata"><strong>ECOGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-eeg-datatypes"><strong>eeg (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-eeg-modalities"><strong>(modalities)</strong></a>
+</li>
+        <li><a href="src/99-appendices/14-glossary.html#term-eeg-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGChannelCount-metadata"><strong>EEGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGCoordinateSystem-metadata"><strong>EEGCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGCoordinateSystemDescription-metadata"><strong>EEGCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGCoordinateUnits-metadata"><strong>EEGCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGGround-metadata"><strong>EEGGround (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGPlacementScheme-metadata"><strong>EEGPlacementScheme (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EEGReference-metadata"><strong>EEGReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EffectiveEchoSpacing-metadata"><strong>EffectiveEchoSpacing (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ElectricalStimulation-metadata"><strong>ElectricalStimulation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ElectricalStimulationParameters-metadata"><strong>ElectricalStimulationParameters (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ElectrodeManufacturer-metadata"><strong>ElectrodeManufacturer (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ElectrodeManufacturersModelName-metadata"><strong>ElectrodeManufacturersModelName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-electrodes-suffixes"><strong>electrodes (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EMGChannelCount-metadata"><strong>EMGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EOGChannelCount-metadata"><strong>EOGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-epi-suffixes"><strong>epi (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EpochLength-metadata"><strong>EpochLength (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EstimationAlgorithm-metadata"><strong>EstimationAlgorithm (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EstimationReference-metadata"><strong>EstimationReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-EthicsApprovals-metadata"><strong>EthicsApprovals (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-events-suffixes"><strong>events (suffixes)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-FiducialsCoordinates-metadata"><strong>FiducialsCoordinates (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FiducialsCoordinateSystem-metadata"><strong>FiducialsCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FiducialsCoordinateSystemDescription-metadata"><strong>FiducialsCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FiducialsCoordinateUnits-metadata"><strong>FiducialsCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FiducialsDescription-metadata"><strong>FiducialsDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-fieldmap-suffixes"><strong>fieldmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-file_relative-formats"><strong>file_relative (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-filename-columns"><strong>filename (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FLAIR-suffixes"><strong>FLAIR (suffixes)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-FLASH-suffixes"><strong>FLASH (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-flip-entities"><strong>flip (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FlipAngle-metadata"><strong>FlipAngle (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FLUO-suffixes"><strong>FLUO (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-fmap-datatypes"><strong>fmap (datatypes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FrameDuration-metadata"><strong>FrameDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-FrameTimesStart-metadata"><strong>FrameTimesStart (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-func-datatypes"><strong>func (datatypes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Funding-metadata"><strong>Funding (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-GeneratedBy-metadata"><strong>GeneratedBy (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-genetic_info-top_level_files"><strong>genetic_info (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-GeneticLevel-metadata"><strong>GeneticLevel (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Genetics-metadata"><strong>Genetics (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-Genetics.Database-metadata"><strong>Genetics.Database (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Genetics.Dataset-metadata"><strong>Genetics.Dataset (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Genetics.Descriptors-metadata"><strong>Genetics.Descriptors (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-GradientSetType-metadata"><strong>GradientSetType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-group-columns"><strong>group (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-Haematocrit-metadata"><strong>Haematocrit (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-handedness-columns"><strong>handedness (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HardcopyDeviceSoftwareVersion-metadata"><strong>HardcopyDeviceSoftwareVersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HardwareFilters-metadata"><strong>HardwareFilters (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCircumference-metadata"><strong>HeadCircumference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCoilCoordinates-metadata"><strong>HeadCoilCoordinates (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCoilCoordinateSystem-metadata"><strong>HeadCoilCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCoilCoordinateSystemDescription-metadata"><strong>HeadCoilCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCoilCoordinateUnits-metadata"><strong>HeadCoilCoordinateUnits (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-HeadCoilFrequency-metadata"><strong>HeadCoilFrequency (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-headshape-suffixes"><strong>headshape (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HED-columns"><strong>HED (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-HED-metadata"><strong>(metadata)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HEDVersion-metadata"><strong>HEDVersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-hemisphere-columns"><strong>hemisphere (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-hemisphere-entities"><strong>(entities)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-high_cutoff-columns"><strong>high_cutoff (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-HowToAcknowledge-metadata"><strong>HowToAcknowledge (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-hplc_recovery_fractions-columns"><strong>hplc_recovery_fractions (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-ieeg-datatypes"><strong>ieeg (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-ieeg-modalities"><strong>(modalities)</strong></a>
+</li>
+        <li><a href="src/99-appendices/14-glossary.html#term-ieeg-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGCoordinateProcessingDescription-metadata"><strong>iEEGCoordinateProcessingDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGCoordinateProcessingReference-metadata"><strong>iEEGCoordinateProcessingReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGCoordinateSystem-metadata"><strong>iEEGCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGCoordinateSystemDescription-metadata"><strong>iEEGCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGCoordinateUnits-metadata"><strong>iEEGCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGElectrodeGroups-metadata"><strong>iEEGElectrodeGroups (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGGround-metadata"><strong>iEEGGround (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGPlacementScheme-metadata"><strong>iEEGPlacementScheme (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-iEEGReference-metadata"><strong>iEEGReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ImageAcquisitionProtocol-metadata"><strong>ImageAcquisitionProtocol (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ImageDecayCorrected-metadata"><strong>ImageDecayCorrected (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ImageDecayCorrectionTime-metadata"><strong>ImageDecayCorrectionTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Immersion-metadata"><strong>Immersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-impedance-columns"><strong>impedance (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-index-columns"><strong>index (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-index-formats"><strong>(formats)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InfusionRadioactivity-metadata"><strong>InfusionRadioactivity (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InfusionSpeed-metadata"><strong>InfusionSpeed (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-InfusionSpeedUnits-metadata"><strong>InfusionSpeedUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InfusionStart-metadata"><strong>InfusionStart (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedMass-metadata"><strong>InjectedMass (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedMassPerWeight-metadata"><strong>InjectedMassPerWeight (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedMassPerWeightUnits-metadata"><strong>InjectedMassPerWeightUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedMassUnits-metadata"><strong>InjectedMassUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedRadioactivity-metadata"><strong>InjectedRadioactivity (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedRadioactivityUnits-metadata"><strong>InjectedRadioactivityUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectedVolume-metadata"><strong>InjectedVolume (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectionEnd-metadata"><strong>InjectionEnd (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InjectionStart-metadata"><strong>InjectionStart (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-inplaneT1-suffixes"><strong>inplaneT1 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-inplaneT2-suffixes"><strong>inplaneT2 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InstitutionAddress-metadata"><strong>InstitutionAddress (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InstitutionalDepartmentName-metadata"><strong>InstitutionalDepartmentName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InstitutionName-metadata"><strong>InstitutionName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Instructions-metadata"><strong>Instructions (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-integer-formats"><strong>integer (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-IntendedFor-metadata"><strong>IntendedFor (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-inversion-entities"><strong>inversion (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-InversionTime-metadata"><strong>InversionTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-IRT1-suffixes"><strong>IRT1 (suffixes)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-label-entities"><strong>label (entities)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-label-formats"><strong>(formats)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingDistance-metadata"><strong>LabelingDistance (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingDuration-metadata"><strong>LabelingDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingEfficiency-metadata"><strong>LabelingEfficiency (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingLocationDescription-metadata"><strong>LabelingLocationDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingOrientation-metadata"><strong>LabelingOrientation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseAverageB1-metadata"><strong>LabelingPulseAverageB1 (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseAverageGradient-metadata"><strong>LabelingPulseAverageGradient (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseDuration-metadata"><strong>LabelingPulseDuration (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseFlipAngle-metadata"><strong>LabelingPulseFlipAngle (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseInterval-metadata"><strong>LabelingPulseInterval (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingPulseMaximumGradient-metadata"><strong>LabelingPulseMaximumGradient (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LabelingSlabThickness-metadata"><strong>LabelingSlabThickness (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Levels-metadata"><strong>Levels (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-License-metadata"><strong>License (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LICENSE-top_level_files"><strong>LICENSE (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LongName-metadata"><strong>LongName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-LookLocker-metadata"><strong>LookLocker (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-low_cutoff-columns"><strong>low_cutoff (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-M0Estimate-metadata"><strong>M0Estimate (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-M0map-suffixes"><strong>M0map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-m0scan-suffixes"><strong>m0scan (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-M0Type-metadata"><strong>M0Type (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MagneticFieldStrength-metadata"><strong>MagneticFieldStrength (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Magnification-metadata"><strong>Magnification (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-magnitude-suffixes"><strong>magnitude (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-magnitude1-suffixes"><strong>magnitude1 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-magnitude2-suffixes"><strong>magnitude2 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Manual-metadata"><strong>Manual (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-manufacturer-columns"><strong>manufacturer (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Manufacturer-metadata"><strong>Manufacturer (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ManufacturersModelName-metadata"><strong>ManufacturersModelName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-mapping-columns"><strong>mapping (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-markers-suffixes"><strong>markers (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-material-columns"><strong>material (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MatrixCoilMode-metadata"><strong>MatrixCoilMode (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MaxMovement-metadata"><strong>MaxMovement (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MeasurementToolMetadata-metadata"><strong>MeasurementToolMetadata (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-meg-datatypes"><strong>meg (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-meg-modalities"><strong>(modalities)</strong></a>
+</li>
+        <li><a href="src/99-appendices/14-glossary.html#term-meg-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGChannelCount-metadata"><strong>MEGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGCoordinateSystem-metadata"><strong>MEGCoordinateSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGCoordinateSystemDescription-metadata"><strong>MEGCoordinateSystemDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGCoordinateUnits-metadata"><strong>MEGCoordinateUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGRE-suffixes"><strong>MEGRE (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MEGREFChannelCount-metadata"><strong>MEGREFChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MESE-suffixes"><strong>MESE (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-metabolite_parent_fraction-columns"><strong>metabolite_parent_fraction (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-metabolite_polar_fraction-columns"><strong>metabolite_polar_fraction (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MetaboliteAvail-metadata"><strong>MetaboliteAvail (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-MetaboliteMethod-metadata"><strong>MetaboliteMethod (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MetaboliteRecoveryCorrectionApplied-metadata"><strong>MetaboliteRecoveryCorrectionApplied (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-micr-datatypes"><strong>micr (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-micr-modalities"><strong>(modalities)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MiscChannelCount-metadata"><strong>MiscChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MixingTime-metadata"><strong>MixingTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-modality-entities"><strong>modality (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ModeOfAdministration-metadata"><strong>ModeOfAdministration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MolarActivity-metadata"><strong>MolarActivity (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MolarActivityMeasTime-metadata"><strong>MolarActivityMeasTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MolarActivityUnits-metadata"><strong>MolarActivityUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MP2RAGE-suffixes"><strong>MP2RAGE (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MPE-suffixes"><strong>MPE (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MPM-suffixes"><strong>MPM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MRAcquisitionType-metadata"><strong>MRAcquisitionType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-mri-modalities"><strong>mri (modalities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MRTransmitCoilSequence-metadata"><strong>MRTransmitCoilSequence (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTNumberOfPulses-metadata"><strong>MTNumberOfPulses (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTOffsetFrequency-metadata"><strong>MTOffsetFrequency (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTPulseBandwidth-metadata"><strong>MTPulseBandwidth (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTPulseDuration-metadata"><strong>MTPulseDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTPulseShape-metadata"><strong>MTPulseShape (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTR-suffixes"><strong>MTR (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-mtransfer-entities"><strong>mtransfer (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTRmap-suffixes"><strong>MTRmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTS-suffixes"><strong>MTS (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTsat-suffixes"><strong>MTsat (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTState-metadata"><strong>MTState (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MTVmap-suffixes"><strong>MTVmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MultibandAccelerationFactor-metadata"><strong>MultibandAccelerationFactor (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MultipartID-metadata"><strong>MultipartID (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-MWFmap-suffixes"><strong>MWFmap (suffixes)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-Name-metadata"><strong>Name (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-name-sense-1-columns"><strong>name sense 1 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-name-sense-2-columns"><strong>name sense 2 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-name-sense-3-columns"><strong>name sense 3 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NegativeContrast-metadata"><strong>NegativeContrast (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NLO-suffixes"><strong>NLO (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-None-extensions"><strong>None (extensions)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-NonlinearGradientCorrection-metadata"><strong>NonlinearGradientCorrection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-notch-columns"><strong>notch (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-number-formats"><strong>number (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NumberOfVolumesDiscardedByScanner-metadata"><strong>NumberOfVolumesDiscardedByScanner (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NumberOfVolumesDiscardedByUser-metadata"><strong>NumberOfVolumesDiscardedByUser (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NumberShots-metadata"><strong>NumberShots (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-NumericalAperture-metadata"><strong>NumericalAperture (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-OCT-suffixes"><strong>OCT (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-onset-columns"><strong>onset (columns)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-OperatingSystem-metadata"><strong>OperatingSystem (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-OtherAcquisitionParameters-metadata"><strong>OtherAcquisitionParameters (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-ParallelAcquisitionTechnique-metadata"><strong>ParallelAcquisitionTechnique (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ParallelReductionFactorInPlane-metadata"><strong>ParallelReductionFactorInPlane (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-part-entities"><strong>part (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PartialFourier-metadata"><strong>PartialFourier (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PartialFourierDirection-metadata"><strong>PartialFourierDirection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-participant_id-columns"><strong>participant_id (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-participant_relative-formats"><strong>participant_relative (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-participants-top_level_files"><strong>participants (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PASLType-metadata"><strong>PASLType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-pathology-columns"><strong>pathology (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PC-suffixes"><strong>PC (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PCASLType-metadata"><strong>PCASLType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PD-suffixes"><strong>PD (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PDmap-suffixes"><strong>PDmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PDT2-suffixes"><strong>PDT2 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PDT2map-suffixes"><strong>PDT2map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PDw-suffixes"><strong>PDw (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-perf-datatypes"><strong>perf (datatypes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-pet-datatypes"><strong>pet (datatypes)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-pet-modalities"><strong>(modalities)</strong></a>
+</li>
+        <li><a href="src/99-appendices/14-glossary.html#term-pet-suffixes"><strong>(suffixes)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PharmaceuticalDoseAmount-metadata"><strong>PharmaceuticalDoseAmount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PharmaceuticalDoseRegimen-metadata"><strong>PharmaceuticalDoseRegimen (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-PharmaceuticalDoseTime-metadata"><strong>PharmaceuticalDoseTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PharmaceuticalDoseUnits-metadata"><strong>PharmaceuticalDoseUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PharmaceuticalName-metadata"><strong>PharmaceuticalName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-phase-suffixes"><strong>phase (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-phase1-suffixes"><strong>phase1 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-phase2-suffixes"><strong>phase2 (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-phasediff-suffixes"><strong>phasediff (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PhaseEncodingDirection-metadata"><strong>PhaseEncodingDirection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-photo-suffixes"><strong>photo (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-physio-suffixes"><strong>physio (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PixelSize-metadata"><strong>PixelSize (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PixelSizeUnits-metadata"><strong>PixelSizeUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-plasma_radioactivity-columns"><strong>plasma_radioactivity (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PlasmaAvail-metadata"><strong>PlasmaAvail (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PlasmaFreeFraction-metadata"><strong>PlasmaFreeFraction (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PlasmaFreeFractionMethod-metadata"><strong>PlasmaFreeFractionMethod (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PLI-suffixes"><strong>PLI (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PostLabelingDelay-metadata"><strong>PostLabelingDelay (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PowerLineFrequency-metadata"><strong>PowerLineFrequency (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-processing-entities"><strong>processing (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PromptRate-metadata"><strong>PromptRate (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PulseSequenceDetails-metadata"><strong>PulseSequenceDetails (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-PulseSequenceType-metadata"><strong>PulseSequenceType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Purity-metadata"><strong>Purity (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-R1map-suffixes"><strong>R1map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-R2map-suffixes"><strong>R2map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-R2starmap-suffixes"><strong>R2starmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RandomRate-metadata"><strong>RandomRate (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RawSources-metadata"><strong>RawSources (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RB1COR-suffixes"><strong>RB1COR (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RB1map-suffixes"><strong>RB1map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-README-top_level_files"><strong>README (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReceiveCoilActiveElements-metadata"><strong>ReceiveCoilActiveElements (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReceiveCoilName-metadata"><strong>ReceiveCoilName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconFilterSize-metadata"><strong>ReconFilterSize (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconFilterType-metadata"><strong>ReconFilterType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconMethodImplementationVersion-metadata"><strong>ReconMethodImplementationVersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconMethodName-metadata"><strong>ReconMethodName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconMethodParameterLabels-metadata"><strong>ReconMethodParameterLabels (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconMethodParameterUnits-metadata"><strong>ReconMethodParameterUnits (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReconMethodParameterValues-metadata"><strong>ReconMethodParameterValues (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-reconstruction-entities"><strong>reconstruction (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-recording-entities"><strong>recording (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RecordingDuration-metadata"><strong>RecordingDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RecordingType-metadata"><strong>RecordingType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-reference-sense-1-columns"><strong>reference sense 1 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-reference-sense-2-columns"><strong>reference sense 2 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ReferencesAndLinks-metadata"><strong>ReferencesAndLinks (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RepetitionTime-metadata"><strong>RepetitionTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RepetitionTimeExcitation-metadata"><strong>RepetitionTimeExcitation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-RepetitionTimePreparation-metadata"><strong>RepetitionTimePreparation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-resolution-entities"><strong>resolution (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Resolution-metadata"><strong>Resolution (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-respiratory-columns"><strong>respiratory (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-response_time-columns"><strong>response_time (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-rrid-formats"><strong>rrid (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-run-entities"><strong>run (entities)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-S0map-suffixes"><strong>S0map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sample-columns"><strong>sample (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-sample-entities"><strong>(entities)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sample_id-columns"><strong>sample_id (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sample_type-columns"><strong>sample_type (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleEmbedding-metadata"><strong>SampleEmbedding (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleEnvironment-metadata"><strong>SampleEnvironment (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleExtractionInstitution-metadata"><strong>SampleExtractionInstitution (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleExtractionProtocol-metadata"><strong>SampleExtractionProtocol (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleFixation-metadata"><strong>SampleFixation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleOrigin-metadata"><strong>SampleOrigin (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SamplePrimaryAntibody-metadata"><strong>SamplePrimaryAntibody (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-samples-top_level_files"><strong>samples (top_level_files)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleSecondaryAntibody-metadata"><strong>SampleSecondaryAntibody (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SampleStaining-metadata"><strong>SampleStaining (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sampling_frequency-columns"><strong>sampling_frequency (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SamplingFrequency-metadata"><strong>SamplingFrequency (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sbref-suffixes"><strong>sbref (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScaleFactor-metadata"><strong>ScaleFactor (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScanDate-metadata"><strong>ScanDate (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScanningSequence-metadata"><strong>ScanningSequence (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScanOptions-metadata"><strong>ScanOptions (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-scans-suffixes"><strong>scans (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScanStart-metadata"><strong>ScanStart (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-ScatterFraction-metadata"><strong>ScatterFraction (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SEEGChannelCount-metadata"><strong>SEEGChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SEM-suffixes"><strong>SEM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SequenceName-metadata"><strong>SequenceName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SequenceVariant-metadata"><strong>SequenceVariant (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-session-entities"><strong>session (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-session_id-columns"><strong>session_id (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sessions-suffixes"><strong>sessions (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sex-columns"><strong>sex (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SinglesRate-metadata"><strong>SinglesRate (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-size-columns"><strong>size (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SkullStripped-metadata"><strong>SkullStripped (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SliceEncodingDirection-metadata"><strong>SliceEncodingDirection (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SliceThickness-metadata"><strong>SliceThickness (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-SliceTiming-metadata"><strong>SliceTiming (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-software_filters-columns"><strong>software_filters (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SoftwareFilters-metadata"><strong>SoftwareFilters (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SoftwareName-metadata"><strong>SoftwareName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SoftwareRRID-metadata"><strong>SoftwareRRID (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SoftwareVersion-metadata"><strong>SoftwareVersion (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SoftwareVersions-metadata"><strong>SoftwareVersions (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-sourcedata-associated_data"><strong>sourcedata (associated_data)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SourceDatasets-metadata"><strong>SourceDatasets (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Sources-metadata"><strong>Sources (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-space-entities"><strong>space (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpatialReference-metadata"><strong>SpatialReference (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-species-columns"><strong>species (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpecificRadioactivity-metadata"><strong>SpecificRadioactivity (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpecificRadioactivityMeasTime-metadata"><strong>SpecificRadioactivityMeasTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpecificRadioactivityUnits-metadata"><strong>SpecificRadioactivityUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SPIM-suffixes"><strong>SPIM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-split-entities"><strong>split (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpoilingGradientDuration-metadata"><strong>SpoilingGradientDuration (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpoilingGradientMoment-metadata"><strong>SpoilingGradientMoment (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpoilingRFPhaseIncrement-metadata"><strong>SpoilingRFPhaseIncrement (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpoilingState-metadata"><strong>SpoilingState (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SpoilingType-metadata"><strong>SpoilingType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SR-suffixes"><strong>SR (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-stain-entities"><strong>stain (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-StartTime-metadata"><strong>StartTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-StationName-metadata"><strong>StationName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-status-columns"><strong>status (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-status_description-columns"><strong>status_description (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-stim-suffixes"><strong>stim (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-stim_file-columns"><strong>stim_file (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-stimuli-associated_data"><strong>stimuli (associated_data)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-stimuli_relative-formats"><strong>stimuli_relative (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-StimulusPresentation-metadata"><strong>StimulusPresentation (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-strain-columns"><strong>strain (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-strain_rrid-columns"><strong>strain_rrid (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-string-formats"><strong>string (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-subject-entities"><strong>subject (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-SubjectArtefactDescription-metadata"><strong>SubjectArtefactDescription (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-T1map-suffixes"><strong>T1map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T1rho-suffixes"><strong>T1rho (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T1w-suffixes"><strong>T1w (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T2map-suffixes"><strong>T2map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T2star-suffixes"><strong>T2star (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T2starmap-suffixes"><strong>T2starmap (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T2starw-suffixes"><strong>T2starw (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-T2w-suffixes"><strong>T2w (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-task-entities"><strong>task (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TaskDescription-metadata"><strong>TaskDescription (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TaskName-metadata"><strong>TaskName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1AFI-suffixes"><strong>TB1AFI (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1DAM-suffixes"><strong>TB1DAM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1EPI-suffixes"><strong>TB1EPI (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1map-suffixes"><strong>TB1map (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1RFM-suffixes"><strong>TB1RFM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1SRGE-suffixes"><strong>TB1SRGE (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TB1TFL-suffixes"><strong>TB1TFL (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TEM-suffixes"><strong>TEM (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TermURL-metadata"><strong>TermURL (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-time-columns"><strong>time (columns)</strong></a>
+
+      <ul>
+        <li><a href="src/99-appendices/14-glossary.html#term-time-formats"><strong>(formats)</strong></a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-TimeZero-metadata"><strong>TimeZero (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TissueDeformationScaling-metadata"><strong>TissueDeformationScaling (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TissueOrigin-metadata"><strong>TissueOrigin (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TotalAcquiredPairs-metadata"><strong>TotalAcquiredPairs (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TotalReadoutTime-metadata"><strong>TotalReadoutTime (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-tracer-entities"><strong>tracer (entities)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerMolecularWeight-metadata"><strong>TracerMolecularWeight (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerMolecularWeightUnits-metadata"><strong>TracerMolecularWeightUnits (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerName-metadata"><strong>TracerName (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerRadionuclide-metadata"><strong>TracerRadionuclide (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerRadLex-metadata"><strong>TracerRadLex (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TracerSNOMED-metadata"><strong>TracerSNOMED (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-trial_type-columns"><strong>trial_type (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-trigger-columns"><strong>trigger (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TriggerChannelCount-metadata"><strong>TriggerChannelCount (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TubingLength-metadata"><strong>TubingLength (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-TubingType-metadata"><strong>TubingType (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Type-metadata"><strong>Type (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-type-sense-1-columns"><strong>type sense 1 (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-type-sense-2-columns"><strong>type sense 2 (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-uCT-suffixes"><strong>uCT (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-unit-formats"><strong>unit (formats)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-UNIT1-suffixes"><strong>UNIT1 (suffixes)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-units-columns"><strong>units (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-Units-metadata"><strong>Units (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-uri-formats"><strong>uri (formats)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-value-columns"><strong>value (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-VascularCrushing-metadata"><strong>VascularCrushing (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-VascularCrushingVENC-metadata"><strong>VascularCrushingVENC (metadata)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-VFA-suffixes"><strong>VFA (suffixes)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-volume_type-columns"><strong>volume_type (columns)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-VolumeTiming-metadata"><strong>VolumeTiming (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-whole_blood_radioactivity-columns"><strong>whole_blood_radioactivity (columns)</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-WholeBloodAvail-metadata"><strong>WholeBloodAvail (metadata)</strong></a>
+</li>
+      <li><a href="src/99-appendices/14-glossary.html#term-WithdrawalRate-metadata"><strong>WithdrawalRate (metadata)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-x-columns"><strong>x (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-y-columns"><strong>y (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src/99-appendices/14-glossary.html#term-z-columns"><strong>z (columns)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

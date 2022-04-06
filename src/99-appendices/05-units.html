@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix V: Units &#8212; The Brain Imaging Data Standard</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/BIDS_logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix VI: MEG file formats" href="06-meg-file-formats.html" />
+    <link rel="prev" title="Appendix IV: Entity table" href="04-entity-table.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/BIDS_logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Brain Imaging Data Standard</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Brain Imaging Data Structure
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Specification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-common-principles.html">
+   Common principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-modality-agnostic-files.html">
+   Modality agnostic files
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-modality-specific-files.html">
+   Modality specific files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/01-magnetic-resonance-imaging-data.html">
+     Magnetic Resonance Imaging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/02-magnetoencephalography.html">
+     Magnetoencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/03-electroencephalography.html">
+     Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/04-intracranial-electroencephalography.html">
+     Intracranial Electroencephalography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/05-task-events.html">
+     Task events
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/06-physiological-and-other-continuous-recordings.html">
+     Physiological and other continuous recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/07-behavioral-experiments.html">
+     Behavioral experiments (with no neural recordings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/08-genetic-descriptor.html">
+     Genetic Descriptor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/09-positron-emission-tomography.html">
+     Positron Emission Tomography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-modality-specific-files/10-microscopy.html">
+     Microscopy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-derivatives.html">
+   Derivatives
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/01-introduction.html">
+     BIDS Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/02-common-data-types.html">
+     Common data types and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-derivatives/03-imaging.html">
+     Imaging data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-longitudinal-and-multi-site-studies.html">
+   Longitudinal and multi-site studies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-extensions.html">
+   BIDS Extension Proposals
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../99-appendices.html">
+   Appendices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-contributors.html">
+     Appendix I: Contributors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-licenses.html">
+     Appendix II: Licenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-hed.html">
+     Appendix III: Hierarchical Event Descriptors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-entity-table.html">
+     Appendix IV: Entity table
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Appendix V: Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-meg-file-formats.html">
+     Appendix VI: MEG file formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-meg-systems.html">
+     Appendix VII: MEG systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-coordinate-systems.html">
+     Appendix VIII: Coordinate systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-entities.html">
+     Appendix IX: Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-file-collections.html">
+     Appendix X: File collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-qmri.html">
+     Appendix XI: Quantitative MRI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-arterial-spin-labeling.html">
+     Appendix XI: Arterial Spin Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-cross-modality-correspondence.html">
+     Appendix XIII: Cross modality correspondence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-glossary.html">
+     Appendix XIV: Glossary of schema objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGES.html">
+   Changelog
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The BIDS Starter Kit
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit">
+   Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://bids-standard.github.io/bids-starter-kit/tutorials/tutorials.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/bids-standard/bids-starter-kit">
+   GitHub repository
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/src/99-appendices/05-units.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/05-units.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-table">
+   Unit table
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prefixes">
+   Prefixes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiples">
+     Multiples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#submultiples">
+     Submultiples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Appendix V: Units</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-table">
+   Unit table
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prefixes">
+   Prefixes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiples">
+     Multiples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#submultiples">
+     Submultiples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-v-units">
+<h1>Appendix V: Units<a class="headerlink" href="#appendix-v-units" title="Permalink to this headline">¶</a></h1>
+<p>As described in the <a class="reference external" href="../02-common-principles.md#units">Units</a>,
+the specification of units SHOULD follow the
+<a class="reference external" href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a>
+(SI, abbreviated from the French Système international (d’unités)).</p>
+<p>The <a class="reference external" href="https://people.csail.mit.edu/jaffer/MIXF/CMIXF-12">CMIXF-12</a> convention
+for encoding units is RECOMMENDED to achieve maximum portability and limited
+variability of representation.
+If a CMIXF-12 representation of a unit is not possible, the unit can be declared
+as custom units and defined in an accompanying JSON file, as described in the
+<a class="reference external" href="../02-common-principles.md#units">units section</a>.
+Earlier versions of the BIDS standard listed the following Unicode symbols, and
+these are still included for backwards compatibility:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://codepoints.net/U+03BC"><code class="docutils literal notranslate"><span class="pre">U+03BC</span></code> (μ)</a> or <a class="reference external" href="https://codepoints.net/U+00B5"><code class="docutils literal notranslate"><span class="pre">U+00B5</span></code> (µ)</a></p></li>
+<li><p><a class="reference external" href="https://codepoints.net/U+03A9"><code class="docutils literal notranslate"><span class="pre">U+03A9</span></code> (Ω)</a> or <a class="reference external" href="https://codepoints.net/U+2126"><code class="docutils literal notranslate"><span class="pre">U+2126</span></code> (Ω)</a></p></li>
+<li><p><a class="reference external" href="https://codepoints.net/U+00B0"><code class="docutils literal notranslate"><span class="pre">U+00B0</span></code> (°)</a></p></li>
+</ol>
+<p>Note that for the first two entries in this list, two characters are permissible
+for each, but the first character in each entry is preferred, per Unicode rules
+(see the section on “Duplicated Characters” on page 11 in the
+<a class="reference external" href="https://www.unicode.org/reports/tr25/">unicode report</a>).</p>
+<p>It is RECOMMENDED that units be CMIXF-12 compliant or among these five Unicode
+characters.
+Please note the appropriate upper- or lower- casing when using CMIXF-12.</p>
+<p>For cases that are unspecified by this appendix or the <a class="reference external" href="../02-common-principles.md#units">units section</a>,
+the <a class="reference external" href="https://people.csail.mit.edu/jaffer/MIXF/CMIXF-12">CMIXF-12</a> convention
+applies.</p>
+<p>You can use the <a class="reference external" href="https://github.com/sensein/cmixf">cmixf Python package</a> to
+check whether your formatting is compliant.</p>
+<p>Examples for CMIXF-12 (including the five unicode symbols mentioned above):</p>
+<ol class="simple">
+<li><p>Different formatting of “micro Volts”:</p>
+<ol class="simple">
+<li><p>RECOMMENDED: <code class="docutils literal notranslate"><span class="pre">uV</span></code> or <code class="docutils literal notranslate"><span class="pre">µV</span></code></p></li>
+<li><p>NOT RECOMMENDED: <code class="docutils literal notranslate"><span class="pre">microV</span></code>, <code class="docutils literal notranslate"><span class="pre">µvolt</span></code> or <code class="docutils literal notranslate"><span class="pre">1e-6V</span></code></p></li>
+</ol>
+</li>
+<li><p>Combinations of units:</p>
+<ol class="simple">
+<li><p>RECOMMENDED: <code class="docutils literal notranslate"><span class="pre">V/us</span></code> for the <a class="reference external" href="https://en.wikipedia.org/wiki/Slew_rate">Slew rate</a></p></li>
+<li><p>NOT RECOMMENDED: <code class="docutils literal notranslate"><span class="pre">volts</span> <span class="pre">per</span> <span class="pre">microsecond</span></code></p></li>
+</ol>
+</li>
+</ol>
+<div class="section" id="unit-table">
+<h2>Unit table<a class="headerlink" href="#unit-table" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Unit name</strong></p></th>
+<th class="head"><p><strong>Unit symbol</strong></p></th>
+<th class="head"><p><strong>Quantity name</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>metre</p></td>
+<td><p>m</p></td>
+<td><p>length</p></td>
+</tr>
+<tr class="row-odd"><td><p>kilogram</p></td>
+<td><p>kg</p></td>
+<td><p>mass</p></td>
+</tr>
+<tr class="row-even"><td><p>litre (liter)</p></td>
+<td><p>L</p></td>
+<td><p>volume</p></td>
+</tr>
+<tr class="row-odd"><td><p>second</p></td>
+<td><p>s</p></td>
+<td><p>time</p></td>
+</tr>
+<tr class="row-even"><td><p>ampere</p></td>
+<td><p>A</p></td>
+<td><p>electric current</p></td>
+</tr>
+<tr class="row-odd"><td><p>kelvin</p></td>
+<td><p>K</p></td>
+<td><p>thermodynamic temperature</p></td>
+</tr>
+<tr class="row-even"><td><p>mole</p></td>
+<td><p>mol</p></td>
+<td><p>amount of substance</p></td>
+</tr>
+<tr class="row-odd"><td><p>candela</p></td>
+<td><p>cd</p></td>
+<td><p>luminous intensity</p></td>
+</tr>
+<tr class="row-even"><td><p>radian</p></td>
+<td><p>rad</p></td>
+<td><p>angle</p></td>
+</tr>
+<tr class="row-odd"><td><p>steradian</p></td>
+<td><p>sr</p></td>
+<td><p>solid angle</p></td>
+</tr>
+<tr class="row-even"><td><p>hertz</p></td>
+<td><p>Hz</p></td>
+<td><p>frequency</p></td>
+</tr>
+<tr class="row-odd"><td><p>newton</p></td>
+<td><p>N</p></td>
+<td><p>force, weight</p></td>
+</tr>
+<tr class="row-even"><td><p>pascal</p></td>
+<td><p>Pa</p></td>
+<td><p>pressure, stress</p></td>
+</tr>
+<tr class="row-odd"><td><p>joule</p></td>
+<td><p>J</p></td>
+<td><p>energy, work, heat</p></td>
+</tr>
+<tr class="row-even"><td><p>watt</p></td>
+<td><p>W</p></td>
+<td><p>power, radiant flux</p></td>
+</tr>
+<tr class="row-odd"><td><p>coulomb</p></td>
+<td><p>C</p></td>
+<td><p>electric charge or quantity of electricity</p></td>
+</tr>
+<tr class="row-even"><td><p>volt</p></td>
+<td><p>V</p></td>
+<td><p>voltage (electrical potential), emf</p></td>
+</tr>
+<tr class="row-odd"><td><p>farad</p></td>
+<td><p>F</p></td>
+<td><p>capacitance</p></td>
+</tr>
+<tr class="row-even"><td><p>ohm</p></td>
+<td><p>Ohm</p></td>
+<td><p>resistance, impedance, reactance</p></td>
+</tr>
+<tr class="row-odd"><td><p>siemens</p></td>
+<td><p>S</p></td>
+<td><p>electrical conductance</p></td>
+</tr>
+<tr class="row-even"><td><p>weber</p></td>
+<td><p>Wb</p></td>
+<td><p>magnetic flux</p></td>
+</tr>
+<tr class="row-odd"><td><p>tesla</p></td>
+<td><p>T</p></td>
+<td><p>magnetic flux density</p></td>
+</tr>
+<tr class="row-even"><td><p>henry</p></td>
+<td><p>H</p></td>
+<td><p>inductance</p></td>
+</tr>
+<tr class="row-odd"><td><p>degree Celsius</p></td>
+<td><p>oC</p></td>
+<td><p>temperature relative to 273.15 K</p></td>
+</tr>
+<tr class="row-even"><td><p>lumen</p></td>
+<td><p>lm</p></td>
+<td><p>luminous flux</p></td>
+</tr>
+<tr class="row-odd"><td><p>lux</p></td>
+<td><p>lx</p></td>
+<td><p>illuminance</p></td>
+</tr>
+<tr class="row-even"><td><p>becquerel</p></td>
+<td><p>Bq</p></td>
+<td><p>radioactivity (decays per unit time)</p></td>
+</tr>
+<tr class="row-odd"><td><p>gray</p></td>
+<td><p>Gy</p></td>
+<td><p>absorbed dose (of ionizing radiation)</p></td>
+</tr>
+<tr class="row-even"><td><p>sievert</p></td>
+<td><p>Sv</p></td>
+<td><p>equivalent dose (of ionizing radiation)</p></td>
+</tr>
+<tr class="row-odd"><td><p>katal</p></td>
+<td><p>kat</p></td>
+<td><p>catalytic activity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="prefixes">
+<h2>Prefixes<a class="headerlink" href="#prefixes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multiples">
+<h3>Multiples<a class="headerlink" href="#multiples" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Prefix name</strong></p></th>
+<th class="head"><p><strong>Prefix symbol</strong></p></th>
+<th class="head"><p><strong>Factor</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Deca-">deca</a></p></td>
+<td><p>da</p></td>
+<td><p>10<sup>1</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Hecto-">hecto</a></p></td>
+<td><p>h</p></td>
+<td><p>10<sup>2</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Kilo-">kilo</a></p></td>
+<td><p>k</p></td>
+<td><p>10<sup>3</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Mega-">mega</a></p></td>
+<td><p>M</p></td>
+<td><p>10<sup>6</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Giga-">giga</a></p></td>
+<td><p>G</p></td>
+<td><p>10<sup>9</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Tera-">tera</a></p></td>
+<td><p>T</p></td>
+<td><p>10<sup>12</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Peta-">peta</a></p></td>
+<td><p>P</p></td>
+<td><p>10<sup>15</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Exa-">exa</a></p></td>
+<td><p>E</p></td>
+<td><p>10<sup>18</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Zetta-">zetta</a></p></td>
+<td><p>Z</p></td>
+<td><p>10<sup>21</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Yotta-">yotta</a></p></td>
+<td><p>Y</p></td>
+<td><p>10<sup>24</sup></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="submultiples">
+<h3>Submultiples<a class="headerlink" href="#submultiples" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Prefix name</strong></p></th>
+<th class="head"><p><strong>Prefix symbol</strong></p></th>
+<th class="head"><p><strong>Factor</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Deci-">deci</a></p></td>
+<td><p>d</p></td>
+<td><p>10<sup>-1</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Centi-">centi</a></p></td>
+<td><p>c</p></td>
+<td><p>10<sup>-2</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Milli-">milli</a></p></td>
+<td><p>m</p></td>
+<td><p>10<sup>-3</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Micro-">micro</a></p></td>
+<td><p>u</p></td>
+<td><p>10<sup>-6</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Nano-">nano</a></p></td>
+<td><p>n</p></td>
+<td><p>10<sup>-9</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Pico-">pico</a></p></td>
+<td><p>p</p></td>
+<td><p>10<sup>-12</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Femto-">femto</a></p></td>
+<td><p>f</p></td>
+<td><p>10<sup>-15</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Atto-">atto</a></p></td>
+<td><p>a</p></td>
+<td><p>10<sup>-18</sup></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Zepto-">zepto</a></p></td>
+<td><p>z</p></td>
+<td><p>10<sup>-21</sup></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.wikiwand.com/en/Yocto-">yocto</a></p></td>
+<td><p>y</p></td>
+<td><p>10<sup>-24</sup></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src/99-appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04-entity-table.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Appendix IV: Entity table</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06-meg-file-formats.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix VI: MEG file formats</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The BIDS Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
