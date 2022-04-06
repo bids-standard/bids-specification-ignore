@@ -14,7 +14,7 @@ kernelspec:
 # Modality agnostic files
 
 ```{code-cell} ipython3
-:tags: [hide-cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 from IPython.display import display, Markdown, HTML
@@ -40,7 +40,7 @@ The file `dataset_description.json` is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 
 field_info = {
     "Name": "REQUIRED",
@@ -130,7 +130,7 @@ In contrast to raw BIDS datasets, derived BIDS datasets MUST include a
 `GeneratedBy` key:
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 
 field_info = {
     "GeneratedBy": "REQUIRED",
@@ -393,7 +393,7 @@ MAY be accompanied by a JSON file describing the columns in detail
 In addition to the column descriptions, the JSON file MAY contain the following fields:
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 
 field_info = {
     "MeasurementToolMetadata": "OPTIONAL",

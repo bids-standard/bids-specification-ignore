@@ -111,7 +111,7 @@ Generic fields MUST be present:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 SHOULD be present: For consistency between studies and institutions, we
@@ -146,7 +146,7 @@ Whenever possible, please avoid using ad-hoc wording.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Specific MEG fields MUST be present:
@@ -163,7 +163,7 @@ Specific MEG fields MUST be present:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 SHOULD be present:
@@ -193,7 +193,7 @@ SHOULD be present:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Specific EEG fields
@@ -210,7 +210,7 @@ SHOULD be present:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Example:
@@ -372,7 +372,7 @@ MEG and EEG sensors:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Head localization coils:
@@ -387,7 +387,7 @@ Head localization coils:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Digitized head points:
@@ -402,7 +402,7 @@ Digitized head points:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Anatomical MRI:
@@ -419,7 +419,7 @@ Anatomical MRI:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Anatomical landmarks:
@@ -434,7 +434,7 @@ Anatomical landmarks:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 It is also RECOMMENDED that the MRI voxel coordinates of the actual anatomical
@@ -462,7 +462,7 @@ Fiducials information:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 For more information on the definition of anatomical landmarks, please visit:

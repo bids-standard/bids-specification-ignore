@@ -14,7 +14,7 @@ kernelspec:
 # Appendix IX: Entities
 
 ```{code-cell} ipython3
-:tags: [hide-cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 from IPython.display import display, Markdown, HTML

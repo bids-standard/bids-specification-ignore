@@ -47,7 +47,7 @@ by Ben Inglis.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Example for `ReceiveCoilActiveElements`:
@@ -92,7 +92,7 @@ that a given scan was collected with the intended coil elements selected
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### In-Plane Spatial Encoding
@@ -126,7 +126,7 @@ that a given scan was collected with the intended coil elements selected
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 <sup>2</sup>Conveniently, for Siemens data, this value is easily obtained as
@@ -153,7 +153,7 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### RF & Contrast
@@ -166,7 +166,7 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### Slice Acceleration
@@ -178,7 +178,7 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### Anatomical landmarks
@@ -192,7 +192,7 @@ Useful for multimodal co-registration with MEG, (S)EEG, TMS, and so on.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### Echo-Planar Imaging and *B<sub>0</sub>* mapping
@@ -217,7 +217,7 @@ fieldmap estimation using the following metadata:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### Institution information
@@ -231,7 +231,7 @@ fieldmap estimation using the following metadata:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 When adding additional metadata please use the CamelCase version of
@@ -314,7 +314,7 @@ fields specific to anatomical scans:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 The [`part-<label>`](../99-appendices/09-entities.md#part) key/value pair is
@@ -540,7 +540,7 @@ JSON file.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 For the fields described above and in the following section, the term "Volume"
@@ -563,7 +563,7 @@ combined image rather than an image from each coil.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 The following table recapitulates the different ways that specific fields have
@@ -597,7 +597,7 @@ sparse sequences.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 See [Common metadata fields](#common-metadata-fields) for a list of
@@ -760,7 +760,7 @@ following metadata:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 JSON example:
@@ -941,7 +941,7 @@ See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#summary-i
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 #### (P)CASL-specific metadata fields
@@ -963,7 +963,7 @@ These fields can only be used when `ArterialSpinLabelingType` is `"CASL"` or `"P
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 #### PASL-specific metadata fields
@@ -981,7 +981,7 @@ These fields can only be used when `ArterialSpinLabelingType` is `PASL`. See [Ap
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 ### `m0scan` metadata fields
@@ -999,7 +999,7 @@ Some common metadata fields are REQUIRED for the `*_m0scan.json`: `EchoTime`, `R
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 The following table recapitulates the ASL field dependencies. If Source field (column 1) contains the Value specified in column 2, then the Requirements in column 4 are
@@ -1093,7 +1093,7 @@ filling the `IntendedFor` field in the corresponding JSON file.
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 For example:
@@ -1135,7 +1135,7 @@ Required fields:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 In this particular case, the sidecar JSON file
@@ -1169,7 +1169,7 @@ Required fields:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 Each phase map has a corresponding sidecar JSON file to specify its corresponding `EchoTime`.
@@ -1201,7 +1201,7 @@ Required fields:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 For example:
@@ -1250,7 +1250,7 @@ Required fields:
 ) }}
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 ```
 
 For example:
