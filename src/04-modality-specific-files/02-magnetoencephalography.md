@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Magnetoencephalography
 
 Support for Magnetoencephalography (MEG) was developed as a
@@ -97,6 +110,10 @@ Generic fields MUST be present:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 SHOULD be present: For consistency between studies and institutions, we
 encourage users to extract the values of these fields from the actual raw data.
 Whenever possible, please avoid using ad-hoc wording.
@@ -128,6 +145,10 @@ Whenever possible, please avoid using ad-hoc wording.
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Specific MEG fields MUST be present:
 
 {{ MACROS___make_metadata_table(
@@ -140,6 +161,10 @@ Specific MEG fields MUST be present:
       "DigitizedHeadPoints": "REQUIRED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 SHOULD be present:
 
@@ -167,6 +192,10 @@ SHOULD be present:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Specific EEG fields
 (if recorded with MEG, see [Recording EEG simultaneously with MEG](#recording-eeg-simultaneously-with-meg)
 SHOULD be present:
@@ -179,6 +208,10 @@ SHOULD be present:
       "EEGReference": "OPTIONAL",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 Example:
 
@@ -338,6 +371,10 @@ MEG and EEG sensors:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Head localization coils:
 
 {{ MACROS___make_metadata_table(
@@ -349,6 +386,10 @@ Head localization coils:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Digitized head points:
 
 {{ MACROS___make_metadata_table(
@@ -359,6 +400,10 @@ Digitized head points:
       "DigitizedHeadPointsCoordinateSystemDescription": "OPTIONAL, but REQUIRED if `DigitizedHeadPointsCoordinateSystem` is `Other`",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 Anatomical MRI:
 
@@ -373,6 +418,10 @@ Anatomical MRI:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Anatomical landmarks:
 
 {{ MACROS___make_metadata_table(
@@ -383,6 +432,10 @@ Anatomical landmarks:
       "AnatomicalLandmarkCoordinateSystemDescription": "OPTIONAL, but REQUIRED if `AnatomicalLandmarkCoordinateSystem` is `Other`",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 It is also RECOMMENDED that the MRI voxel coordinates of the actual anatomical
 landmarks for co-registration of MEG with structural MRI are stored in the
@@ -407,6 +460,10 @@ Fiducials information:
       "FiducialsDescription": "OPTIONAL",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 For more information on the definition of anatomical landmarks, please visit:
 [http://www.fieldtriptoolbox.org/faq/how_are_the_lpa_and_rpa_points_defined](http://www.fieldtriptoolbox.org/faq/how_are_the_lpa_and_rpa_points_defined)
