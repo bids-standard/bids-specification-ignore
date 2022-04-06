@@ -639,30 +639,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code><a class="headerlink" href="#dataset-description-json" title="Permalink to this headline">¶</a></h3>
 <p>The file <code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code> is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">field_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BIDSVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HEDVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;DatasetType&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;License&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Authors&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Acknowledgements&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HowToAcknowledge&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Funding&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;EthicsApprovals&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ReferencesAndLinks&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;DatasetDOI&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;GeneratedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;SourceDatasets&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">make_metadata_table</span><span class="p">(</span><span class="n">schema_obj</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">markdown</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">(),</span> <span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tables&#39;</span><span class="p">])))</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 </div>
 <p>Each object in the <code class="docutils literal notranslate"><span class="pre">GeneratedBy</span></code> array includes the following REQUIRED, RECOMMENDED
 and OPTIONAL keys:</p>
