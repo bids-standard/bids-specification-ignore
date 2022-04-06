@@ -485,7 +485,7 @@ def make_entity_table(schema, tablefmt="github", **kwargs):
 
     # Print it as markdown
     table_str = tabulate(table, headers="keys", tablefmt=tablefmt)
-    return table_str
+    return table
 
 
 def make_suffix_table(schema, suffixes, tablefmt="github"):
@@ -534,7 +534,7 @@ def make_suffix_table(schema, suffixes, tablefmt="github"):
 
     # Print it as markdown
     table_str = tabulate(df, headers="keys", tablefmt=tablefmt)
-    return table_str
+    return df
 
 
 def make_metadata_table(schema, field_info, tablefmt="github"):
@@ -684,4 +684,4 @@ def make_columns_table(schema, column_info, tablefmt="github"):
 
     # Print it as markdown
     table_str = tabulate(df, headers="keys", tablefmt=tablefmt)
-    return table_str
+    return df
