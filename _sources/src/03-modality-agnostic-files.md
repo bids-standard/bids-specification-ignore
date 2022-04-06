@@ -19,6 +19,7 @@ kernelspec:
 from myst_nb import glue
 from IPython.display import display, Markdown, HTML
 from schemacode import render, schema, utils
+from markdown import markdown
 
 # Load the schema path
 schemapath = utils.get_schema_path()
@@ -59,35 +60,7 @@ field_info = {
 }
 
 table = render.make_metadata_table(schema_obj, field_info)
-```
-
-try markdown
-
-```{code-cell} ipython3
-display(Markdown(table.to_markdown()))
-```
-
-glue the dataframe
-
-```{code-cell} ipython3
-from myst_nb import glue
-
-glue("table", table)
-```
-
-post the glued dataframe
-
-```{glue:figure} table
-:name: "tbl:table"
-:align: center
-
-A table!
-```
-
-try html
-
-```{code-cell} ipython3
-display(HTML(table.to_html()))
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 Each object in the `GeneratedBy` array includes the following REQUIRED, RECOMMENDED
