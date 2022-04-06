@@ -1,4 +1,29 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Common principles
+
+```{code-cell} ipython3
+:tags: [hide-cell]
+
+from myst_nb import glue
+from IPython.display import display, Markdown, HTML
+from schemacode import render, schema, utils
+
+# Load the schema path
+schemapath = utils.get_schema_path()
+schema_obj = schema.load_schema(schemapath)
+```
 
 ## Definitions
 
@@ -327,7 +352,7 @@ Derivatives can be stored/distributed in two ways:
 
     Example of derivatives with one directory per pipeline:
 
-    ```Plain
+    ```Text
     <dataset>/derivatives/fmriprep-v1.4.1/sub-0001
     <dataset>/derivatives/spm/sub-0001
     <dataset>/derivatives/vbm/sub-0001
@@ -335,14 +360,14 @@ Derivatives can be stored/distributed in two ways:
 
     Example of a pipeline with split derivative directories:
 
-    ```Plain
+    ```Text
     <dataset>/derivatives/spm-preproc/sub-0001
     <dataset>/derivatives/spm-stats/sub-0001
     ```
 
     Example of a pipeline with nested derivative directories:
 
-    ```Plain
+    ```Text
     <dataset>/derivatives/spm-preproc/sub-0001
     <dataset>/derivatives/spm-preproc/derivatives/spm-stats/sub-0001
     ```
@@ -461,19 +486,23 @@ Note that if a field name included in the data dictionary matches a column name 
 then that field MUST contain a description of the corresponding column,
 using an object containing the following fields:
 
-{{ MACROS___make_metadata_table(
-   {
-        "LongName": "OPTIONAL",
-        "Description": (
-            "RECOMMENDED",
-            "The description of the column.",
-        ),
-        "Levels": "RECOMMENDED",
-        "Units": "RECOMMENDED",
-        "TermURL": "RECOMMENDED",
-        "HED": "OPTIONAL",
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "LongName": "OPTIONAL",
+    "Description": (
+        "RECOMMENDED",
+        "The description of the column.",
+    ),
+    "Levels": "RECOMMENDED",
+    "Units": "RECOMMENDED",
+    "TermURL": "RECOMMENDED",
+    "HED": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+```
 
 Please note that while both `Units` and `Levels` are RECOMMENDED, typically only one
 of these two fields would be specified for describing a single TSV file column.

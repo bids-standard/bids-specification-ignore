@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Appendix X: File collections
 
 Here, some concrete use-cases of [entity-linked file collections](../02-common-principles.md#file-name-structure) are listed using descriptive tables, organized by modality.

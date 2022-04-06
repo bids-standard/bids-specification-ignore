@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Magnetic Resonance Imaging
 
 ## Common metadata fields
@@ -32,6 +45,10 @@ by Ben Inglis.
       "CoilCombinationMethod": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 Example for `ReceiveCoilActiveElements`:
 
@@ -74,6 +91,10 @@ that a given scan was collected with the intended coil elements selected
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 ### In-Plane Spatial Encoding
 
 {{ MACROS___make_metadata_table(
@@ -104,6 +125,10 @@ that a given scan was collected with the intended coil elements selected
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 <sup>2</sup>Conveniently, for Siemens data, this value is easily obtained as
 `1 / (BWPPPE * ReconMatrixPE)`, where BWPPPE is the
 "BandwidthPerPixelPhaseEncode" in DICOM Tag 0019, 1028 and ReconMatrixPE is
@@ -127,6 +152,10 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 ### RF & Contrast
 
 {{ MACROS___make_metadata_table(
@@ -136,6 +165,10 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 ### Slice Acceleration
 
 {{ MACROS___make_metadata_table(
@@ -143,6 +176,10 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
       "MultibandAccelerationFactor": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 ### Anatomical landmarks
 
@@ -153,6 +190,10 @@ Useful for multimodal co-registration with MEG, (S)EEG, TMS, and so on.
       "AnatomicalLandmarkCoordinates__mri": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 ### Echo-Planar Imaging and *B<sub>0</sub>* mapping
 
@@ -175,6 +216,10 @@ fieldmap estimation using the following metadata:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 ### Institution information
 
 {{ MACROS___make_metadata_table(
@@ -184,6 +229,10 @@ fieldmap estimation using the following metadata:
       "InstitutionalDepartmentName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1040 `Institutional Department Name`.")
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 When adding additional metadata please use the CamelCase version of
 [DICOM ontology terms](https://scicrunch.org/scicrunch/interlex/dashboard)
@@ -263,6 +312,10 @@ fields specific to anatomical scans:
       "RepetitionTimePreparation": "OPTIONAL",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 The [`part-<label>`](../99-appendices/09-entities.md#part) key/value pair is
 used to indicate which component of the complex representation of the MRI
@@ -486,6 +539,10 @@ JSON file.
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 For the fields described above and in the following section, the term "Volume"
 refers to a reconstruction of the object being imaged (for example, brain or part of a
 brain). In case of multiple channels in a coil, the term "Volume" refers to a
@@ -504,6 +561,10 @@ combined image rather than an image from each coil.
       "DelayAfterTrigger": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 The following table recapitulates the different ways that specific fields have
 to be populated for functional sequences. Note that all these options can be
@@ -534,6 +595,10 @@ sparse sequences.
       "CogPOID": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 See [Common metadata fields](#common-metadata-fields) for a list of
 additional terms and their definitions.
@@ -693,6 +758,10 @@ following metadata:
       "MultipartID": "REQUIRED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 JSON example:
 
@@ -871,6 +940,10 @@ See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#summary-i
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 #### (P)CASL-specific metadata fields
 
 These fields can only be used when `ArterialSpinLabelingType` is `"CASL"` or `"PCASL"`. See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#pcasl-sequence) for more information on the (P)CASL sequence and the Labeling Pulse fields.
@@ -889,6 +962,10 @@ These fields can only be used when `ArterialSpinLabelingType` is `"CASL"` or `"P
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 #### PASL-specific metadata fields
 
 These fields can only be used when `ArterialSpinLabelingType` is `PASL`. See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#pasl-sequence) for more information on the PASL sequence and the BolusCutOff fields.
@@ -903,6 +980,10 @@ These fields can only be used when `ArterialSpinLabelingType` is `PASL`. See [Ap
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 ### `m0scan` metadata fields
 
 Some common metadata fields are REQUIRED for the `*_m0scan.json`: `EchoTime`, `RepetitionTimePreparation`, and `FlipAngle` in case `LookLocker` is `true`.
@@ -916,6 +997,10 @@ Some common metadata fields are REQUIRED for the `*_m0scan.json`: `EchoTime`, `R
       "AcquisitionVoxelSize": "RECOMMENDED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 The following table recapitulates the ASL field dependencies. If Source field (column 1) contains the Value specified in column 2, then the Requirements in column 4 are
 imposed on the Dependent fields in column 3. See [Appendix XII](../99-appendices/12-arterial-spin-labeling.md#flowchart-based-on-dependency-table) for this information in the
@@ -1007,6 +1092,10 @@ filling the `IntendedFor` field in the corresponding JSON file.
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 For example:
 
 ```JSON
@@ -1045,6 +1134,10 @@ Required fields:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 In this particular case, the sidecar JSON file
 `sub-<label>[_ses-<label>][_acq-<label>][_run-<index>]_phasediff.json`
 MUST define the time of two echos used to map the phase and finally calculate
@@ -1075,6 +1168,10 @@ Required fields:
    }
 ) }}
 
+```{code-cell} ipython3
+:tags: [hide-input]
+```
+
 Each phase map has a corresponding sidecar JSON file to specify its corresponding `EchoTime`.
 For example, `sub-<label>[_ses-<label>][_acq-<label>][_run-<index>]_phase2.json` may read:
 
@@ -1102,6 +1199,10 @@ Required fields:
       ),
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 For example:
 
@@ -1147,6 +1248,10 @@ Required fields:
       "TotalReadoutTime": "REQUIRED",
    }
 ) }}
+
+```{code-cell} ipython3
+:tags: [hide-input]
+```
 
 For example:
 

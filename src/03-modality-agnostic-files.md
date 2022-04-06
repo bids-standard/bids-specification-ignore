@@ -1,4 +1,29 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Modality agnostic files
+
+```{code-cell} ipython3
+:tags: [hide-cell]
+
+from myst_nb import glue
+from IPython.display import display, Markdown, HTML
+from schemacode import render, schema, utils
+
+# Load the schema path
+schemapath = utils.get_schema_path()
+schema_obj = schema.load_schema(schemapath)
+```
 
 ## Dataset description
 
@@ -14,24 +39,29 @@ Templates:
 The file `dataset_description.json` is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "Name": "REQUIRED",
-      "BIDSVersion": "REQUIRED",
-      "HEDVersion": "RECOMMENDED",
-      "DatasetType": "RECOMMENDED",
-      "License": "RECOMMENDED",
-      "Authors": "OPTIONAL",
-      "Acknowledgements": "OPTIONAL",
-      "HowToAcknowledge": "OPTIONAL",
-      "Funding": "OPTIONAL",
-      "EthicsApprovals": "OPTIONAL",
-      "ReferencesAndLinks": "OPTIONAL",
-      "DatasetDOI": "OPTIONAL",
-      "GeneratedBy": "RECOMMENDED",
-      "SourceDatasets": "RECOMMENDED",
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "Name": "REQUIRED",
+    "BIDSVersion": "REQUIRED",
+    "HEDVersion": "RECOMMENDED",
+    "DatasetType": "RECOMMENDED",
+    "License": "RECOMMENDED",
+    "Authors": "OPTIONAL",
+    "Acknowledgements": "OPTIONAL",
+    "HowToAcknowledge": "OPTIONAL",
+    "Funding": "OPTIONAL",
+    "EthicsApprovals": "OPTIONAL",
+    "ReferencesAndLinks": "OPTIONAL",
+    "DatasetDOI": "OPTIONAL",
+    "GeneratedBy": "RECOMMENDED",
+    "SourceDatasets": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(Markdown(table.to_markdown()))
+```
 
 Each object in the `GeneratedBy` array includes the following REQUIRED, RECOMMENDED
 and OPTIONAL keys:
@@ -99,11 +129,15 @@ top level of every derived dataset:
 In contrast to raw BIDS datasets, derived BIDS datasets MUST include a
 `GeneratedBy` key:
 
-{{ MACROS___make_metadata_table(
-   {
-      "GeneratedBy": "REQUIRED"
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "GeneratedBy": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+```
 
 If a derived dataset is stored as a subdirectory of the raw dataset, then the `Name` field
 of the first `GeneratedBy` object MUST be a substring of the derived dataset directory name.
@@ -358,12 +392,16 @@ MAY be accompanied by a JSON file describing the columns in detail
 
 In addition to the column descriptions, the JSON file MAY contain the following fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "MeasurementToolMetadata": "OPTIONAL",
-      "Derivative": "OPTIONAL",
-   }
-) }}
+```{code-cell} ipython3
+:tags: [hide-input]
+
+field_info = {
+    "MeasurementToolMetadata": "OPTIONAL",
+    "Derivative": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+```
 
 As an example, consider the contents of a file called
 `phenotype/acds_adult.json`:
