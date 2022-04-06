@@ -626,19 +626,6 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="modality-agnostic-files">
 <h1>Modality agnostic files<a class="headerlink" href="#modality-agnostic-files" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">schemacode</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">utils</span>
-
-<span class="c1"># Load the schema path</span>
-<span class="n">schemapath</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_schema_path</span><span class="p">()</span>
-<span class="n">schema_obj</span> <span class="o">=</span> <span class="n">schema</span><span class="o">.</span><span class="n">load_schema</span><span class="p">(</span><span class="n">schemapath</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="dataset-description">
 <h2>Dataset description<a class="headerlink" href="#dataset-description" title="Permalink to this headline">¶</a></h2>
 <p>Templates:</p>
@@ -652,30 +639,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code><a class="headerlink" href="#dataset-description-json" title="Permalink to this headline">¶</a></h3>
 <p>The file <code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code> is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">field_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BIDSVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HEDVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;DatasetType&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;License&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Authors&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Acknowledgements&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HowToAcknowledge&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Funding&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;EthicsApprovals&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ReferencesAndLinks&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;DatasetDOI&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;GeneratedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;SourceDatasets&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">make_metadata_table</span><span class="p">(</span><span class="n">schema_obj</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">()))</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <p>| <strong>Key name</strong>       | <strong>Requirement Level</strong>   | <strong>Data type</strong>                                                                                                             | <strong>Description</strong>                                                                                                                                                                                                                                                                                |
 |:-------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -784,16 +748,7 @@ top level of every derived dataset:
 <code class="docutils literal notranslate"><span class="pre">&lt;dataset&gt;/derivatives/&lt;pipeline_name&gt;/dataset_description.json</span></code>.</p>
 <p>In contrast to raw BIDS datasets, derived BIDS datasets MUST include a
 <code class="docutils literal notranslate"><span class="pre">GeneratedBy</span></code> key:</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">field_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;GeneratedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">make_metadata_table</span><span class="p">(</span><span class="n">schema_obj</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 </div>
 <p>If a derived dataset is stored as a subdirectory of the raw dataset, then the <code class="docutils literal notranslate"><span class="pre">Name</span></code> field
 of the first <code class="docutils literal notranslate"><span class="pre">GeneratedBy</span></code> object MUST be a substring of the derived dataset directory name.
@@ -1001,17 +956,7 @@ in the BIDS dataset and <code class="docutils literal notranslate"><span class="
 MAY be accompanied by a JSON file describing the columns in detail
 (see <a class="reference external" href="02-common-principles.md#tabular-files">Tabular files</a>).</p>
 <p>In addition to the column descriptions, the JSON file MAY contain the following fields:</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">field_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;MeasurementToolMetadata&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Derivative&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">make_metadata_table</span><span class="p">(</span><span class="n">schema_obj</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 </div>
 <p>As an example, consider the contents of a file called
 <code class="docutils literal notranslate"><span class="pre">phenotype/acds_adult.json</span></code>:</p>

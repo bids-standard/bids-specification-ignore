@@ -682,19 +682,6 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="common-principles">
 <h1>Common principles<a class="headerlink" href="#common-principles" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">schemacode</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">utils</span>
-
-<span class="c1"># Load the schema path</span>
-<span class="n">schemapath</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_schema_path</span><span class="p">()</span>
-<span class="n">schema_obj</span> <span class="o">=</span> <span class="n">schema</span><span class="o">.</span><span class="n">load_schema</span><span class="p">(</span><span class="n">schemapath</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <p>The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
@@ -1082,24 +1069,7 @@ it MAY contain one or more fields describing the columns found in the TSV file
 Note that if a field name included in the data dictionary matches a column name in the TSV file,
 then that field MUST contain a description of the corresponding column,
 using an object containing the following fields:</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">field_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;LongName&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="p">(</span>
-        <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;The description of the column.&quot;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="s2">&quot;Levels&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Units&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;TermURL&quot;</span><span class="p">:</span> <span class="s2">&quot;RECOMMENDED&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HED&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">make_metadata_table</span><span class="p">(</span><span class="n">schema_obj</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 </div>
 <p>Please note that while both <code class="docutils literal notranslate"><span class="pre">Units</span></code> and <code class="docutils literal notranslate"><span class="pre">Levels</span></code> are RECOMMENDED, typically only one
 of these two fields would be specified for describing a single TSV file column.</p>
