@@ -979,7 +979,99 @@ MRI acquisition parameters are divided into several categories based on
 by Ben Inglis.</p>
 <div class="section" id="scanner-hardware">
 <h3>Scanner Hardware<a class="headerlink" href="#scanner-hardware" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Manufacturer</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Manufacturer of the equipment that produced the measurements.  Corresponds to DICOM Tag 0008, 0070 <code>Manufacturer</code>.</td>
+</tr>
+<tr>
+<td align="left">ManufacturersModelName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Manufacturer's model name of the equipment that produced the measurements.  Corresponds to DICOM Tag 0008, 1090 <code>Manufacturers Model Name</code>.</td>
+</tr>
+<tr>
+<td align="left">DeviceSerialNumber</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The serial number of the equipment that produced the measurements. A pseudonym can also be used to prevent the equipment from being identifiable, so long as each pseudonym is unique within the dataset.  Corresponds to DICOM Tag 0018, 1000 <code>DeviceSerialNumber</code>.</td>
+</tr>
+<tr>
+<td align="left">StationName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Institution defined name of the machine that produced the measurements.  Corresponds to DICOM Tag 0008, 1010 <code>Station Name</code>.</td>
+</tr>
+<tr>
+<td align="left">SoftwareVersions</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Manufacturer's designation of software version of the equipment that produced the measurements.  Corresponds to DICOM Tag 0018, 1020 <code>Software Versions</code>.</td>
+</tr>
+<tr>
+<td align="left">HardcopyDeviceSoftwareVersion</td>
+<td align="left"><a href="/02-common-principles.html#definitions">DEPRECATED</a></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Manufacturer's designation of the software of the device that created this Hardcopy Image (the printer). Corresponds to DICOM Tag 0018, 101A <code>Hardcopy Device Software Version</code>.</td>
+</tr>
+<tr>
+<td align="left">MagneticFieldStrength</td>
+<td align="left">RECOMMENDED, but REQUIRED for Arterial Spin Labeling</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Nominal field strength of MR magnet in Tesla. Corresponds to DICOM Tag 0018, 0087 <code>Magnetic Field Strength</code>.</td>
+</tr>
+<tr>
+<td align="left">ReceiveCoilName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Information describing the receiver coil. Corresponds to DICOM Tag 0018, 1250 <code>Receive Coil Name</code>, although not all vendors populate that DICOM Tag, in which case this field can be derived from an appropriate private DICOM field.</td>
+</tr>
+<tr>
+<td align="left">ReceiveCoilActiveElements</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Information describing the active/selected elements of the receiver coil. This does not correspond to a tag in the DICOM ontology. The vendor-defined terminology for active coil elements can go in this field.  See an example below the table.</td>
+</tr>
+<tr>
+<td align="left">GradientSetType</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">It should be possible to infer the gradient coil from the scanner model. If not, for example because of a custom upgrade or use of a gradient insert set, then the specifications of the actual gradient coil should be reported independently.</td>
+</tr>
+<tr>
+<td align="left">MRTransmitCoilSequence</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">This is a relevant field if a non-standard transmit coil is used. Corresponds to DICOM Tag 0018, 9049 <code>MR Transmit Coil Sequence</code>.</td>
+</tr>
+<tr>
+<td align="left">MatrixCoilMode</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">(If used) A method for reducing the number of independent channels by combining in analog the signals from multiple coil elements. There are typically different default modes when using un-accelerated or accelerated (for example, <code>"GRAPPA"</code>, <code>"SENSE"</code>) imaging.</td>
+</tr>
+<tr>
+<td align="left">CoilCombinationMethod</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Almost all fMRI studies using phased-array coils use root-sum-of-squares (rSOS) combination, but other methods exist. The image reconstruction is changed by the coil combination method (as for the matrix coil mode above), so anything non-standard should be reported.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>Example for <code class="docutils literal notranslate"><span class="pre">ReceiveCoilActiveElements</span></code>:</p>
 <p>For Siemens, coil channels are typically not activated/selected individually,
 but rather in pre-defined selectable “groups” of individual channels,
@@ -996,11 +1088,207 @@ that a given scan was collected with the intended coil elements selected</p>
 </div>
 <div class="section" id="sequence-specifics">
 <h3>Sequence Specifics<a class="headerlink" href="#sequence-specifics" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PulseSequenceType</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">A general description of the pulse sequence used for the scan (for example, <code>"MPRAGE"</code>, <code>"Gradient Echo EPI"</code>, <code>"Spin Echo EPI"</code>, <code>"Multiband gradient echo EPI"</code>).</td>
+</tr>
+<tr>
+<td align="left">ScanningSequence</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">Description of the type of data acquired. Corresponds to DICOM Tag 0018, 0020 <code>Scanning Sequence</code>.</td>
+</tr>
+<tr>
+<td align="left">SequenceVariant</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">Variant of the ScanningSequence. Corresponds to DICOM Tag 0018, 0021 <code>Sequence Variant</code>.</td>
+</tr>
+<tr>
+<td align="left">ScanOptions</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">Parameters of ScanningSequence. Corresponds to DICOM Tag 0018, 0022 <code>Scan Options</code>.</td>
+</tr>
+<tr>
+<td align="left">SequenceName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Manufacturer's designation of the sequence name. Corresponds to DICOM Tag 0018, 0024 <code>Sequence Name</code>.</td>
+</tr>
+<tr>
+<td align="left">PulseSequenceDetails</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Information beyond pulse sequence type that identifies the specific pulse sequence used (for example, <code>"Standard Siemens Sequence distributed with the VB17 software"</code>, <code>"Siemens WIP ### version #.##,"</code> or <code>"Sequence written by X using a version compiled on MM/DD/YYYY"</code>).</td>
+</tr>
+<tr>
+<td align="left">NonlinearGradientCorrection</td>
+<td align="left">RECOMMENDED, but REQUIRED if <a href="./09-positron-emission-tomography.md">PET</a> data are present</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean stating if the image saved has been corrected for gradient nonlinearities by the scanner sequence.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">MRAcquisitionType</td>
+<td align="left">RECOMMENDED, but REQUIRED for Arterial Spin Labeling</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Type of sequence readout. Corresponds to DICOM Tag 0018, 0023 <code>MR Acquisition Type</code>.  <br><br>Must be one of: <code>"2D"</code>, <code>"3D"</code>.</td>
+</tr>
+<tr>
+<td align="left">MTState</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean stating whether the magnetization transfer pulse is applied. Corresponds to DICOM Tag 0018, 9020 <code>Magnetization Transfer</code>.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">MTOffsetFrequency</td>
+<td align="left">RECOMMENDED if the MTstate is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The frequency offset of the magnetization transfer pulse with respect to the central H1 Larmor frequency in Hertz (Hz).</td>
+</tr>
+<tr>
+<td align="left">MTPulseBandwidth</td>
+<td align="left">RECOMMENDED if the MTstate is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The excitation bandwidth of the magnetization transfer pulse in Hertz (Hz).</td>
+</tr>
+<tr>
+<td align="left">MTNumberOfPulses</td>
+<td align="left">RECOMMENDED if the MTstate is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The number of magnetization transfer RF pulses applied before the readout.</td>
+</tr>
+<tr>
+<td align="left">MTPulseShape</td>
+<td align="left">RECOMMENDED if the MTstate is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Shape of the magnetization transfer RF pulse waveform. The value <code>"GAUSSHANN"</code> refers to a Gaussian pulse with a Hanning window. The value <code>"SINCHANN"</code> refers to a sinc pulse with a Hanning window. The value <code>"SINCGAUSS"</code> refers to a sinc pulse with a Gaussian window.  <br><br>Must be one of: <code>"HARD"</code>, <code>"GAUSSIAN"</code>, <code>"GAUSSHANN"</code>, <code>"SINC"</code>, <code>"SINCHANN"</code>, <code>"SINCGAUSS"</code>, <code>"FERMI"</code>.</td>
+</tr>
+<tr>
+<td align="left">MTPulseDuration</td>
+<td align="left">RECOMMENDED if the MTstate is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Duration of the magnetization transfer RF pulse in seconds.</td>
+</tr>
+<tr>
+<td align="left">SpoilingState</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean stating whether the pulse sequence uses any type of spoiling strategy to suppress residual transverse magnetization.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">SpoilingType</td>
+<td align="left">RECOMMENDED if the SpoilingState is <code>True</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Specifies which spoiling method(s) are used by a spoiled sequence.  <br><br>Must be one of: <code>"RF"</code>, <code>"GRADIENT"</code>, <code>"COMBINED"</code>.</td>
+</tr>
+<tr>
+<td align="left">SpoilingRFPhaseIncrement</td>
+<td align="left">RECOMMENDED if the SpoilingType is <code>"RF"</code> or <code>"COMBINED"</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The amount of incrementation described in degrees, which is applied to the phase of the excitation pulse at each TR period for achieving RF spoiling.</td>
+</tr>
+<tr>
+<td align="left">SpoilingGradientMoment</td>
+<td align="left">RECOMMENDED if the SpoilingType is <code>"GRADIENT"</code> or <code>"COMBINED"</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Zeroth moment of the spoiler gradient lobe in millitesla times second per meter (mT.s/m).</td>
+</tr>
+<tr>
+<td align="left">SpoilingGradientDuration</td>
+<td align="left">RECOMMENDED if the SpoilingType is <code>"GRADIENT"</code> or <code>"COMBINED"</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The duration of the spoiler gradient lobe in seconds. The duration of a trapezoidal lobe is defined as the summation of ramp-up and plateau times.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="in-plane-spatial-encoding">
 <h3>In-Plane Spatial Encoding<a class="headerlink" href="#in-plane-spatial-encoding" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NumberShots</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The number of RF excitations needed to reconstruct a slice or volume (may be referred to as partition). Please mind that this is not the same as Echo Train Length which denotes the number of k-space lines collected after excitation in a multi-echo readout. The data type array is applicable for specifying this parameter before and after the k-space center is sampled. Please see <a href="/99-appendices/11-qmri.html#numbershots-metadata-field"><code>"NumberShots"</code> metadata field</a> in the qMRI appendix for corresponding calculations.</td>
+</tr>
+<tr>
+<td align="left">ParallelReductionFactorInPlane</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The parallel imaging (for instance, GRAPPA) factor. Use the denominator of the fraction of k-space encoded for each slice. For example, 2 means half of k-space is encoded. Corresponds to DICOM Tag 0018, 9069 <code>Parallel Reduction Factor In-plane</code>.</td>
+</tr>
+<tr>
+<td align="left">ParallelAcquisitionTechnique</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The type of parallel imaging used (for example <code>"GRAPPA"</code>, <code>"SENSE"</code>). Corresponds to DICOM Tag 0018, 9078 <code>Parallel Acquisition Technique</code>.</td>
+</tr>
+<tr>
+<td align="left">PartialFourier</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The fraction of partial Fourier information collected. Corresponds to DICOM Tag 0018, 9081 <code>Partial Fourier</code>.</td>
+</tr>
+<tr>
+<td align="left">PartialFourierDirection</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The direction where only partial Fourier information was collected. Corresponds to DICOM Tag 0018, 9036 <code>Partial Fourier Direction</code>.</td>
+</tr>
+<tr>
+<td align="left">PhaseEncodingDirection</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The letters <code>i</code>, <code>j</code>, <code>k</code> correspond to the first, second and third axis of the data in the NIFTI file. The polarity of the phase encoding is assumed to go from zero index to maximum index unless <code>-</code> sign is present (then the order is reversed - starting from the highest index instead of zero). <code>PhaseEncodingDirection</code> is defined as the direction along which phase is was modulated which may result in visible distortions. Note that this is not the same as the DICOM term <code>InPlanePhaseEncodingDirection</code> which can have <code>ROW</code> or <code>COL</code> values.  This parameter is REQUIRED if corresponding fieldmap data is present or when using multiple runs with different phase encoding directions (which can be later used for field inhomogeneity correction).<br><br>Must be one of: <code>"i"</code>, <code>"j"</code>, <code>"k"</code>, <code>"i-"</code>, <code>"j-"</code>, <code>"k-"</code>.</td>
+</tr>
+<tr>
+<td align="left">EffectiveEchoSpacing</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The "effective" sampling interval, specified in seconds, between lines in the phase-encoding direction, defined based on the size of the reconstructed image in the phase direction. It is frequently, but incorrectly, referred to as "dwell time" (see the <code>"DwellTime"</code> parameter for actual dwell time). It is required for unwarping distortions using field maps. Note that beyond just in-plane acceleration, a variety of other manipulations to the phase encoding need to be accounted for properly, including partial fourier, phase oversampling, phase resolution, phase field-of-view and interpolation.  <sup>2</sup> This parameter is REQUIRED if corresponding fieldmap data is present.<br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">TotalReadoutTime</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">This is actually the "effective" total readout time, defined as the readout duration, specified in seconds, that would have generated data with the given level of distortion. It is NOT the actual, physical duration of the readout train. If <code>"EffectiveEchoSpacing"</code> has been properly computed, it is just <code>EffectiveEchoSpacing * (ReconMatrixPE - 1)</code>.  <sup>3</sup> This parameter is REQUIRED if corresponding 'field/distortion' maps acquired with opposing phase encoding directions are present (see <a href="#case-4-multiple-phase-encoded-directions-pepolar">Case 4: Multiple phase encoded directions</a>).</td>
+</tr>
+<tr>
+<td align="left">MixingTime</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">In the context of a stimulated- and spin-echo 3D EPI sequence for B1+ mapping, corresponds to the interval between spin- and stimulated-echo pulses. In the context of a diffusion-weighted double spin-echo sequence, corresponds to the interval between two successive diffusion sensitizing gradients, specified in seconds.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p><sup>2</sup>Conveniently, for Siemens data, this value is easily obtained as
 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">(BWPPPE</span> <span class="pre">*</span> <span class="pre">ReconMatrixPE)</span></code>, where BWPPPE is the
 “BandwidthPerPixelPhaseEncode” in DICOM Tag 0019, 1028 and ReconMatrixPE is
@@ -1013,20 +1301,130 @@ and the center of the last “effective” echo, sometimes called the “FSL def
 </div>
 <div class="section" id="timing-parameters">
 <h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">EchoTime</td>
+<td align="left">RECOMMENDED, but REQUIRED if corresponding fieldmap data is present, or the data comes from a multi echo sequence or Arterial Spin Labeling</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The echo time (TE) for the acquisition, specified in seconds. Corresponds to DICOM Tag 0018, 0081 <code>Echo Time</code> (please note that the DICOM term is in milliseconds not seconds). The data type number may apply to files from any MRI modality concerned with a single value for this field, or to the files in a <a href="/99-appendices/10-file-collections.html">file collection</a> where the value of this field is iterated using the <a href="/99-appendices/09-entities.html#echo">echo entity</a>. The data type array provides a value for each volume in a 4D dataset and should only be used when the volume timing is critical for interpretation of the data, such as in <a href="/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data">ASL</a> or variable echo time fMRI sequences.</td>
+</tr>
+<tr>
+<td align="left">InversionTime</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The inversion time (TI) for the acquisition, specified in seconds. Inversion time is the time after the middle of inverting RF pulse to middle of excitation pulse to detect the amount of longitudinal magnetization. Corresponds to DICOM Tag 0018, 0082 <code>Inversion Time</code> (please note that the DICOM term is in milliseconds not seconds).  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">SliceTiming</td>
+<td align="left">RECOMMENDED, but REQUIRED for sparse sequences that do not have the <code>DelayTime</code> field set, and Arterial Spin Labeling with <code>MRAcquisitionType</code> set on <code>2D</code>.</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The time at which each slice was acquired within each volume (frame) of the acquisition. Slice timing is not slice order -- rather, it is a list of times containing the time (in seconds) of each slice acquisition in relation to the beginning of volume acquisition. The list goes through the slices along the slice axis in the slice encoding dimension (see below). Note that to ensure the proper interpretation of the <code>"SliceTiming"</code> field, it is important to check if the OPTIONAL <code>SliceEncodingDirection</code> exists. In particular, if <code>"SliceEncodingDirection"</code> is negative, the entries in <code>"SliceTiming"</code> are defined in reverse order with respect to the slice axis, such that the final entry in the <code>"SliceTiming"</code> list is the time of acquisition of slice 0. Without this parameter slice time correction will not be possible.</td>
+</tr>
+<tr>
+<td align="left">SliceEncodingDirection</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The axis of the NIfTI data along which slices were acquired, and the direction in which <code>"SliceTiming"</code> is defined with respect to. <code>i</code>, <code>j</code>, <code>k</code> identifiers correspond to the first, second and third axis of the data in the NIfTI file. A <code>-</code> sign indicates that the contents of <code>"SliceTiming"</code> are defined in reverse order - that is, the first entry corresponds to the slice with the largest index, and the final entry corresponds to slice index zero. When present, the axis defined by <code>"SliceEncodingDirection"</code> needs to be consistent with the <code>slice_dim</code> field in the NIfTI header. When absent, the entries in <code>"SliceTiming"</code> must be in the order of increasing slice index as defined by the NIfTI header.  <br><br>Must be one of: <code>"i"</code>, <code>"j"</code>, <code>"k"</code>, <code>"i-"</code>, <code>"j-"</code>, <code>"k-"</code>.</td>
+</tr>
+<tr>
+<td align="left">DwellTime</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Actual dwell time (in seconds) of the receiver per point in the readout direction, including any oversampling. For Siemens, this corresponds to DICOM field 0019, 1018 (in ns). This value is necessary for the optional readout distortion correction of anatomicals in the HCP Pipelines. It also usefully provides a handle on the readout bandwidth, which isn't captured in the other metadata tags. Not to be confused with <code>"EffectiveEchoSpacing"</code>, and the frequent mislabeling of echo spacing (which is spacing in the phase encoding direction) as "dwell time" (which is spacing in the readout direction).</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="rf-contrast">
 <h3>RF &amp; Contrast<a class="headerlink" href="#rf-contrast" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">FlipAngle</td>
+<td align="left">RECOMMENDED, but REQUIRED if <code>LookLocker</code> is set <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">Flip angle (FA) for the acquisition, specified in degrees. Corresponds to: DICOM Tag 0018, 1314 <code>Flip Angle</code>. The data type number may apply to files from any MRI modality concerned with a single value for this field, or to the files in a <a href="/99-appendices/10-file-collections.html">file collection</a> where the value of this field is iterated using the <a href="/99-appendices/09-entities.html#flip">flip entity</a>. The data type array provides a value for each volume in a 4D dataset and should only be used when the volume timing is critical for interpretation of the data, such as in <a href="/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data">ASL</a> or variable flip angle fMRI sequences.</td>
+</tr>
+<tr>
+<td align="left">NegativeContrast</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left"><code>true</code> or <code>false</code> value specifying whether increasing voxel intensity (within sample voxels) denotes a decreased value with respect to the contrast suffix. This is commonly the case when Cerebral Blood Volume is estimated via usage of a contrast agent in conjunction with a T2* weighted acquisition protocol.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="slice-acceleration">
 <h3>Slice Acceleration<a class="headerlink" href="#slice-acceleration" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">MultibandAccelerationFactor</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The multiband factor, for multiband acquisitions.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="anatomical-landmarks">
 <h3>Anatomical landmarks<a class="headerlink" href="#anatomical-landmarks" title="Permalink to this headline">¶</a></h3>
 <p>Useful for multimodal co-registration with MEG, (S)EEG, TMS, and so on.</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AnatomicalLandmarkCoordinates</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.json.org/json-en.html">object</a> of <a href="https://www.w3schools.com/js/js_json_arrays.asp">arrays</a></td>
+<td align="left">Key:value pairs of any number of additional anatomical landmarks and their coordinates in voxel units (where first voxel has index 0,0,0) relative to the associated anatomical MRI (for example, <code>{"AC": [127,119,149], "PC": [128,93,141], "IH": [131,114,206]}</code>, or <code>{"NAS": [127,213,139], "LPA": [52,113,96], "RPA": [202,113,91]}</code>). Each array MUST contain three numeric values corresponding to x, y, and z axis of the coordinate system in that exact order.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="echo-planar-imaging-and-b-sub-0-sub-mapping">
 <h3>Echo-Planar Imaging and <em>B<sub>0</sub></em> mapping<a class="headerlink" href="#echo-planar-imaging-and-b-sub-0-sub-mapping" title="Permalink to this headline">¶</a></h3>
@@ -1040,11 +1438,69 @@ such as gradient-recalled echo (GRE) sequences that are stored under the
 <code class="docutils literal notranslate"><span class="pre">asl</span></code> (under <code class="docutils literal notranslate"><span class="pre">perf/</span></code>), <code class="docutils literal notranslate"><span class="pre">sbref</span></code> (under <code class="docutils literal notranslate"><span class="pre">dwi/</span></code>, <code class="docutils literal notranslate"><span class="pre">func/</span></code> or <code class="docutils literal notranslate"><span class="pre">perf/</span></code>), and
 any modality under <code class="docutils literal notranslate"><span class="pre">fmap/</span></code> are allowed to encode the MR protocol intent for
 fieldmap estimation using the following metadata:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">B0FieldIdentifier</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">The presence of this key states that this particular 3D or 4D image MAY be used for fieldmap estimation purposes. Each <code>"B0FieldIdentifier"</code> MUST be a unique string within one participant's tree, shared only by the images meant to be used as inputs for the estimation of a particular instance of the <em>B<sub>0</sub> field</em> estimation. It is RECOMMENDED to derive this identifier from DICOM Tags, for example, DICOM tag 0018, 1030 <code>Protocol Name</code>, or DICOM tag 0018, 0024 <code>Sequence Name</code> when the former is not defined (for example, in GE devices.)</td>
+</tr>
+<tr>
+<td align="left">B0FieldSource</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">At least one existing <code>"B0FieldIdentifier"</code> defined by images in the participant's tree. This field states the <em>B<sub>0</sub> field</em> estimation designated by the <code>"B0FieldIdentifier"</code> that may be used to correct the dataset for distortions caused by B<sub>0</sub> inhomogeneities. <code>"B0FieldSource"</code> and <code>"B0FieldIdentifier"</code> MAY both be present for images that are used to estimate their own B<sub>0</sub> field, for example, in "pepolar" acquisitions.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="institution-information">
 <h3>Institution information<a class="headerlink" href="#institution-information" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">InstitutionName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The name of the institution in charge of the equipment that produced the measurements.  Corresponds to DICOM Tag 0008, 0080 <code>InstitutionName</code>.</td>
+</tr>
+<tr>
+<td align="left">InstitutionAddress</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The address of the institution in charge of the equipment that produced the measurements.  Corresponds to DICOM Tag 0008, 0081 <code>InstitutionAddress</code>.</td>
+</tr>
+<tr>
+<td align="left">InstitutionalDepartmentName</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The department in the institution in charge of the equipment that produced the measurements.  Corresponds to DICOM Tag 0008, 1040 <code>Institutional Department Name</code>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>When adding additional metadata please use the CamelCase version of
 <a class="reference external" href="https://scicrunch.org/scicrunch/interlex/dashboard">DICOM ontology terms</a>
 whenever possible. See also
@@ -1093,7 +1549,39 @@ JSON file, with the same label.</p>
 JSON file. See <a class="reference external" href="#common-metadata-fields">Common metadata fields</a> for a
 list of terms and their definitions. There are also some OPTIONAL JSON
 fields specific to anatomical scans:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ContrastBolusIngredient</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Active ingredient of agent. Corresponds to DICOM Tag 0018, 1048 <code>Contrast/Bolus Ingredient</code>.  <br><br>Must be one of: <code>"IODINE"</code>, <code>"GADOLINIUM"</code>, <code>"CARBON DIOXIDE"</code>, <code>"BARIUM"</code>, <code>"XENON"</code>.</td>
+</tr>
+<tr>
+<td align="left">RepetitionTimeExcitation</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The interval, in seconds, between two successive excitations. [DICOM Tag 0018, 0080](http://dicomlookup.com/lookup.asp?sw=Tnumber&amp;q=(0018,0080) best refers to this parameter. This field may be used together with the <code>"RepetitionTimePreparation"</code> for certain use cases, such as <a href="https://doi.org/10.1016/j.neuroimage.2009.10.002">MP2RAGE</a>. Use <code>RepetitionTimeExcitation</code> (in combination with <code>"RepetitionTimePreparation"</code> if needed) for anatomy imaging data rather than <code>"RepetitionTime"</code> as it is already defined as the amount of time that it takes to acquire a single volume in the <a href="/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#task-including-resting-state-imaging-data">task imaging data</a> section.  <br><br>Must be a number greater than or equal to 0.</td>
+</tr>
+<tr>
+<td align="left">RepetitionTimePreparation</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The interval, in seconds, that it takes a preparation pulse block to re-appear at the beginning of the succeeding (essentially identical) pulse sequence block. The data type number may apply to files from any MRI modality concerned with a single value for this field. The data type array provides a value for each volume in a 4D dataset and should only be used when the volume timing is critical for interpretation of the data, such as in <a href="/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data">ASL</a>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>The <a class="reference external" href="../99-appendices/09-entities.md#part"><code class="docutils literal notranslate"><span class="pre">part-&lt;label&gt;</span></code></a> key/value pair is
 used to indicate which component of the complex representation of the MRI
 signal is represented in voxel data.
@@ -1204,7 +1692,39 @@ name with the exception of the <code class="docutils literal notranslate"><span 
 JSON file.</p>
 <div class="section" id="required-fields">
 <h3>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">RepetitionTime</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The time in seconds between the beginning of an acquisition of one volume and the beginning of acquisition of the volume following it (TR). When used in the context of functional acquisitions this parameter best corresponds to <a href="http://dicomlookup.com/lookup.asp?sw=Tnumber&amp;q=(0020,0110)">DICOM Tag 0020, 0110</a>: the "time delta between images in a dynamic of functional set of images" but may also be found in <a href="http://dicomlookup.com/lookup.asp?sw=Tnumber&amp;q=(0018,0080)">DICOM Tag 0018, 0080</a>: "the period of time in msec between the beginning of a pulse sequence and the beginning of the succeeding (essentially identical) pulse sequence". This definition includes time between scans (when no data has been acquired) in case of sparse acquisition schemes. This value MUST be consistent with the 'pixdim[4]' field (after accounting for units stored in 'xyzt_units' field) in the NIfTI header. This field is mutually exclusive with VolumeTiming.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">VolumeTiming</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The time at which each volume was acquired during the acquisition. It is described using a list of times referring to the onset of each volume in the BOLD series. The list must have the same length as the BOLD series, and the values must be non-negative and monotonically increasing. This field is mutually exclusive with <code>"RepetitionTime"</code> and <code>"DelayTime"</code>. If defined, this requires acquisition time (TA) be defined via either <code>"SliceTiming"</code> or <code>"AcquisitionDuration"</code> be defined.</td>
+</tr>
+<tr>
+<td align="left">TaskName</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Name of the task. No two tasks should have the same name. The task label included in the file name is derived from this <code>"TaskName"</code> field by removing all non-alphanumeric (<code>[a-zA-Z0-9]</code>) characters. For example <code>"TaskName"</code> <code>"faces n-back"</code> will correspond to task label <code>facesnback</code>.  A RECOMMENDED convention is to name resting state task using labels beginning with <code>rest</code>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>For the fields described above and in the following section, the term “Volume”
 refers to a reconstruction of the object being imaged (for example, brain or part of a
 brain). In case of multiple channels in a coil, the term “Volume” refers to a
@@ -1214,7 +1734,51 @@ combined image rather than an image from each coil.</p>
 <h3>Other RECOMMENDED metadata<a class="headerlink" href="#other-recommended-metadata" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
 <h4>Timing Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NumberOfVolumesDiscardedByScanner</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">integer</a></td>
+<td align="left">Number of volumes ("dummy scans") discarded by the scanner (as opposed to those discarded by the user post hoc) before saving the imaging file. For example, a sequence that automatically discards the first 4 volumes before saving would have this field as 4. A sequence that does not discard dummy scans would have this set to 0. Please note that the onsets recorded in the <code>events.tsv</code> file should always refer to the beginning of the acquisition of the first volume in the corresponding imaging file - independent of the value of <code>"NumberOfVolumesDiscardedByScanner"</code> field.  <br><br>Must be a number greater than or equal to 0.</td>
+</tr>
+<tr>
+<td align="left">NumberOfVolumesDiscardedByUser</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">integer</a></td>
+<td align="left">Number of volumes ("dummy scans") discarded by the user before including the file in the dataset. If possible, including all of the volumes is strongly recommended. Please note that the onsets recorded in the <code>events.tsv</code> file should always refer to the beginning of the acquisition of the first volume in the corresponding imaging file - independent of the value of <code>"NumberOfVolumesDiscardedByUser"</code> field.  <br><br>Must be a number greater than or equal to 0.</td>
+</tr>
+<tr>
+<td align="left">DelayTime</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">User specified time (in seconds) to delay the acquisition of data for the following volume. If the field is not present it is assumed to be set to zero. Corresponds to Siemens CSA header field <code>lDelayTimeInTR</code>. This field is REQUIRED for sparse sequences using the <code>"RepetitionTime"</code> field that do not have the <code>"SliceTiming"</code> field set to allowed for accurate calculation of "acquisition time". This field is mutually exclusive with <code>"VolumeTiming"</code>.</td>
+</tr>
+<tr>
+<td align="left">AcquisitionDuration</td>
+<td align="left">RECOMMENDED, but REQUIRED for sequences that are described with the <code>VolumeTiming</code> field and that do not have the <code>SliceTiming</code> field set to allow for accurate calculation of "acquisition time"</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Duration (in seconds) of volume acquisition. Corresponds to DICOM Tag 0018, 9073 <code>Acquisition Duration</code>. This field is mutually exclusive with <code>"RepetitionTime"</code>.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">DelayAfterTrigger</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Duration (in seconds) from trigger delivery to scan onset. This delay is commonly caused by adjustments and loading times. This specification is entirely independent of <code>"NumberOfVolumesDiscardedByScanner"</code> or <code>"NumberOfVolumesDiscardedByUser"</code>, as the delay precedes the acquisition.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>The following table recapitulates the different ways that specific fields have
 to be populated for functional sequences. Note that all these options can be
 used for non sparse sequences but that only options B, D and E are valid for
@@ -1276,7 +1840,45 @@ sparse sequences.</p>
 </div>
 <div class="section" id="fmri-task-information">
 <h4>fMRI task information<a class="headerlink" href="#fmri-task-information" title="Permalink to this headline">¶</a></h4>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Instructions</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Text of the instructions given to participants before the recording.  This is especially important in context of resting state recordings and distinguishing between eyes open and eyes closed paradigms.</td>
+</tr>
+<tr>
+<td align="left">TaskDescription</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Longer description of the task.</td>
+</tr>
+<tr>
+<td align="left">CogAtlasID</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left"><a href="/02-common-principles.html#uniform-resource-indicator">URI</a> of the corresponding <a href="https://www.cognitiveatlas.org/">Cognitive Atlas</a> Task term.</td>
+</tr>
+<tr>
+<td align="left">CogPOID</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left"><a href="/02-common-principles.html#uniform-resource-indicator">URI</a> of the corresponding <a href="http://www.cogpo.org/">CogPO</a> term.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>See <a class="reference external" href="#common-metadata-fields">Common metadata fields</a> for a list of
 additional terms and their definitions.</p>
 <p>Example:</p>
@@ -1397,7 +1999,27 @@ Because researchers will generally optimize the data splits, these will likely
 not be able to be directly concatenated.
 BIDS permits defining arbitrary groupings of these multipart scans with the
 following metadata:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">MultipartID</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">A unique (per participant) label tagging DWI runs that are part of a multipart scan.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>JSON example:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;MultipartID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dwi_1&quot;</span><span class="w"></span>
@@ -1510,23 +2132,271 @@ Additionally, some common metadata fields are REQUIRED for the <code class="docu
 See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#summary-image-of-the-most-common-asl-sequences">Appendix XII - ASL</a> for more information on the most common ASL sequences.</p>
 <div class="section" id="common-metadata-fields-applicable-to-both-p-casl-and-pasl">
 <h4>Common metadata fields applicable to both (P)CASL and PASL<a class="headerlink" href="#common-metadata-fields-applicable-to-both-p-casl-and-pasl" title="Permalink to this headline">¶</a></h4>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ArterialSpinLabelingType</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The arterial spin labeling type.  <br><br>Must be one of: <code>"CASL"</code>, <code>"PCASL"</code>, <code>"PASL"</code>.</td>
+</tr>
+<tr>
+<td align="left">PostLabelingDelay</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">This is the postlabeling delay (PLD) time, in seconds, after the end of the labeling (for <code>"CASL"</code> or <code>"PCASL"</code>) or middle of the labeling pulse (for <code>"PASL"</code>) until the middle of the excitation pulse applied to the imaging slab (for 3D acquisition) or first slice (for 2D acquisition). Can be a number (for a single-PLD time series) or an array of numbers (for multi-PLD and Look-Locker). In the latter case, the array of numbers contains the PLD of each volume, namely each <code>control</code> and <code>label</code>, in the acquisition order. Any image within the time-series without a PLD, for example an <code>m0scan</code>, is indicated by a zero. Based on DICOM Tags 0018, 9079 <code>Inversion Times</code> and 0018, 0082 <code>InversionTime</code>.</td>
+</tr>
+<tr>
+<td align="left">BackgroundSuppression</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean indicating if background suppression is used.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">M0Type</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Describes the presence of M0 information. <code>"Separate"</code> means that a separate <code>*_m0scan.nii[.gz]</code> is present. <code>"Included"</code> means that an m0scan volume is contained within the current <code>*_asl.nii[.gz]</code>. <code>"Estimate"</code> means that a single whole-brain M0 value is provided. <code>"Absent"</code> means that no specific M0 information is present.  <br><br>Must be one of: <code>"Separate"</code>, <code>"Included"</code>, <code>"Estimate"</code>, <code>"Absent"</code>.</td>
+</tr>
+<tr>
+<td align="left">TotalAcquiredPairs</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The total number of acquired <code>control</code>-<code>label</code> pairs. A single pair consists of a single <code>control</code> and a single <code>label</code> image.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">VascularCrushing</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean indicating if Vascular Crushing is used. Corresponds to DICOM Tag 0018, 9259 <code>ASL Crusher Flag</code>.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">AcquisitionVoxelSize</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">An array of numbers with a length of 3, in millimeters. This parameter denotes the original acquisition voxel size, excluding any inter-slice gaps and before any interpolation or resampling within reconstruction or image processing. Any point spread function effects, for example due to T2-blurring, that would decrease the effective resolution are not considered here.</td>
+</tr>
+<tr>
+<td align="left">M0Estimate</td>
+<td align="left">OPTIONAL, but REQUIRED when <code>M0Type</code> is defined as <code>Estimate</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">A single numerical whole-brain M0 value (referring to the M0 of blood), only if obtained externally (for example retrieved from CSF in a separate measurement).  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">BackgroundSuppressionNumberPulses</td>
+<td align="left">OPTIONAL, RECOMMENDED if <code>BackgroundSuppression</code> is <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The number of background suppression pulses used. Note that this excludes any effect of background suppression pulses applied before the labeling.  <br><br>Must be a number greater than or equal to 0.</td>
+</tr>
+<tr>
+<td align="left">BackgroundSuppressionPulseTime</td>
+<td align="left">OPTIONAL, RECOMMENDED if <code>BackgroundSuppression</code> is <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">Array of numbers containing timing, in seconds, of the background suppression pulses with respect to the start of the labeling. In case of multi-PLD with different background suppression pulse times, only the pulse time of the first PLD should be defined.</td>
+</tr>
+<tr>
+<td align="left">VascularCrushingVENC</td>
+<td align="left">OPTIONAL, RECOMMENDED if <code>VascularCrushing</code> is <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">The crusher gradient strength, in centimeters per second. Specify either one number for the total time-series, or provide an array of numbers, for example when using QUASAR, using the value zero to identify volumes for which <code>VascularCrushing</code> was turned off. Corresponds to DICOM Tag 0018, 925A <code>ASL Crusher Flow Limit</code>.</td>
+</tr>
+<tr>
+<td align="left">LabelingOrientation</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">Orientation of the labeling plane (<code>(P)CASL</code>) or slab (<code>PASL</code>). The direction cosines of a normal vector perpendicular to the ASL labeling slab or plane with respect to the patient. Corresponds to DICOM Tag 0018, 9255 <code>ASL Slab Orientation</code>.</td>
+</tr>
+<tr>
+<td align="left">LabelingDistance</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Distance from the center of the imaging slab to the center of the labeling plane (<code>(P)CASL</code>) or the leading edge of the labeling slab (<code>PASL</code>), in millimeters. If the labeling is performed inferior to the isocenter, this number should be negative. Based on DICOM macro C.8.13.5.14.</td>
+</tr>
+<tr>
+<td align="left">LabelingLocationDescription</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Description of the location of the labeling plane (<code>"CASL"</code> or <code>"PCASL"</code>) or the labeling slab (<code>"PASL"</code>) that cannot be captured by fields <code>LabelingOrientation</code> or <code>LabelingDistance</code>. May include a link to an anonymized screenshot of the planning of the labeling slab/plane with respect to the imaging slab or slices <code>*_asllabeling.jpg</code>. Based on DICOM macro C.8.13.5.14.</td>
+</tr>
+<tr>
+<td align="left">LookLocker</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean indicating if a Look-Locker readout is used.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">LabelingEfficiency</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Labeling efficiency, specified as a number between zero and one, only if obtained externally (for example phase-contrast based).  <br><br>Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="p-casl-specific-metadata-fields">
 <h4>(P)CASL-specific metadata fields<a class="headerlink" href="#p-casl-specific-metadata-fields" title="Permalink to this headline">¶</a></h4>
 <p>These fields can only be used when <code class="docutils literal notranslate"><span class="pre">ArterialSpinLabelingType</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;CASL&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;PCASL&quot;</span></code>. See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#pcasl-sequence">Appendix XII - ASL</a> for more information on the (P)CASL sequence and the Labeling Pulse fields.</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">LabelingDuration</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">Total duration of the labeling pulse train, in seconds, corresponding to the temporal width of the labeling bolus for <code>"PCASL"</code> or <code>"CASL"</code>. In case all control-label volumes (or deltam or CBF) have the same <code>LabelingDuration</code>, a scalar must be specified. In case the control-label volumes (or deltam or cbf) have a different <code>"LabelingDuration"</code>, an array of numbers must be specified, for which any <code>m0scan</code> in the timeseries has a <code>"LabelingDuration"</code> of zero. In case an array of numbers is provided, its length should be equal to the number of volumes specified in <code>*_aslcontext.tsv</code>. Corresponds to DICOM Tag 0018, 9258 <code>ASL Pulse Train Duration</code>.</td>
+</tr>
+<tr>
+<td align="left">PCASLType</td>
+<td align="left">RECOMMENDED if <code>ArterialSpinLabelingType</code> is <code>"PCASL"</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The type of gradient pulses used in the <code>control</code> condition.  <br><br>Must be one of: <code>"balanced"</code>, <code>"unbalanced"</code>.</td>
+</tr>
+<tr>
+<td align="left">CASLType</td>
+<td align="left">RECOMMENDED if <code>ArterialSpinLabelingType</code> is <code>"CASL"</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Describes if a separate coil is used for labeling.  <br><br>Must be one of: <code>"single-coil"</code>, <code>"double-coil"</code>.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseAverageGradient</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The average labeling gradient, in milliteslas per meter.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseMaximumGradient</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The maximum amplitude of the gradient switched on during the application of the labeling RF pulse(s), in milliteslas per meter.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseAverageB1</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The average B1-field strength of the RF labeling pulses, in microteslas. As an alternative, <code>"LabelingPulseFlipAngle"</code> can be provided.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseDuration</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Duration of the individual labeling pulses, in milliseconds.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseFlipAngle</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The flip angle of a single labeling pulse, in degrees, which can be given as an alternative to <code>"LabelingPulseAverageB1"</code>.  <br><br>Must be a number greater than 0 and less than or equal to 360.</td>
+</tr>
+<tr>
+<td align="left">LabelingPulseInterval</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Delay between the peaks of the individual labeling pulses, in milliseconds.  <br><br>Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="pasl-specific-metadata-fields">
 <h4>PASL-specific metadata fields<a class="headerlink" href="#pasl-specific-metadata-fields" title="Permalink to this headline">¶</a></h4>
 <p>These fields can only be used when <code class="docutils literal notranslate"><span class="pre">ArterialSpinLabelingType</span></code> is <code class="docutils literal notranslate"><span class="pre">PASL</span></code>. See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#pasl-sequence">Appendix XII - ASL</a> for more information on the PASL sequence and the BolusCutOff fields.</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BolusCutOffFlag</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">boolean</a></td>
+<td align="left">Boolean indicating if a bolus cut-off technique is used. Corresponds to DICOM Tag 0018, 925C <code>ASL Bolus Cut-off Flag</code>.  <br><br>Must be one of: <code>"true"</code>, <code>"false"</code>.</td>
+</tr>
+<tr>
+<td align="left">PASLType</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Type of the labeling pulse of the <code>PASL</code> labeling, for example <code>"FAIR"</code>, <code>"EPISTAR"</code>, or <code>"PICORE"</code>.</td>
+</tr>
+<tr>
+<td align="left">LabelingSlabThickness</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">Thickness of the labeling slab in millimeters. For non-selective FAIR a zero is entered. Corresponds to DICOM Tag 0018, 9254 <code>ASL Slab Thickness</code>.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">BolusCutOffDelayTime</td>
+<td align="left">OPTIONAL, REQUIRED if <code>BolusCutOffFlag</code> is <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">Duration between the end of the labeling and the start of the bolus cut-off saturation pulse(s), in seconds. This can be a number or array of numbers, of which the values must be non-negative and monotonically increasing, depending on the number of bolus cut-off saturation pulses. For Q2TIPS, only the values for the first and last bolus cut-off saturation pulses are provided. Based on DICOM Tag 0018, 925F <code>ASL Bolus Cut-off Delay Time</code>.</td>
+</tr>
+<tr>
+<td align="left">BolusCutOffTechnique</td>
+<td align="left">OPTIONAL, REQUIRED if <code>BolusCutOffFlag</code> is <code>true</code></td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Name of the technique used, for example <code>"Q2TIPS"</code>, <code>"QUIPSS"</code>, <code>"QUIPSSII"</code>. Corresponds to DICOM Tag 0018, 925E <code>ASL Bolus Cut-off Technique</code>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="m0scan-metadata-fields">
 <h3><code class="docutils literal notranslate"><span class="pre">m0scan</span></code> metadata fields<a class="headerlink" href="#m0scan-metadata-fields" title="Permalink to this headline">¶</a></h3>
 <p>Some common metadata fields are REQUIRED for the <code class="docutils literal notranslate"><span class="pre">*_m0scan.json</span></code>: <code class="docutils literal notranslate"><span class="pre">EchoTime</span></code>, <code class="docutils literal notranslate"><span class="pre">RepetitionTimePreparation</span></code>, and <code class="docutils literal notranslate"><span class="pre">FlipAngle</span></code> in case <code class="docutils literal notranslate"><span class="pre">LookLocker</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">IntendedFor</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">The paths to files for which the associated file is intended to be used. Contains one or more filenames with paths relative to the participant subdirectory. Paths need to use forward slashes instead of backward slashes, regardless of operating system.  This is used to refer to the ASL time series for which the <code>*_m0scan.nii[.gz]</code> is intended.</td>
+</tr>
+<tr>
+<td align="left">AcquisitionVoxelSize</td>
+<td align="left">RECOMMENDED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">numbers</a></td>
+<td align="left">An array of numbers with a length of 3, in millimeters. This parameter denotes the original acquisition voxel size, excluding any inter-slice gaps and before any interpolation or resampling within reconstruction or image processing. Any point spread function effects, for example due to T2-blurring, that would decrease the effective resolution are not considered here.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>The following table recapitulates the ASL field dependencies. If Source field (column 1) contains the Value specified in column 2, then the Requirements in column 4 are
 imposed on the Dependent fields in column 3. See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#flowchart-based-on-dependency-table">Appendix XII</a> for this information in the
 form of flowcharts.</p>
@@ -1639,7 +2509,27 @@ tools that support older datasets.</p>
 <h4>Using <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> metadata<a class="headerlink" href="#using-intendedfor-metadata" title="Permalink to this headline">¶</a></h4>
 <p>Fieldmap data MAY be linked to the specific scan(s) it was acquired for by
 filling the <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> field in the corresponding JSON file.</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">IntendedFor</td>
+<td align="left">OPTIONAL</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> or <a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
+<td align="left">The paths to files for which the associated file is intended to be used. Contains one or more filenames with paths relative to the participant subdirectory. Paths need to use forward slashes instead of backward slashes, regardless of operating system.  This field is OPTIONAL, and in case the fieldmaps do not correspond to any particular scans, it does not have to be filled.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>For example:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">   </span><span class="nt">&quot;IntendedFor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -1667,7 +2557,33 @@ the REQUIRED <code class="docutils literal notranslate"><span class="pre">_phase
 the REQUIRED <code class="docutils literal notranslate"><span class="pre">_magnitude1</span></code> image corresponds to the shorter echo time, and
 the OPTIONAL <code class="docutils literal notranslate"><span class="pre">_magnitude2</span></code> image to the longer echo time.</p>
 <p>Required fields:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">EchoTime1</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The time (in seconds) when the first (shorter) echo occurs.  <br><br>Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td align="left">EchoTime2</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The time (in seconds) when the second (longer) echo occurs.  <br><br>Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>In this particular case, the sidecar JSON file
 <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;[_ses-&lt;label&gt;][_acq-&lt;label&gt;][_run-&lt;index&gt;]_phasediff.json</span></code>
 MUST define the time of two echos used to map the phase and finally calculate
@@ -1687,7 +2603,27 @@ For example:</p>
 separate phase images and two magnitude images corresponding to first and
 second echos are available.</p>
 <p>Required fields:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">EchoTime</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">The time (in seconds) when the echo corresponding to this map was acquired.  <br><br>Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>Each phase map has a corresponding sidecar JSON file to specify its corresponding <code class="docutils literal notranslate"><span class="pre">EchoTime</span></code>.
 For example, <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;[_ses-&lt;label&gt;][_acq-&lt;label&gt;][_run-&lt;index&gt;]_phase2.json</span></code> may read:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -1702,7 +2638,27 @@ For example, <code class="docutils literal notranslate"><span class="pre">sub-&l
 <p>In some cases (for example GE), the scanner software will directly reconstruct a
 <em>B<sub>0</sub></em> field map along with a magnitude image used for anatomical reference.</p>
 <p>Required fields:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Units</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">Measurement units for the associated file. SI units in CMIXF formatting are RECOMMENDED (see <a href="/02-common-principles.html#units">Units</a>).  Fieldmaps must be in units of Hertz (<code>"Hz"</code>), radians per second (<code>"rad/s"</code>), or Tesla (<code>"T"</code>).</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>For example:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">   </span><span class="nt">&quot;Units&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rad/s&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1734,7 +2690,33 @@ This key-value pair MUST be used in addition to
 the REQUIRED <code class="docutils literal notranslate"><span class="pre">PhaseEncodingDirection</span></code> metadata field
 (see <a class="reference external" href="../02-common-principles.md#file-name-structure">File name structure</a>).</p>
 <p>Required fields:</p>
-<p></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left"><strong>Key name</strong></th>
+<th align="left"><strong>Requirement Level</strong></th>
+<th align="left"><strong>Data type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PhaseEncodingDirection</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
+<td align="left">The letters <code>i</code>, <code>j</code>, <code>k</code> correspond to the first, second and third axis of the data in the NIFTI file. The polarity of the phase encoding is assumed to go from zero index to maximum index unless <code>-</code> sign is present (then the order is reversed - starting from the highest index instead of zero). <code>PhaseEncodingDirection</code> is defined as the direction along which phase is was modulated which may result in visible distortions. Note that this is not the same as the DICOM term <code>InPlanePhaseEncodingDirection</code> which can have <code>ROW</code> or <code>COL</code> values.  <br><br>Must be one of: <code>"i"</code>, <code>"j"</code>, <code>"k"</code>, <code>"i-"</code>, <code>"j-"</code>, <code>"k-"</code>.</td>
+</tr>
+<tr>
+<td align="left">TotalReadoutTime</td>
+<td align="left">REQUIRED</td>
+<td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">number</a></td>
+<td align="left">This is actually the "effective" total readout time, defined as the readout duration, specified in seconds, that would have generated data with the given level of distortion. It is NOT the actual, physical duration of the readout train. If <code>"EffectiveEchoSpacing"</code> has been properly computed, it is just <code>EffectiveEchoSpacing * (ReconMatrixPE - 1)</code>.</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 <p>For example:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">   </span><span class="nt">&quot;PhaseEncodingDirection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;j-&quot;</span><span class="p">,</span><span class="w"></span>

@@ -13,6 +13,19 @@ kernelspec:
 
 # Magnetic Resonance Imaging
 
+```{code-cell} ipython3
+:tags: [remove-cell]
+
+from myst_nb import glue
+from IPython.display import display, Markdown, HTML
+from schemacode import render, schema, utils
+from markdown import markdown
+
+# Load the schema path
+schemapath = utils.get_schema_path()
+schema_obj = schema.load_schema(schemapath)
+```
+
 ## Common metadata fields
 
 MR Data described in the following sections share the following RECOMMENDED metadata
@@ -25,29 +38,30 @@ by Ben Inglis.
 
 ### Scanner Hardware
 
-{{ MACROS___make_metadata_table(
-   {
-      "Manufacturer": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0070 `Manufacturer`."),
-      "ManufacturersModelName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1090 `Manufacturers Model Name`."),
-      "DeviceSerialNumber": ("RECOMMENDED", "Corresponds to DICOM Tag 0018, 1000 `DeviceSerialNumber`."),
-      "StationName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1010 `Station Name`."),
-      "SoftwareVersions": ("RECOMMENDED", "Corresponds to DICOM Tag 0018, 1020 `Software Versions`."),
-      "HardcopyDeviceSoftwareVersion": "DEPRECATED",
-      "MagneticFieldStrength": "RECOMMENDED, but REQUIRED for Arterial Spin Labeling",
-      "ReceiveCoilName": "RECOMMENDED",
-      "ReceiveCoilActiveElements": (
-         "RECOMMENDED",
-         "See an example below the table.",
-      ),
-      "GradientSetType": "RECOMMENDED",
-      "MRTransmitCoilSequence": "RECOMMENDED",
-      "MatrixCoilMode": "RECOMMENDED",
-      "CoilCombinationMethod": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "Manufacturer": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0070 `Manufacturer`."),
+   "ManufacturersModelName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1090 `Manufacturers Model Name`."),
+   "DeviceSerialNumber": ("RECOMMENDED", "Corresponds to DICOM Tag 0018, 1000 `DeviceSerialNumber`."),
+   "StationName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1010 `Station Name`."),
+   "SoftwareVersions": ("RECOMMENDED", "Corresponds to DICOM Tag 0018, 1020 `Software Versions`."),
+   "HardcopyDeviceSoftwareVersion": "DEPRECATED",
+   "MagneticFieldStrength": "RECOMMENDED, but REQUIRED for Arterial Spin Labeling",
+   "ReceiveCoilName": "RECOMMENDED",
+   "ReceiveCoilActiveElements": (
+      "RECOMMENDED",
+      "See an example below the table.",
+   ),
+   "GradientSetType": "RECOMMENDED",
+   "MRTransmitCoilSequence": "RECOMMENDED",
+   "MatrixCoilMode": "RECOMMENDED",
+   "CoilCombinationMethod": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 Example for `ReceiveCoilActiveElements`:
@@ -67,66 +81,68 @@ that a given scan was collected with the intended coil elements selected
 
 ### Sequence Specifics
 
-{{ MACROS___make_metadata_table(
-   {
-      "PulseSequenceType": "RECOMMENDED",
-      "ScanningSequence": "RECOMMENDED",
-      "SequenceVariant": "RECOMMENDED",
-      "ScanOptions": "RECOMMENDED",
-      "SequenceName": "RECOMMENDED",
-      "PulseSequenceDetails": "RECOMMENDED",
-      "NonlinearGradientCorrection": "RECOMMENDED, but REQUIRED if [PET](./09-positron-emission-tomography.md) data are present",
-      "MRAcquisitionType": "RECOMMENDED, but REQUIRED for Arterial Spin Labeling",
-      "MTState": "RECOMMENDED",
-      "MTOffsetFrequency": "RECOMMENDED if the MTstate is `True`.",
-      "MTPulseBandwidth": "RECOMMENDED if the MTstate is `True`.",
-      "MTNumberOfPulses": "RECOMMENDED if the MTstate is `True`.",
-      "MTPulseShape": "RECOMMENDED if the MTstate is `True`.",
-      "MTPulseDuration": "RECOMMENDED if the MTstate is `True`.",
-      "SpoilingState": "RECOMMENDED",
-      "SpoilingType": "RECOMMENDED if the SpoilingState is `True`.",
-      "SpoilingRFPhaseIncrement": 'RECOMMENDED if the SpoilingType is `"RF"` or `"COMBINED"`.',
-      "SpoilingGradientMoment": 'RECOMMENDED if the SpoilingType is `"GRADIENT"` or `"COMBINED"`.',
-      "SpoilingGradientDuration": 'RECOMMENDED if the SpoilingType is `"GRADIENT"` or `"COMBINED"`.',
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "PulseSequenceType": "RECOMMENDED",
+   "ScanningSequence": "RECOMMENDED",
+   "SequenceVariant": "RECOMMENDED",
+   "ScanOptions": "RECOMMENDED",
+   "SequenceName": "RECOMMENDED",
+   "PulseSequenceDetails": "RECOMMENDED",
+   "NonlinearGradientCorrection": "RECOMMENDED, but REQUIRED if [PET](./09-positron-emission-tomography.md) data are present",
+   "MRAcquisitionType": "RECOMMENDED, but REQUIRED for Arterial Spin Labeling",
+   "MTState": "RECOMMENDED",
+   "MTOffsetFrequency": "RECOMMENDED if the MTstate is `True`.",
+   "MTPulseBandwidth": "RECOMMENDED if the MTstate is `True`.",
+   "MTNumberOfPulses": "RECOMMENDED if the MTstate is `True`.",
+   "MTPulseShape": "RECOMMENDED if the MTstate is `True`.",
+   "MTPulseDuration": "RECOMMENDED if the MTstate is `True`.",
+   "SpoilingState": "RECOMMENDED",
+   "SpoilingType": "RECOMMENDED if the SpoilingState is `True`.",
+   "SpoilingRFPhaseIncrement": 'RECOMMENDED if the SpoilingType is `"RF"` or `"COMBINED"`.',
+   "SpoilingGradientMoment": 'RECOMMENDED if the SpoilingType is `"GRADIENT"` or `"COMBINED"`.',
+   "SpoilingGradientDuration": 'RECOMMENDED if the SpoilingType is `"GRADIENT"` or `"COMBINED"`.',
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### In-Plane Spatial Encoding
 
-{{ MACROS___make_metadata_table(
-   {
-      "NumberShots": "RECOMMENDED",
-      "ParallelReductionFactorInPlane": "RECOMMENDED",
-      "ParallelAcquisitionTechnique": "RECOMMENDED",
-      "PartialFourier": "RECOMMENDED",
-      "PartialFourierDirection": "RECOMMENDED",
-      "PhaseEncodingDirection": (
-         "RECOMMENDED",
-         "This parameter is REQUIRED if corresponding fieldmap data is present "
-         "or when using multiple runs with different phase encoding directions "
-         "(which can be later used for field inhomogeneity correction).",
-      ),
-      "EffectiveEchoSpacing": (
-         "RECOMMENDED",
-         "<sup>2</sup> This parameter is REQUIRED if corresponding fieldmap data is present.",
-      ),
-      "TotalReadoutTime": (
-         "RECOMMENDED",
-         "<sup>3</sup> This parameter is REQUIRED if corresponding 'field/distortion' maps "
-         "acquired with opposing phase encoding directions are present "
-         "(see [Case 4: Multiple phase encoded "
-         "directions](#case-4-multiple-phase-encoded-directions-pepolar)).",
-      ),
-      "MixingTime": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "NumberShots": "RECOMMENDED",
+   "ParallelReductionFactorInPlane": "RECOMMENDED",
+   "ParallelAcquisitionTechnique": "RECOMMENDED",
+   "PartialFourier": "RECOMMENDED",
+   "PartialFourierDirection": "RECOMMENDED",
+   "PhaseEncodingDirection": (
+      "RECOMMENDED",
+      "This parameter is REQUIRED if corresponding fieldmap data is present "
+      "or when using multiple runs with different phase encoding directions "
+      "(which can be later used for field inhomogeneity correction).",
+   ),
+   "EffectiveEchoSpacing": (
+      "RECOMMENDED",
+      "<sup>2</sup> This parameter is REQUIRED if corresponding fieldmap data is present.",
+   ),
+   "TotalReadoutTime": (
+      "RECOMMENDED",
+      "<sup>3</sup> This parameter is REQUIRED if corresponding 'field/distortion' maps "
+      "acquired with opposing phase encoding directions are present "
+      "(see [Case 4: Multiple phase encoded "
+      "directions](#case-4-multiple-phase-encoded-directions-pepolar)).",
+   ),
+   "MixingTime": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 <sup>2</sup>Conveniently, for Siemens data, this value is easily obtained as
@@ -142,57 +158,61 @@ and the center of the last "effective" echo, sometimes called the "FSL definitio
 
 ### Timing Parameters
 
-{{ MACROS___make_metadata_table(
-   {
-      "EchoTime": "RECOMMENDED, but REQUIRED if corresponding fieldmap data is present, or the data comes from a multi echo sequence or Arterial Spin Labeling",
-      "InversionTime": "RECOMMENDED",
-      "SliceTiming": "RECOMMENDED, but REQUIRED for sparse sequences that do not have the `DelayTime` field set, and Arterial Spin Labeling with `MRAcquisitionType` set on `2D`.",
-      "SliceEncodingDirection": "RECOMMENDED",
-      "DwellTime": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "EchoTime": "RECOMMENDED, but REQUIRED if corresponding fieldmap data is present, or the data comes from a multi echo sequence or Arterial Spin Labeling",
+   "InversionTime": "RECOMMENDED",
+   "SliceTiming": "RECOMMENDED, but REQUIRED for sparse sequences that do not have the `DelayTime` field set, and Arterial Spin Labeling with `MRAcquisitionType` set on `2D`.",
+   "SliceEncodingDirection": "RECOMMENDED",
+   "DwellTime": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### RF & Contrast
 
-{{ MACROS___make_metadata_table(
-   {
-      "FlipAngle": "RECOMMENDED, but REQUIRED if `LookLocker` is set `true`",
-      "NegativeContrast": "OPTIONAL",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "FlipAngle": "RECOMMENDED, but REQUIRED if `LookLocker` is set `true`",
+   "NegativeContrast": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### Slice Acceleration
 
-{{ MACROS___make_metadata_table(
-   {
-      "MultibandAccelerationFactor": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "MultibandAccelerationFactor": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### Anatomical landmarks
 
 Useful for multimodal co-registration with MEG, (S)EEG, TMS, and so on.
 
-{{ MACROS___make_metadata_table(
-   {
-      "AnatomicalLandmarkCoordinates__mri": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "AnatomicalLandmarkCoordinates__mri": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### Echo-Planar Imaging and *B<sub>0</sub>* mapping
@@ -209,29 +229,31 @@ The modality labels `dwi` (under `dwi/`), `bold` (under `func/`),
 any modality under `fmap/` are allowed to encode the MR protocol intent for
 fieldmap estimation using the following metadata:
 
-{{ MACROS___make_metadata_table(
-   {
-      "B0FieldIdentifier": "RECOMMENDED",
-      "B0FieldSource": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "B0FieldIdentifier": "RECOMMENDED",
+   "B0FieldSource": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### Institution information
 
-{{ MACROS___make_metadata_table(
-   {
-      "InstitutionName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0080 `InstitutionName`."),
-      "InstitutionAddress": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0081 `InstitutionAddress`."),
-      "InstitutionalDepartmentName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1040 `Institutional Department Name`.")
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "InstitutionName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0080 `InstitutionName`."),
+   "InstitutionAddress": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 0081 `InstitutionAddress`."),
+   "InstitutionalDepartmentName": ("RECOMMENDED", "Corresponds to DICOM Tag 0008, 1040 `Institutional Department Name`.")
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 When adding additional metadata please use the CamelCase version of
@@ -305,16 +327,17 @@ JSON file. See [Common metadata fields](#common-metadata-fields) for a
 list of terms and their definitions. There are also some OPTIONAL JSON
 fields specific to anatomical scans:
 
-{{ MACROS___make_metadata_table(
-   {
-      "ContrastBolusIngredient": "OPTIONAL",
-      "RepetitionTimeExcitation": "OPTIONAL",
-      "RepetitionTimePreparation": "OPTIONAL",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "ContrastBolusIngredient": "OPTIONAL",
+   "RepetitionTimeExcitation": "OPTIONAL",
+   "RepetitionTimePreparation": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 The [`part-<label>`](../99-appendices/09-entities.md#part) key/value pair is
@@ -531,16 +554,17 @@ JSON file.
 
 ### Required fields
 
-{{ MACROS___make_metadata_table(
-   {
-      "RepetitionTime": "REQUIRED",
-      "VolumeTiming": "REQUIRED",
-      "TaskName": ("REQUIRED", "A RECOMMENDED convention is to name resting state task using labels beginning with `rest`.")
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "RepetitionTime": "REQUIRED",
+   "VolumeTiming": "REQUIRED",
+   "TaskName": ("REQUIRED", "A RECOMMENDED convention is to name resting state task using labels beginning with `rest`.")
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 For the fields described above and in the following section, the term "Volume"
@@ -552,18 +576,19 @@ combined image rather than an image from each coil.
 
 #### Timing Parameters
 
-{{ MACROS___make_metadata_table(
-   {
-      "NumberOfVolumesDiscardedByScanner": "RECOMMENDED",
-      "NumberOfVolumesDiscardedByUser": "RECOMMENDED",
-      "DelayTime": "RECOMMENDED",
-      "AcquisitionDuration": 'RECOMMENDED, but REQUIRED for sequences that are described with the `VolumeTiming` field and that do not have the `SliceTiming` field set to allow for accurate calculation of "acquisition time"',
-      "DelayAfterTrigger": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "NumberOfVolumesDiscardedByScanner": "RECOMMENDED",
+   "NumberOfVolumesDiscardedByUser": "RECOMMENDED",
+   "DelayTime": "RECOMMENDED",
+   "AcquisitionDuration": 'RECOMMENDED, but REQUIRED for sequences that are described with the `VolumeTiming` field and that do not have the `SliceTiming` field set to allow for accurate calculation of "acquisition time"',
+   "DelayAfterTrigger": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 The following table recapitulates the different ways that specific fields have
@@ -587,17 +612,18 @@ sparse sequences.
 
 #### fMRI task information
 
-{{ MACROS___make_metadata_table(
-   {
-      "Instructions": ("RECOMMENDED", "This is especially important in context of resting state recordings and distinguishing between eyes open and eyes closed paradigms."),
-      "TaskDescription": "RECOMMENDED",
-      "CogAtlasID": "RECOMMENDED",
-      "CogPOID": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "Instructions": ("RECOMMENDED", "This is especially important in context of resting state recordings and distinguishing between eyes open and eyes closed paradigms."),
+   "TaskDescription": "RECOMMENDED",
+   "CogAtlasID": "RECOMMENDED",
+   "CogPOID": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 See [Common metadata fields](#common-metadata-fields) for a list of
@@ -753,14 +779,15 @@ not be able to be directly concatenated.
 BIDS permits defining arbitrary groupings of these multipart scans with the
 following metadata:
 
-{{ MACROS___make_metadata_table(
-   {
-      "MultipartID": "REQUIRED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "MultipartID": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 JSON example:
@@ -919,87 +946,91 @@ See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#summary-i
 
 #### Common metadata fields applicable to both (P)CASL and PASL
 
-{{ MACROS___make_metadata_table(
-   {
-      "ArterialSpinLabelingType": "REQUIRED",
-      "PostLabelingDelay": "REQUIRED",
-      "BackgroundSuppression": "REQUIRED",
-      "M0Type": "REQUIRED",
-      "TotalAcquiredPairs": "REQUIRED",
-      "VascularCrushing": "RECOMMENDED",
-      "AcquisitionVoxelSize": "RECOMMENDED",
-      "M0Estimate": "OPTIONAL, but REQUIRED when `M0Type` is defined as `Estimate`",
-      "BackgroundSuppressionNumberPulses": "OPTIONAL, RECOMMENDED if `BackgroundSuppression` is `true`",
-      "BackgroundSuppressionPulseTime": "OPTIONAL, RECOMMENDED if `BackgroundSuppression` is `true`",
-      "VascularCrushingVENC": "OPTIONAL, RECOMMENDED if `VascularCrushing` is `true`",
-      "LabelingOrientation": "RECOMMENDED",
-      "LabelingDistance": "RECOMMENDED",
-      "LabelingLocationDescription": "RECOMMENDED",
-      "LookLocker": "OPTIONAL",
-      "LabelingEfficiency": "OPTIONAL",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "ArterialSpinLabelingType": "REQUIRED",
+   "PostLabelingDelay": "REQUIRED",
+   "BackgroundSuppression": "REQUIRED",
+   "M0Type": "REQUIRED",
+   "TotalAcquiredPairs": "REQUIRED",
+   "VascularCrushing": "RECOMMENDED",
+   "AcquisitionVoxelSize": "RECOMMENDED",
+   "M0Estimate": "OPTIONAL, but REQUIRED when `M0Type` is defined as `Estimate`",
+   "BackgroundSuppressionNumberPulses": "OPTIONAL, RECOMMENDED if `BackgroundSuppression` is `true`",
+   "BackgroundSuppressionPulseTime": "OPTIONAL, RECOMMENDED if `BackgroundSuppression` is `true`",
+   "VascularCrushingVENC": "OPTIONAL, RECOMMENDED if `VascularCrushing` is `true`",
+   "LabelingOrientation": "RECOMMENDED",
+   "LabelingDistance": "RECOMMENDED",
+   "LabelingLocationDescription": "RECOMMENDED",
+   "LookLocker": "OPTIONAL",
+   "LabelingEfficiency": "OPTIONAL",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 #### (P)CASL-specific metadata fields
 
 These fields can only be used when `ArterialSpinLabelingType` is `"CASL"` or `"PCASL"`. See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#pcasl-sequence) for more information on the (P)CASL sequence and the Labeling Pulse fields.
 
-{{ MACROS___make_metadata_table(
-   {
-      "LabelingDuration": "REQUIRED",
-      "PCASLType": 'RECOMMENDED if `ArterialSpinLabelingType` is `"PCASL"`',
-      "CASLType": 'RECOMMENDED if `ArterialSpinLabelingType` is `"CASL"`',
-      "LabelingPulseAverageGradient": "RECOMMENDED",
-      "LabelingPulseMaximumGradient": "RECOMMENDED",
-      "LabelingPulseAverageB1": "RECOMMENDED",
-      "LabelingPulseDuration": "RECOMMENDED",
-      "LabelingPulseFlipAngle": "RECOMMENDED",
-      "LabelingPulseInterval": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "LabelingDuration": "REQUIRED",
+   "PCASLType": 'RECOMMENDED if `ArterialSpinLabelingType` is `"PCASL"`',
+   "CASLType": 'RECOMMENDED if `ArterialSpinLabelingType` is `"CASL"`',
+   "LabelingPulseAverageGradient": "RECOMMENDED",
+   "LabelingPulseMaximumGradient": "RECOMMENDED",
+   "LabelingPulseAverageB1": "RECOMMENDED",
+   "LabelingPulseDuration": "RECOMMENDED",
+   "LabelingPulseFlipAngle": "RECOMMENDED",
+   "LabelingPulseInterval": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 #### PASL-specific metadata fields
 
 These fields can only be used when `ArterialSpinLabelingType` is `PASL`. See [Appendix XII - ASL](../99-appendices/12-arterial-spin-labeling.md#pasl-sequence) for more information on the PASL sequence and the BolusCutOff fields.
 
-{{ MACROS___make_metadata_table(
-   {
-      "BolusCutOffFlag": "REQUIRED",
-      "PASLType": "RECOMMENDED",
-      "LabelingSlabThickness": "RECOMMENDED",
-      "BolusCutOffDelayTime": "OPTIONAL, REQUIRED if `BolusCutOffFlag` is `true`",
-      "BolusCutOffTechnique": "OPTIONAL, REQUIRED if `BolusCutOffFlag` is `true`",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "BolusCutOffFlag": "REQUIRED",
+   "PASLType": "RECOMMENDED",
+   "LabelingSlabThickness": "RECOMMENDED",
+   "BolusCutOffDelayTime": "OPTIONAL, REQUIRED if `BolusCutOffFlag` is `true`",
+   "BolusCutOffTechnique": "OPTIONAL, REQUIRED if `BolusCutOffFlag` is `true`",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 ### `m0scan` metadata fields
 
 Some common metadata fields are REQUIRED for the `*_m0scan.json`: `EchoTime`, `RepetitionTimePreparation`, and `FlipAngle` in case `LookLocker` is `true`.
 
-{{ MACROS___make_metadata_table(
-   {
-      "IntendedFor": (
-         "REQUIRED",
-         "This is used to refer to the ASL time series for which the `*_m0scan.nii[.gz]` is intended."
-      ),
-      "AcquisitionVoxelSize": "RECOMMENDED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "IntendedFor": (
+      "REQUIRED",
+      "This is used to refer to the ASL time series for which the `*_m0scan.nii[.gz]` is intended."
+   ),
+   "AcquisitionVoxelSize": "RECOMMENDED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 The following table recapitulates the ASL field dependencies. If Source field (column 1) contains the Value specified in column 2, then the Requirements in column 4 are
@@ -1082,18 +1113,19 @@ tools that support older datasets.
 Fieldmap data MAY be linked to the specific scan(s) it was acquired for by
 filling the `IntendedFor` field in the corresponding JSON file.
 
-{{ MACROS___make_metadata_table(
-   {
-      "IntendedFor": (
-         "OPTIONAL",
-         "This field is OPTIONAL, and in case the fieldmaps do not correspond "
-         "to any particular scans, it does not have to be filled.",
-      ),
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "IntendedFor": (
+      "OPTIONAL",
+      "This field is OPTIONAL, and in case the fieldmaps do not correspond "
+      "to any particular scans, it does not have to be filled.",
+   ),
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 For example:
@@ -1127,15 +1159,16 @@ the OPTIONAL `_magnitude2` image to the longer echo time.
 
 Required fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "EchoTime1": "REQUIRED",
-      "EchoTime2": "REQUIRED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "EchoTime1": "REQUIRED",
+   "EchoTime2": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 In this particular case, the sidecar JSON file
@@ -1162,14 +1195,15 @@ second echos are available.
 
 Required fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "EchoTime__fmap": "REQUIRED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "EchoTime__fmap": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 Each phase map has a corresponding sidecar JSON file to specify its corresponding `EchoTime`.
@@ -1190,18 +1224,19 @@ In some cases (for example GE), the scanner software will directly reconstruct a
 
 Required fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "Units": (
-         "REQUIRED",
-         'Fieldmaps must be in units of Hertz (`"Hz"`), '
-         'radians per second (`"rad/s"`), or Tesla (`"T"`).',
-      ),
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "Units": (
+      "REQUIRED",
+      'Fieldmaps must be in units of Hertz (`"Hz"`), '
+      'radians per second (`"rad/s"`), or Tesla (`"T"`).',
+   ),
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 For example:
@@ -1242,15 +1277,16 @@ the REQUIRED `PhaseEncodingDirection` metadata field
 
 Required fields:
 
-{{ MACROS___make_metadata_table(
-   {
-      "PhaseEncodingDirection": "REQUIRED",
-      "TotalReadoutTime": "REQUIRED",
-   }
-) }}
-
 ```{code-cell} ipython3
 :tags: [remove-input]
+
+field_info = {
+   "PhaseEncodingDirection": "REQUIRED",
+   "TotalReadoutTime": "REQUIRED",
+}
+
+table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 
 For example:
