@@ -40,7 +40,6 @@ The file `dataset_description.json` is a JSON file describing the dataset.
 Every dataset MUST include this file with the following fields:
 
 ```{code-cell} ipython3
-:tags: [remove-input]
 
 field_info = {
     "Name": "REQUIRED",
@@ -60,7 +59,35 @@ field_info = {
 }
 
 table = render.make_metadata_table(schema_obj, field_info)
+```
+
+try markdown
+
+```{code-cell} ipython3
 display(Markdown(table.to_markdown()))
+```
+
+glue the dataframe
+
+```{code-cell} ipython3
+from myst_nb import glue
+
+glue("table", table)
+```
+
+post the glued dataframe
+
+```{glue:figure} table
+:name: "tbl:table"
+:align: center
+
+A table!
+```
+
+try html
+
+```{code-cell} ipython3
+display(HTML(table.to_html()))
 ```
 
 Each object in the `GeneratedBy` array includes the following REQUIRED, RECOMMENDED
