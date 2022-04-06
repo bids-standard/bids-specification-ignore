@@ -543,21 +543,905 @@ while entity definitions are in <a class="reference internal" href="09-entities.
 -->
 <div class="section" id="magnetic-resonance-imaging">
 <h2>Magnetic Resonance Imaging<a class="headerlink" href="#magnetic-resonance-imaging" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Task</th>
+<th align="left">Acquisition</th>
+<th align="left">Contrast Enhancing Agent</th>
+<th align="left">Reconstruction</th>
+<th align="left">Phase-Encoding Direction</th>
+<th align="left">Run</th>
+<th align="left">Corresponding Modality</th>
+<th align="left">Echo</th>
+<th align="left">Flip Angle</th>
+<th align="left">Inversion Time</th>
+<th align="left">Magnetization Transfer</th>
+<th align="left">Part</th>
+<th align="left">Recording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#task"><code>task-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#acq"><code>acq-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ce"><code>ce-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#rec"><code>rec-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#dir"><code>dir-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#mod"><code>mod-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#echo"><code>echo-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#flip"><code>flip-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#inv"><code>inv-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#mt"><code>mt-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#part"><code>part-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#recording"><code>recording-&lt;label&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">anat<br>(T1w T2w PDw T2starw FLAIR inplaneT1 inplaneT2 PDT2 angio T2star FLASH PD)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(T1map T2map T2starmap R1map R2map R2starmap PDmap MTRmap MTsat UNIT1 T1rho MWFmap MTVmap PDT2map Chimap S0map M0map)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(defacemask)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(MESE MEGRE)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(VFA)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(IRT1)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(MP2RAGE)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(MPM MTS)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">anat<br>(MTR)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">dwi<br>(dwi sbref)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">dwi<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+</tr>
+<tr>
+<td align="left">fmap<br>(phasediff phase1 phase2 magnitude1 magnitude2 magnitude fieldmap)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(epi m0scan)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(TB1DAM)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(TB1EPI)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(TB1AFI TB1TFL TB1RFM RB1COR)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(TB1SRGE)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">fmap<br>(TB1map RB1map)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">func<br>(bold cbv sbref)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">func<br>(phase)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">func<br>(events)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">func<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+</tr>
+<tr>
+<td align="left">perf<br>(asl aslcontext m0scan)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">perf<br>(asllabeling)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">perf<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="biopotential-amplification-eeg-and-ieeg">
 <h2>Biopotential Amplification (EEG and iEEG)<a class="headerlink" href="#biopotential-amplification-eeg-and-ieeg" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Task</th>
+<th align="left">Acquisition</th>
+<th align="left">Run</th>
+<th align="left">Space</th>
+<th align="left">Recording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#task"><code>task-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#acq"><code>acq-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#space"><code>space-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#recording"><code>recording-&lt;label&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">eeg<br>(coordsystem electrodes)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">eeg<br>(channels eeg events)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">eeg<br>(photo)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">eeg<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+</tr>
+<tr>
+<td align="left">ieeg<br>(coordsystem electrodes)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">ieeg<br>(channels events ieeg)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">ieeg<br>(photo)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">ieeg<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="magnetoencephalography-meg">
 <h2>Magnetoencephalography (MEG)<a class="headerlink" href="#magnetoencephalography-meg" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Task</th>
+<th align="left">Acquisition</th>
+<th align="left">Run</th>
+<th align="left">Processed (on device)</th>
+<th align="left">Space</th>
+<th align="left">Split</th>
+<th align="left">Recording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#task"><code>task-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#acq"><code>acq-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#proc"><code>proc-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#space"><code>space-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#split"><code>split-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#recording"><code>recording-&lt;label&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">meg<br>(meg)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(meg)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">REQUIRED</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(markers)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(channels)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(events)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(coordsystem headshape photo)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">meg<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OPTIONAL</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="positron-emission-tomography-pet">
 <h2>Positron Emission Tomography (PET)<a class="headerlink" href="#positron-emission-tomography-pet" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Task</th>
+<th align="left">Tracer</th>
+<th align="left">Reconstruction</th>
+<th align="left">Run</th>
+<th align="left">Recording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#task"><code>task-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#trc"><code>trc-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#rec"><code>rec-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#recording"><code>recording-&lt;label&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">pet<br>(pet)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">pet<br>(blood)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+</tr>
+<tr>
+<td align="left">pet<br>(events)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">pet<br>(physio stim)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="behavioral-data">
 <h2>Behavioral Data<a class="headerlink" href="#behavioral-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Task</th>
+<th align="left">Acquisition</th>
+<th align="left">Run</th>
+<th align="left">Recording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#task"><code>task-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#acq"><code>acq-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#recording"><code>recording-&lt;label&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">beh<br>(stim physio)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+</tr>
+<tr>
+<td align="left">beh<br>(events beh)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 <div class="section" id="microscopy">
 <h2>Microscopy<a class="headerlink" href="#microscopy" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Subject</th>
+<th align="left">Session</th>
+<th align="left">Sample</th>
+<th align="left">Acquisition</th>
+<th align="left">Stain</th>
+<th align="left">Run</th>
+<th align="left">Chunk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Format</td>
+<td align="left"><a href="09-entities.md#sub"><code>sub-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#ses"><code>ses-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#sample"><code>sample-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#acq"><code>acq-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#stain"><code>stain-&lt;label&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#run"><code>run-&lt;index&gt;</code></a></td>
+<td align="left"><a href="09-entities.md#chunk"><code>chunk-&lt;index&gt;</code></a></td>
+</tr>
+<tr>
+<td align="left">micr<br>(TEM SEM uCT BF DF PC DIC FLUO CONF PLI CARS 2PE MPE SR NLO OCT SPIM)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+<td align="left">OPTIONAL</td>
+</tr>
+<tr>
+<td align="left">micr<br>(photo)</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left">REQUIRED</td>
+<td align="left">OPTIONAL</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table></div></div>
+</div>
 </div>
 </div>
 
