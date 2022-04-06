@@ -2,4 +2,4 @@ jupyter-book
 matplotlib
 numpy
 sphinx-hoverxref
-../tools/schemacode/
+tools/schemacode/
