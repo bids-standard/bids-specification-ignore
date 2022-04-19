@@ -652,85 +652,85 @@ Every dataset MUST include this file with the following fields:</p>
 </thead>
 <tbody>
 <tr>
-<td align="left">Name</td>
+<td align="left">{term}<code>Name (metadata)</code></td>
 <td align="left">REQUIRED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">Name of the dataset.</td>
 </tr>
 <tr>
-<td align="left">BIDSVersion</td>
+<td align="left">{term}<code>BIDSVersion (metadata)</code></td>
 <td align="left">REQUIRED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">The version of the BIDS standard that was used.</td>
 </tr>
 <tr>
-<td align="left">HEDVersion</td>
+<td align="left">{term}<code>HEDVersion (metadata)</code></td>
 <td align="left">RECOMMENDED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">If HED tags are used: The version of the HED schema used to validate HED tags for study.</td>
 </tr>
 <tr>
-<td align="left">DatasetType</td>
+<td align="left">{term}<code>DatasetType (metadata)</code></td>
 <td align="left">RECOMMENDED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">The interpretation of the dataset. For backwards compatibility, the default value is <code>"raw"</code>.  <br><br>Must be one of: <code>"raw"</code>, <code>"derivative"</code>.</td>
 </tr>
 <tr>
-<td align="left">License</td>
+<td align="left">{term}<code>License (metadata)</code></td>
 <td align="left">RECOMMENDED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">The license for the dataset. The use of license name abbreviations is RECOMMENDED for specifying a license (see <a href="/99-appendices/02-licenses.html">Appendix II</a>). The corresponding full license text MAY be specified in an additional <code>LICENSE</code> file.</td>
 </tr>
 <tr>
-<td align="left">Authors</td>
+<td align="left">{term}<code>Authors (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
 <td align="left">List of individuals who contributed to the creation/curation of the dataset.</td>
 </tr>
 <tr>
-<td align="left">Acknowledgements</td>
+<td align="left">{term}<code>Acknowledgements (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">Text acknowledging contributions of individuals or institutions beyond those listed in Authors or Funding.</td>
 </tr>
 <tr>
-<td align="left">HowToAcknowledge</td>
+<td align="left">{term}<code>HowToAcknowledge (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">Text containing instructions on how researchers using this dataset should acknowledge the original authors. This field can also be used to define a publication that should be cited in publications that use the dataset.</td>
 </tr>
 <tr>
-<td align="left">Funding</td>
+<td align="left">{term}<code>Funding (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
 <td align="left">List of sources of funding (grant numbers).</td>
 </tr>
 <tr>
-<td align="left">EthicsApprovals</td>
+<td align="left">{term}<code>EthicsApprovals (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
 <td align="left">List of ethics committee approvals of the research protocols and/or protocol identifiers.</td>
 </tr>
 <tr>
-<td align="left">ReferencesAndLinks</td>
+<td align="left">{term}<code>ReferencesAndLinks (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.w3schools.com/js/js_json_datatypes.asp">strings</a></td>
 <td align="left">List of references to publications that contain information on the dataset. A reference may be textual or a <a href="/02-common-principles.html#uniform-resource-indicator">URI</a>.</td>
 </tr>
 <tr>
-<td align="left">DatasetDOI</td>
+<td align="left">{term}<code>DatasetDOI (metadata)</code></td>
 <td align="left">OPTIONAL</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a></td>
 <td align="left">The Digital Object Identifier of the dataset (not the corresponding paper). DOIs SHOULD be expressed as a valid <a href="/02-common-principles.html#uniform-resource-indicator">URI</a>; bare DOIs such as <code>10.0.2.3/dfjj.10</code> are <a href="/02-common-principles.html#definitions">DEPRECATED</a>.</td>
 </tr>
 <tr>
-<td align="left">GeneratedBy</td>
+<td align="left">{term}<code>GeneratedBy (metadata)</code></td>
 <td align="left">RECOMMENDED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.json.org/json-en.html">objects</a></td>
 <td align="left">Used to specify provenance of the dataset.</td>
 </tr>
 <tr>
-<td align="left">SourceDatasets</td>
+<td align="left">{term}<code>SourceDatasets (metadata)</code></td>
 <td align="left">RECOMMENDED</td>
 <td align="left"><a href="https://www.w3schools.com/js/js_json_arrays.asp">array</a> of <a href="https://www.json.org/json-en.html">objects</a></td>
 <td align="left">Used to specify the locations and relevant attributes of all source datasets. Valid keys in each object include <code>"URL"</code>, <code>"DOI"</code> (see <a href="/02-common-principles.html#uniform-resource-indicator">URI</a>), and <code>"Version"</code> with <a href="https://www.w3schools.com/js/js_json_datatypes.asp">string</a> values.</td>
