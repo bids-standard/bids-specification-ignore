@@ -41,6 +41,16 @@ by Ben Inglis.
 (magnetic-resonance-imaging:common-metadata-fields:scanner-hardware)=
 ### Scanner Hardware
 
+{term}`Manufacturer (metadata)`
+
+```{code-cell} ipython3
+display(Markdown("{term}`Manufacturer (metadata)`"))
+```
+
+```{code-cell} ipython3
+display("{term}`Manufacturer (metadata)`")
+```
+
 ```{code-cell} ipython3
 :tags: [remove-input]
 
@@ -64,6 +74,10 @@ field_info = {
 }
 
 table = render.make_metadata_table(schema_obj, field_info)
+display(HTML(utils.fix(markdown(table.to_markdown(), extensions=['tables']))))
+```
+
+```{code-cell} ipython3
 display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
 ```
 

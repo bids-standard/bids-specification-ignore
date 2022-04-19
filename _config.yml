@@ -52,3 +52,14 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     bibtex_default_style: unsrt
+    nb_render_priority:
+      html:
+      - "application/vnd.jupyter.widget-view+json"
+      - "application/javascript"
+      - "text/markdown"
+      - "text/html"
+      - "image/svg+xml"
+      - "image/png"
+      - "image/jpeg"
+      - "text/latex"
+      - "text/plain"

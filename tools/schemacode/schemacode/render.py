@@ -34,7 +34,14 @@ def make_entity_definitions(schema):
     entity_order = schema["rules"]["entities"]
     entity_definitions = schema["objects"]["entities"]
 
-    text = ""
+    text = "# Appendix IX: Entities"
+    text += "\n\n"
+    text += "This section compiles the entities (key-value pairs) described throughout this specification, and describes each."
+    text += "\n\n"
+    text += "A general introduction to entities is given in the section on [filename structure](../02-common-principles.md#file-name-structure)."
+    text += "\n\n"
+    text += "The ordering of entities, and whether each is OPTIONAL, REQUIRED, or MUST NOT be specified for a given file type, is specified in the [Entity Table](04-entity-table.md)."
+
     for entity in entity_order:
         entity_info = entity_definitions[entity]
         entity_shorthand = entity_info["entity"]
@@ -53,6 +60,7 @@ def make_entity_definitions(schema):
             text += "\n\n"
 
         text += "Definition: {}".format(entity_info["description"])
+
     return text
 
 
@@ -607,9 +615,17 @@ def make_metadata_table(schema, field_info, tablefmt="github"):
 
         df.loc[field_name] = [requirement_info, type_string, description]
 
+    index_names = df.index.tolist()
+    index_mapper = {index_name: _link_to_glossary(index_name, "metadata") for index_name in index_names}
+    df.index = df.index.map(index_mapper)
+
     # Print it as markdown
     table_str = tabulate(df, headers="keys", tablefmt=tablefmt)
     return df
+
+
+def _link_to_glossary(string, term_type):
+    return "{term}`" + string + " (" + term_type + ")`"
 
 
 def make_columns_table(schema, column_info, tablefmt="github"):
