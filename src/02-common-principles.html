@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Common principles &#8212; The Brain Imaging Data Standard</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   The Brain Imaging Data Structure
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    The Brain Imaging Data Structure
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The BIDS Specification
  </span>
@@ -331,110 +346,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/src/02-common-principles.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/src/02-common-principles.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/02-common-principles.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/02-common-principles.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/02-common-principles.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/02-common-principles.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/src/02-common-principles.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/src/02-common-principles.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions">
    Definitions
@@ -545,12 +676,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Common principles</h1>
@@ -677,13 +807,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="common-principles">
-<h1>Common principles<a class="headerlink" href="#common-principles" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="common-principles">
+<h1>Common principles<a class="headerlink" href="#common-principles" title="Permalink to this headline">#</a></h1>
+<section id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h2>
 <p>The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
 “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
 interpreted as described in [<a class="reference external" href="https://www.ietf.org/rfc/rfc2119.txt">RFC2119</a>].</p>
@@ -798,9 +929,9 @@ It remains in the standard in order to preserve the interpretability of existing
 Validating software SHOULD warn when deprecated practices are detected and provide a
 suggestion for updating the dataset to preserve the curator’s intent.</p></li>
 </ol>
-</div>
-<div class="section" id="compulsory-optional-and-additional-data-and-metadata">
-<h2>Compulsory, optional, and additional data and metadata<a class="headerlink" href="#compulsory-optional-and-additional-data-and-metadata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compulsory-optional-and-additional-data-and-metadata">
+<h2>Compulsory, optional, and additional data and metadata<a class="headerlink" href="#compulsory-optional-and-additional-data-and-metadata" title="Permalink to this headline">#</a></h2>
 <p>The following standard describes a way of arranging data and writing down
 metadata for a subset of neuroimaging experiments. Some aspects of the standard
 are compulsory. For example a particular filename format is required when
@@ -816,9 +947,9 @@ continuous recording file with the same naming scheme but different extensions.
 The solutions will change from case to case and publicly available datasets will
 be reviewed to include common data types in the future releases of the BIDS
 specification.</p>
-</div>
-<div class="section" id="file-name-structure">
-<h2>File name structure<a class="headerlink" href="#file-name-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="file-name-structure">
+<h2>File name structure<a class="headerlink" href="#file-name-structure" title="Permalink to this headline">#</a></h2>
 <p>A filename consists of a chain of <em>entities</em>, or key-value pairs, a <em>suffix</em> and an
 <em>extension</em>.
 Two prominent examples of entities are <code class="docutils literal notranslate"><span class="pre">subject</span></code> and <code class="docutils literal notranslate"><span class="pre">session</span></code>.</p>
@@ -859,8 +990,8 @@ but the file’s <code class="docutils literal notranslate"><span class="pre">Ph
 <p>A summary of all entities in BIDS and the order in which they MUST be
 specified is available in the <a class="reference internal" href="99-appendices/04-entity-table.html"><span class="doc std std-doc">entity table</span></a>
 in the appendix.</p>
-<div class="section" id="entity-linked-file-collections">
-<h3>Entity-linked file collections<a class="headerlink" href="#entity-linked-file-collections" title="Permalink to this headline">¶</a></h3>
+<section id="entity-linked-file-collections">
+<h3>Entity-linked file collections<a class="headerlink" href="#entity-linked-file-collections" title="Permalink to this headline">#</a></h3>
 <p>An entity-linked file collection is a set of files that are related to each other
 based on a repetitive acquisition of sequential data
 by changing acquisition parameters one (or multiple) at a time
@@ -880,19 +1011,19 @@ although certain suffixes are exclusive for this purpose (for example, <code cla
 Use cases concerning this convention are compiled in the
 <a class="reference internal" href="99-appendices/10-file-collections.html"><span class="doc std std-doc">file collections</span></a> appendix.
 This convention is mainly intended for but not limited to MRI modalities.</p>
-</div>
-<div class="section" id="case-collision-intolerance">
-<h3>Case collision intolerance<a class="headerlink" href="#case-collision-intolerance" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="case-collision-intolerance">
+<h3>Case collision intolerance<a class="headerlink" href="#case-collision-intolerance" title="Permalink to this headline">#</a></h3>
 <p>File name components are case sensitive,
 but collisions MUST be avoided when casing is ignored.
 For example, a dataset cannot contain both <code class="docutils literal notranslate"><span class="pre">sub-s1</span></code> and <code class="docutils literal notranslate"><span class="pre">sub-S1</span></code>,
 as the labels would collide on a case-insensitive filesystem.
 Additionally, because the suffix <code class="docutils literal notranslate"><span class="pre">eeg</span></code> is defined,
 then the suffix <code class="docutils literal notranslate"><span class="pre">EEG</span></code> will not be added to future versions of the standard.</p>
-</div>
-</div>
-<div class="section" id="source-vs-raw-vs-derived-data">
-<h2>Source vs. raw vs. derived data<a class="headerlink" href="#source-vs-raw-vs-derived-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="source-vs-raw-vs-derived-data">
+<h2>Source vs. raw vs. derived data<a class="headerlink" href="#source-vs-raw-vs-derived-data" title="Permalink to this headline">#</a></h2>
 <p>BIDS was originally designed to describe and apply consistent naming conventions
 to raw (unprocessed or minimally processed due to file format conversion) data.
 During analysis such data will be transformed and partial as well as final results
@@ -942,8 +1073,8 @@ field in <code class="docutils literal notranslate"><span class="pre">dataset_de
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="section" id="storage-of-derived-datasets">
-<h3>Storage of derived datasets<a class="headerlink" href="#storage-of-derived-datasets" title="Permalink to this headline">¶</a></h3>
+<section id="storage-of-derived-datasets">
+<h3>Storage of derived datasets<a class="headerlink" href="#storage-of-derived-datasets" title="Permalink to this headline">#</a></h3>
 <p>Derivatives can be stored/distributed in two ways:</p>
 <ol>
 <li><p>Under a <code class="docutils literal notranslate"><span class="pre">derivatives/</span></code> subdirectory in the root of the source BIDS dataset
@@ -1004,20 +1135,20 @@ possible (that is, unless explicitly contradicted for derivatives).
 Any subject-specific derivatives should be housed within each subject’s directory;
 if session-specific derivatives are generated, they should be deposited under a
 session subdirectory within the corresponding subject directory; and so on.</p>
-</div>
-<div class="section" id="non-compliant-derivatives">
-<h3>Non-compliant derivatives<a class="headerlink" href="#non-compliant-derivatives" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="non-compliant-derivatives">
+<h3>Non-compliant derivatives<a class="headerlink" href="#non-compliant-derivatives" title="Permalink to this headline">#</a></h3>
 <p>Nothing in this specification should be interpreted to disallow the
 storage/distribution of non-compliant derivatives of BIDS datasets.
 In particular, if a BIDS dataset contains a <code class="docutils literal notranslate"><span class="pre">derivatives/</span></code> subdirectory,
 the contents of that directory may be a heterogeneous mix of BIDS Derivatives
 datasets and non-compliant derivatives.</p>
-</div>
-</div>
-<div class="section" id="file-formation-specification">
-<h2>File Formation specification<a class="headerlink" href="#file-formation-specification" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="imaging-files">
-<h3>Imaging files<a class="headerlink" href="#imaging-files" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="file-formation-specification">
+<h2>File Formation specification<a class="headerlink" href="#file-formation-specification" title="Permalink to this headline">#</a></h2>
+<section id="imaging-files">
+<h3>Imaging files<a class="headerlink" href="#imaging-files" title="Permalink to this headline">#</a></h3>
 <p>All imaging data MUST be stored using the NIfTI file format. We RECOMMEND using
 compressed NIfTI files (.nii.gz), either version 1.0 or 2.0. Imaging data SHOULD
 be converted to the NIfTI format using a tool that provides as much of the NIfTI
@@ -1031,9 +1162,9 @@ and <a class="reference external" href="https://www.mathworks.com/matlabcentral/
 DICOM to NIfTI converters. The <a class="reference external" href="https://github.com/bids-standard/bids-validator">BIDS-validator</a>
 will check for conflicts between the JSON file and the data recorded in the
 NIfTI header.</p>
-</div>
-<div class="section" id="tabular-files">
-<h3>Tabular files<a class="headerlink" href="#tabular-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tabular-files">
+<h3>Tabular files<a class="headerlink" href="#tabular-files" title="Permalink to this headline">#</a></h3>
 <p>Tabular data MUST be saved as tab delimited values (<code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) files, that is, CSV
 files where commas are replaced by tabs. Tabs MUST be true tab characters and
 MUST NOT be a series of space characters. Each TSV file MUST start with a header
@@ -1093,9 +1224,9 @@ of these two fields would be specified for describing a single TSV file column.<
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="key-value-files-dictionaries">
-<h3>Key/value files (dictionaries)<a class="headerlink" href="#key-value-files-dictionaries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="key-value-files-dictionaries">
+<h3>Key/value files (dictionaries)<a class="headerlink" href="#key-value-files-dictionaries" title="Permalink to this headline">#</a></h3>
 <p>JavaScript Object Notation (JSON) files MUST be used for storing key/value
 pairs. JSON files MUST be in UTF-8 encoding. Extensive documentation of the
 format can be found at <a class="reference external" href="https://www.json.org/">https://www.json.org/</a>,
@@ -1132,10 +1263,10 @@ for more information.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="the-inheritance-principle">
-<h2>The Inheritance Principle<a class="headerlink" href="#the-inheritance-principle" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-inheritance-principle">
+<h2>The Inheritance Principle<a class="headerlink" href="#the-inheritance-principle" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Any metadata file (such as <code class="docutils literal notranslate"><span class="pre">.json</span></code>, <code class="docutils literal notranslate"><span class="pre">.bvec</span></code> or <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>) MAY be defined at any directory level.</p></li>
 <li><p>For a given data file, any metadata file is applicable to that data file if:</p>
@@ -1212,9 +1343,9 @@ principle requirements</p>
 <p></p>
 <p>Example 4: Single metadata file applying to multiple data files (corollary 2)</p>
 <p></p>
-</div>
-<div class="section" id="participant-names-and-other-labels">
-<h2>Participant names and other labels<a class="headerlink" href="#participant-names-and-other-labels" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="participant-names-and-other-labels">
+<h2>Participant names and other labels<a class="headerlink" href="#participant-names-and-other-labels" title="Permalink to this headline">#</a></h2>
 <p>BIDS allows for custom user-defined <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>s and <code class="docutils literal notranslate"><span class="pre">&lt;index&gt;</span></code>es for example,
 for naming of participants, sessions, acquisition schemes.
 Note that they MUST consist only of allowed characters as described in
@@ -1227,9 +1358,9 @@ of <code class="docutils literal notranslate"><span class="pre">&lt;index&gt;</s
 it refers to. For example <code class="docutils literal notranslate"><span class="pre">sub-01</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">sub</span></code> entity (a
 subject) with the label <code class="docutils literal notranslate"><span class="pre">01</span></code>. The <code class="docutils literal notranslate"><span class="pre">sub-</span></code> prefix is not part of the subject
 label, but must be included in filenames (similarly to other key names).</p>
-</div>
-<div class="section" id="specification-of-paths">
-<h2>Specification of paths<a class="headerlink" href="#specification-of-paths" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="specification-of-paths">
+<h2>Specification of paths<a class="headerlink" href="#specification-of-paths" title="Permalink to this headline">#</a></h2>
 <p>Several metadata fields in BIDS require the specification of paths,
 that is, a string of characters used to uniquely identify a location in a directory structure.
 For example the <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> or <code class="docutils literal notranslate"><span class="pre">AssociatedEmptyroom</span></code> metadata fields.</p>
@@ -1239,9 +1370,9 @@ regardless of the operating system that a particular dataset is curated on or us
 because these might break when a dataset is used on a different machine.
 It is RECOMMENDED that all paths specified in a BIDS dataset are relative paths,
 as specified in the respective descriptions of metadata fields that require the use of paths.</p>
-</div>
-<div class="section" id="uniform-resource-indicator">
-<h2>Uniform Resource Indicator<a class="headerlink" href="#uniform-resource-indicator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="uniform-resource-indicator">
+<h2>Uniform Resource Indicator<a class="headerlink" href="#uniform-resource-indicator" title="Permalink to this headline">#</a></h2>
 <p>A Uniform Resource Indicator (URI) is a string referring to a resource and SHOULD
 have the form <code class="docutils literal notranslate"><span class="pre">&lt;scheme&gt;:[//&lt;authority&gt;]&lt;path&gt;[?&lt;query&gt;][#&lt;fragment&gt;]</span></code>, as specified
 in <a class="reference external" href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>.
@@ -1254,9 +1385,9 @@ specificity and persistence.</p>
 <p>Several fields are designated for DOIs, for example, <code class="docutils literal notranslate"><span class="pre">DatasetDOI</span></code> in <code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code>.
 DOI values SHOULD be fully specified URIs such as <code class="docutils literal notranslate"><span class="pre">doi:10.18112/openneuro.ds000001.v1.0.0</span></code>.
 Bare DOIs such as <code class="docutils literal notranslate"><span class="pre">10.18112/openneuro.ds000001.v1.0.0</span></code> are <a class="reference external" href="./02-common-principles.md#definitions">DEPRECATED</a>.</p>
-</div>
-<div class="section" id="units">
-<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">#</a></h2>
 <p>All units SHOULD be specified as per <a class="reference external" href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a>
 (abbreviated as SI, from the French Système international (d’unités)) and can
 be SI units or <a class="reference external" href="https://en.wikipedia.org/wiki/SI_derived_unit">SI derived units</a>.
@@ -1327,19 +1458,19 @@ scanning (or first scan in case of multi session datasets). Using higher
 accuracy (weeks) should in general be avoided due to privacy protection,
 unless when appropriate given the study goals, for example, when scanning babies.</p></li>
 </ul>
-</div>
-<div class="section" id="directory-structure">
-<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="single-session-example">
-<h3>Single session example<a class="headerlink" href="#single-session-example" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="directory-structure">
+<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">#</a></h2>
+<section id="single-session-example">
+<h3>Single session example<a class="headerlink" href="#single-session-example" title="Permalink to this headline">#</a></h3>
 <p>This is an example of the directory and file structure. Because there is only one
 session, the session level is not required by the format. For details on
 individual files see descriptions in the next section:</p>
 <p></p>
-</div>
-</div>
-<div class="section" id="unspecified-data">
-<h2>Unspecified data<a class="headerlink" href="#unspecified-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="unspecified-data">
+<h2>Unspecified data<a class="headerlink" href="#unspecified-data" title="Permalink to this headline">#</a></h2>
 <p>Additional files and directories containing raw data MAY be added as needed for
 special cases.
 All non-standard file entities SHOULD conform to BIDS-style naming conventions, including
@@ -1355,8 +1486,8 @@ Validation and parsing tools MAY treat the presence of non-standard files and
 directories as an error, so consult the details of these tools for mechanisms
 to suppress warnings or provide interpretations of your filenames.</p>
 <!-- Link Definitions -->
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1380,9 +1511,11 @@ to suppress warnings or provide interpretations of your filenames.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="01-introduction.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1398,24 +1531,28 @@ to suppress warnings or provide interpretations of your filenames.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The BIDS Community<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The BIDS Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

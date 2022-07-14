@@ -48,6 +48,7 @@ display(Markdown("{term}`Manufacturer (metadata)`"))
 ```
 
 ```{code-cell} ipython3
+:tags: [remove-input]
 display("{term}`Manufacturer (metadata)`")
 ```
 

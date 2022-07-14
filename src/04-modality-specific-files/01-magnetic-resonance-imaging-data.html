@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Magnetic Resonance Imaging &#8212; The Brain Imaging Data Standard</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   The Brain Imaging Data Structure
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    The Brain Imaging Data Structure
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The BIDS Specification
  </span>
@@ -331,110 +346,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/04-modality-specific-files/01-magnetic-resonance-imaging-data.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/04-modality-specific-files/01-magnetic-resonance-imaging-data.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/src/04-modality-specific-files/01-magnetic-resonance-imaging-data.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#common-metadata-fields">
    Common metadata fields
@@ -688,12 +819,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Magnetic Resonance Imaging</h1>
@@ -963,13 +1093,14 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="magnetic-resonance-imaging">
-<span id="id1"></span><h1>Magnetic Resonance Imaging<a class="headerlink" href="#magnetic-resonance-imaging" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="common-metadata-fields">
-<span id="magnetic-resonance-imaging-common-metadata-fields"></span><h2>Common metadata fields<a class="headerlink" href="#common-metadata-fields" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="magnetic-resonance-imaging">
+<span id="id1"></span><h1>Magnetic Resonance Imaging<a class="headerlink" href="#magnetic-resonance-imaging" title="Permalink to this headline">#</a></h1>
+<section id="common-metadata-fields">
+<span id="magnetic-resonance-imaging-common-metadata-fields"></span><h2>Common metadata fields<a class="headerlink" href="#common-metadata-fields" title="Permalink to this headline">#</a></h2>
 <p>MR Data described in the following sections share the following RECOMMENDED metadata
 fields (stored in sidecar JSON files).
 MRI acquisition parameters are divided into several categories based on
@@ -977,8 +1108,8 @@ MRI acquisition parameters are divided into several categories based on
 (<a class="reference external" href="https://winnower-production.s3.amazonaws.com/papers/977/v4/pdf/977-a-checklist-for-fmri-acquisition-methods-reporting-in-the-literature.pdf">article</a>,
 <a class="reference external" href="https://winnower-production.s3.amazonaws.com/papers/977/assets/993e199d-6bc3-4418-be3a-f620af1188b7-Parameter_Reporting_V1p3.pdf">checklist</a>)
 by Ben Inglis.</p>
-<div class="section" id="scanner-hardware">
-<span id="magnetic-resonance-imaging-common-metadata-fields-scanner-hardware"></span><h3>Scanner Hardware<a class="headerlink" href="#scanner-hardware" title="Permalink to this headline">¶</a></h3>
+<section id="scanner-hardware">
+<span id="magnetic-resonance-imaging-common-metadata-fields-scanner-hardware"></span><h3>Scanner Hardware<a class="headerlink" href="#scanner-hardware" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="../99-appendices/14-glossary.html#term-Manufacturer-metadata"><span class="xref std std-term">Manufacturer (metadata)</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,12 +1121,7 @@ by Ben Inglis.</p>
 <p>{term}<code class="docutils literal notranslate"><span class="pre">Manufacturer</span> <span class="pre">(metadata)</span></code></p>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{term}</span><span class="s2">`Manufacturer (metadata)`&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;{term}`Manufacturer (metadata)`&#39;
 </pre></div>
@@ -1206,9 +1332,9 @@ Since individual scans can sometimes not have the intended coil elements selecte
 it is preferable for this field to be populated directly from the DICOM
 for each individual scan, so that it can be used as a mechanism for checking
 that a given scan was collected with the intended coil elements selected</p>
-</div>
-<div class="section" id="sequence-specifics">
-<span id="magnetic-resonance-imaging-common-metadata-fields-sequence-specifics"></span><h3>Sequence Specifics<a class="headerlink" href="#sequence-specifics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sequence-specifics">
+<span id="magnetic-resonance-imaging-common-metadata-fields-sequence-specifics"></span><h3>Sequence Specifics<a class="headerlink" href="#sequence-specifics" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1338,9 +1464,9 @@ that a given scan was collected with the intended coil elements selected</p>
 </tbody>
 </table></div></div>
 </div>
-</div>
-<div class="section" id="in-plane-spatial-encoding">
-<span id="magnetic-resonance-imaging-common-metadata-fields-in-plane-spatial-encoding"></span><h3>In-Plane Spatial Encoding<a class="headerlink" href="#in-plane-spatial-encoding" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-plane-spatial-encoding">
+<span id="magnetic-resonance-imaging-common-metadata-fields-in-plane-spatial-encoding"></span><h3>In-Plane Spatial Encoding<a class="headerlink" href="#in-plane-spatial-encoding" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1419,9 +1545,9 @@ manipulations). See <a class="reference external" href="https://lcni.uoregon.edu
 <a class="reference external" href="https://github.com/neurolabusc/dcm_qa/tree/master/In/TotalReadoutTime">here</a></p>
 <p><sup>3</sup>We use the time between the center of the first “effective” echo
 and the center of the last “effective” echo, sometimes called the “FSL definition”.</p>
-</div>
-<div class="section" id="timing-parameters">
-<span id="magnetic-resonance-imaging-common-metadata-fields-timing-parameters"></span><h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="timing-parameters">
+<span id="magnetic-resonance-imaging-common-metadata-fields-timing-parameters"></span><h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1468,9 +1594,9 @@ and the center of the last “effective” echo, sometimes called the “FSL def
 </table></div></div>
 </div>
 <p>(magnetic-resonance-imaging:common-metadata-fields:rf-&amp;-contrast)=</p>
-</div>
-<div class="section" id="rf-contrast">
-<h3>RF &amp; Contrast<a class="headerlink" href="#rf-contrast" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rf-contrast">
+<h3>RF &amp; Contrast<a class="headerlink" href="#rf-contrast" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1498,9 +1624,9 @@ and the center of the last “effective” echo, sometimes called the “FSL def
 </tbody>
 </table></div></div>
 </div>
-</div>
-<div class="section" id="slice-acceleration">
-<span id="magnetic-resonance-imaging-common-metadata-fields-slice-acceleration"></span><h3>Slice Acceleration<a class="headerlink" href="#slice-acceleration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slice-acceleration">
+<span id="magnetic-resonance-imaging-common-metadata-fields-slice-acceleration"></span><h3>Slice Acceleration<a class="headerlink" href="#slice-acceleration" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1522,9 +1648,9 @@ and the center of the last “effective” echo, sometimes called the “FSL def
 </tbody>
 </table></div></div>
 </div>
-</div>
-<div class="section" id="anatomical-landmarks">
-<span id="magnetic-resonance-imaging-common-metadata-fields-anatomical-landmarks"></span><h3>Anatomical landmarks<a class="headerlink" href="#anatomical-landmarks" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="anatomical-landmarks">
+<span id="magnetic-resonance-imaging-common-metadata-fields-anatomical-landmarks"></span><h3>Anatomical landmarks<a class="headerlink" href="#anatomical-landmarks" title="Permalink to this headline">#</a></h3>
 <p>Useful for multimodal co-registration with MEG, (S)EEG, TMS, and so on.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1547,9 +1673,9 @@ and the center of the last “effective” echo, sometimes called the “FSL def
 </tbody>
 </table></div></div>
 </div>
-</div>
-<div class="section" id="echo-planar-imaging-and-b-sub-0-sub-mapping">
-<span id="magnetic-resonance-imaging-common-metadata-fields-echo-planar-imaging-and-b0-mapping"></span><h3>Echo-Planar Imaging and <em>B<sub>0</sub></em> mapping<a class="headerlink" href="#echo-planar-imaging-and-b-sub-0-sub-mapping" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="echo-planar-imaging-and-b-sub-0-sub-mapping">
+<span id="magnetic-resonance-imaging-common-metadata-fields-echo-planar-imaging-and-b0-mapping"></span><h3>Echo-Planar Imaging and <em>B<sub>0</sub></em> mapping<a class="headerlink" href="#echo-planar-imaging-and-b-sub-0-sub-mapping" title="Permalink to this headline">#</a></h3>
 <p>Echo-Planar Imaging (EPI) schemes typically used in the acquisition of
 diffusion and functional MRI may also be <em>intended for</em> estimating the
 <em>B<sub>0</sub></em> field nonuniformity inside the scanner (in other words,
@@ -1587,9 +1713,9 @@ fieldmap estimation using the following metadata:</p>
 </tbody>
 </table></div></div>
 </div>
-</div>
-<div class="section" id="institution-information">
-<span id="magnetic-resonance-imaging-common-metadata-fields-institution-information"></span><h3>Institution information<a class="headerlink" href="#institution-information" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="institution-information">
+<span id="magnetic-resonance-imaging-common-metadata-fields-institution-information"></span><h3>Institution information<a class="headerlink" href="#institution-information" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1627,10 +1753,10 @@ fieldmap estimation using the following metadata:</p>
 <a class="reference external" href="https://scicrunch.org/scicrunch/interlex/dashboard">DICOM ontology terms</a>
 whenever possible. See also
 <a class="reference external" href="../02-common-principles.md#keyvalue-files-dictionaries">recommendations on JSON files</a>.</p>
-</div>
-</div>
-<div class="section" id="anatomy-imaging-data">
-<span id="magnetic-resonance-imaging-anatomy-imaging-data"></span><h2>Anatomy imaging data<a class="headerlink" href="#anatomy-imaging-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="anatomy-imaging-data">
+<span id="magnetic-resonance-imaging-anatomy-imaging-data"></span><h2>Anatomy imaging data<a class="headerlink" href="#anatomy-imaging-data" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <p>Template:</p>
@@ -1833,8 +1959,8 @@ For any other details on the organization of parametric maps, their
 recommended metadata fields, and the application specific entity or
 metadata requirement levels of <a class="reference internal" href="../99-appendices/10-file-collections.html"><span class="doc std std-doc">file collections</span></a> that can generate
 them, visit the <a class="reference internal" href="../99-appendices/11-qmri.html"><span class="doc std std-doc">qMRI appendix</span></a>.</p>
-<div class="section" id="deprecated-suffixes">
-<span id="magnetic-resonance-imaging-anatomy-imaging-data-deprecated-suffixes"></span><h3>Deprecated suffixes<a class="headerlink" href="#deprecated-suffixes" title="Permalink to this headline">¶</a></h3>
+<section id="deprecated-suffixes">
+<span id="magnetic-resonance-imaging-anatomy-imaging-data-deprecated-suffixes"></span><h3>Deprecated suffixes<a class="headerlink" href="#deprecated-suffixes" title="Permalink to this headline">#</a></h3>
 <p>Some suffixes that were available in versions of the specification prior to
 1.5.0 have been deprecated.
 These suffixes are ambiguous and have been superseded by more precise conventions.
@@ -1843,10 +1969,10 @@ They are, however, still valid suffixes, to maintain backwards compatibility.</p
 <p>The following suffixes are valid, but SHOULD NOT be used for new BIDS compatible
 datasets (created after version 1.5.0.):</p>
 <p></p>
-</div>
-</div>
-<div class="section" id="task-including-resting-state-imaging-data">
-<span id="magnetic-resonance-imaging-task-imaging-data"></span><h2>Task (including resting state) imaging data<a class="headerlink" href="#task-including-resting-state-imaging-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="task-including-resting-state-imaging-data">
+<span id="magnetic-resonance-imaging-task-imaging-data"></span><h2>Task (including resting state) imaging data<a class="headerlink" href="#task-including-resting-state-imaging-data" title="Permalink to this headline">#</a></h2>
 <p>Currently supported image contrasts include:</p>
 <p></p>
 <p>Functional imaging consists of techniques that support rapid temporal repetition.
@@ -1907,8 +2033,8 @@ name with the exception of the <code class="docutils literal notranslate"><span 
 <p></p>
 <p>Some meta information about the acquisition MUST be provided in an additional
 JSON file.</p>
-<div class="section" id="required-fields">
-<span id="magnetic-resonance-imaging-task-imaging-data-required-fields"></span><h3>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
+<section id="required-fields">
+<span id="magnetic-resonance-imaging-task-imaging-data-required-fields"></span><h3>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -1946,11 +2072,11 @@ JSON file.</p>
 refers to a reconstruction of the object being imaged (for example, brain or part of a
 brain). In case of multiple channels in a coil, the term “Volume” refers to a
 combined image rather than an image from each coil.</p>
-</div>
-<div class="section" id="other-recommended-metadata">
-<span id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata"></span><h3>Other RECOMMENDED metadata<a class="headerlink" href="#other-recommended-metadata" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-timing-parameters">
-<span id="id2"></span><h4>Timing Parameters<a class="headerlink" href="#magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-timing-parameters" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="other-recommended-metadata">
+<span id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata"></span><h3>Other RECOMMENDED metadata<a class="headerlink" href="#other-recommended-metadata" title="Permalink to this headline">#</a></h3>
+<section id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-timing-parameters">
+<span id="id2"></span><h4>Timing Parameters<a class="headerlink" href="#magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-timing-parameters" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -2054,9 +2180,9 @@ sparse sequences.</p>
 <li><p>[  ] –&gt; MUST NOT be defined</p></li>
 <li><p>empty cell –&gt; MAY be specified</p></li>
 </ul>
-</div>
-<div class="section" id="fmri-task-information">
-<span id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-fmri-task-information"></span><h4>fMRI task information<a class="headerlink" href="#fmri-task-information" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="fmri-task-information">
+<span id="magnetic-resonance-imaging-task-imaging-data-other-recommended-metadata-fmri-task-information"></span><h4>fMRI task information<a class="headerlink" href="#fmri-task-information" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -2123,11 +2249,11 @@ specified in the
 <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;/func/sub-&lt;label&gt;_task-&lt;label&gt;[_acq-&lt;label&gt;][_run-&lt;index&gt;]_bold.json</span></code> file.
 If both files are specified fields from the file corresponding to a particular
 participant, task and run takes precedence.</p>
-</div>
-</div>
-</div>
-<div class="section" id="diffusion-imaging-data">
-<span id="magnetic-resonance-imaging-diffusion-imaging-data"></span><h2>Diffusion imaging data<a class="headerlink" href="#diffusion-imaging-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="diffusion-imaging-data">
+<span id="magnetic-resonance-imaging-diffusion-imaging-data"></span><h2>Diffusion imaging data<a class="headerlink" href="#diffusion-imaging-data" title="Permalink to this headline">#</a></h2>
 <p>Several <a class="reference external" href="https://github.com/bids-standard/bids-examples">example datasets</a>
 contain diffusion imaging data formatted using this specification
 and that can be used for practical guidance when curating a new dataset:</p>
@@ -2165,8 +2291,8 @@ In such a case, two files could have the following names:
 <code class="docutils literal notranslate"><span class="pre">sub-01_acq-singleband_dwi.nii.gz</span></code> and <code class="docutils literal notranslate"><span class="pre">sub-01_acq-multiband_dwi.nii.gz</span></code>.
 The user is free to choose any other label than <code class="docutils literal notranslate"><span class="pre">singleband</span></code> and
 <code class="docutils literal notranslate"><span class="pre">multiband</span></code>, as long as they are consistent across subjects and sessions.</p>
-<div class="section" id="required-gradient-orientation-information">
-<span id="magnetic-resonance-imaging-diffusion-imaging-data-required-gradient-orientation-information"></span><h3>REQUIRED gradient orientation information<a class="headerlink" href="#required-gradient-orientation-information" title="Permalink to this headline">¶</a></h3>
+<section id="required-gradient-orientation-information">
+<span id="magnetic-resonance-imaging-diffusion-imaging-data-required-gradient-orientation-information"></span><h3>REQUIRED gradient orientation information<a class="headerlink" href="#required-gradient-orientation-information" title="Permalink to this headline">#</a></h3>
 <p>The REQUIRED gradient orientation information corresponding to a DWI acquisition
 MUST be stored using <code class="docutils literal notranslate"><span class="pre">[*_]dwi.bval</span></code> and <code class="docutils literal notranslate"><span class="pre">[*_]dwi.bvec</span></code> pairs of files.
 The <code class="docutils literal notranslate"><span class="pre">[*_]dwi.bval</span></code> and <code class="docutils literal notranslate"><span class="pre">[*_]dwi.bvec</span></code> files MAY be saved on any level of the directory structure
@@ -2203,9 +2329,9 @@ volumes in the relevant NIfTI file), with 0 designating <em>b</em>=0 volumes, sp
 <div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>0 0 2000 2000 1000 1000
 </pre></div>
 </div>
-</div>
-<div class="section" id="multipart-split-dwi-schemes">
-<span id="magnetic-resonance-imaging-diffusion-imaging-data-multipart-dwi-schemes"></span><h3>Multipart (split) DWI schemes<a class="headerlink" href="#multipart-split-dwi-schemes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multipart-split-dwi-schemes">
+<span id="magnetic-resonance-imaging-diffusion-imaging-data-multipart-dwi-schemes"></span><h3>Multipart (split) DWI schemes<a class="headerlink" href="#multipart-split-dwi-schemes" title="Permalink to this headline">#</a></h3>
 <p>Some MR schemes cannot be acquired directly by some scanner devices,
 requiring to generate several DWI runs that were originally meant to belong
 in a single one.
@@ -2257,9 +2383,9 @@ runs instead:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">MultipartID</span></code> metadata MAY be used with the
 <a class="reference external" href="../99-appendices/09-entities.md#acq"><code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code></a> key/value pair, for example:</p>
 <p></p>
-</div>
-<div class="section" id="magnetic-resonance-imaging-diffusion-imaging-data-other-recommended-metadata">
-<span id="id3"></span><h3>Other RECOMMENDED metadata<a class="headerlink" href="#magnetic-resonance-imaging-diffusion-imaging-data-other-recommended-metadata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="magnetic-resonance-imaging-diffusion-imaging-data-other-recommended-metadata">
+<span id="id3"></span><h3>Other RECOMMENDED metadata<a class="headerlink" href="#magnetic-resonance-imaging-diffusion-imaging-data-other-recommended-metadata" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">PhaseEncodingDirection</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalReadoutTime</span></code> metadata
 fields are RECOMMENDED to enable the correction of geometrical distortions
 with <a class="reference external" href="#fieldmap-data">fieldmap information</a>.
@@ -2273,17 +2399,17 @@ additional terms that can be included in the corresponding JSON file.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="arterial-spin-labeling-perfusion-data">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data"></span><h2>Arterial Spin Labeling perfusion data<a class="headerlink" href="#arterial-spin-labeling-perfusion-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="arterial-spin-labeling-perfusion-data">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data"></span><h2>Arterial Spin Labeling perfusion data<a class="headerlink" href="#arterial-spin-labeling-perfusion-data" title="Permalink to this headline">#</a></h2>
 <p>Several <a class="reference external" href="https://github.com/bids-standard/bids-examples#asl-datasets">example ASL datasets</a>
 have been formatted using this specification
 and can be used for practical guidance when curating a new dataset.</p>
 <p>The complete ASL time series should be stored as a 4D NIfTI file in the original acquisition order,
 accompanied by two ancillary files: <code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code> and <code class="docutils literal notranslate"><span class="pre">*_aslcontext.tsv</span></code>.</p>
-<div class="section" id="aslcontext-tsv">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-aslcontext-tsv"></span><h3><code class="docutils literal notranslate"><span class="pre">*_aslcontext.tsv</span></code><a class="headerlink" href="#aslcontext-tsv" title="Permalink to this headline">¶</a></h3>
+<section id="aslcontext-tsv">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-aslcontext-tsv"></span><h3><code class="docutils literal notranslate"><span class="pre">*_aslcontext.tsv</span></code><a class="headerlink" href="#aslcontext-tsv" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">*_aslcontext.tsv</span></code> table consists of a single column of labels identifying the
 <code class="docutils literal notranslate"><span class="pre">volume_type</span></code> of each volume in the corresponding <code class="docutils literal notranslate"><span class="pre">*_asl.nii[.gz]</span></code> file.
 Volume types are defined in the following table, based on DICOM Tag 0018, 9257 <code class="docutils literal notranslate"><span class="pre">ASL</span> <span class="pre">Context</span></code>.
@@ -2323,23 +2449,23 @@ When <code class="docutils literal notranslate"><span class="pre">cbf</span></co
 its units need to be specified in the <code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code> as well.
 Note that the raw images, including the <code class="docutils literal notranslate"><span class="pre">m0scan</span></code>, may also be used for quality control.
 See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#_aslcontexttsv-three-possible-cases">Appendix XII - ASL</a> for examples of the three possible cases, in order of decreasing preference.</p>
-</div>
-<div class="section" id="scaling">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-scaling"></span><h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-scaling"></span><h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">*_asl.nii.gz</span></code> and <code class="docutils literal notranslate"><span class="pre">*_m0scan.nii.gz</span></code> should contain appropriately scaled data, and no additional scaling factors are allowed other than the scale slope in the respective
 NIfTI headers.</p>
-</div>
-<div class="section" id="m0">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-m0"></span><h3>M0<a class="headerlink" href="#m0" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="m0">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-m0"></span><h3>M0<a class="headerlink" href="#m0" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">m0scan</span></code> can either be stored inside the 4D ASL time-series NIfTI file
 or as a separate NIfTI file,
 depending on whether it was acquired within the ASL time-series or as a separate scan.
 These and other M0 options are specified in the REQUIRED <code class="docutils literal notranslate"><span class="pre">M0Type</span></code> field of the <code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code> file.
 It can also be stored under <code class="docutils literal notranslate"><span class="pre">fmap/sub-&lt;label&gt;[_ses-&lt;label&gt;][_acq-&lt;label&gt;][_ce-&lt;label&gt;]_dir-&lt;label&gt;[_run-&lt;index&gt;]_m0scan.nii[.gz]</span></code>,
 when the <a class="reference external" href="#case-4-multiple-phase-encoded-directions-pepolar">pepolar approach</a> is used.</p>
-</div>
-<div class="section" id="asl-json-file">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-asl-json-file"></span><h3><code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code> file<a class="headerlink" href="#asl-json-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="asl-json-file">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-asl-json-file"></span><h3><code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code> file<a class="headerlink" href="#asl-json-file" title="Permalink to this headline">#</a></h3>
 <p>Depending on the method used for ASL acquisition ((P)CASL or PASL)
 different metadata fields are applicable.
 Additionally, some common metadata fields are REQUIRED for the <code class="docutils literal notranslate"><span class="pre">*_asl.json</span></code>:
@@ -2348,8 +2474,8 @@ Additionally, some common metadata fields are REQUIRED for the <code class="docu
 <code class="docutils literal notranslate"><span class="pre">RepetitionTimePreparation</span></code>, and <code class="docutils literal notranslate"><span class="pre">FlipAngle</span></code> in case <code class="docutils literal notranslate"><span class="pre">LookLocker</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#summary-image-of-the-most-common-asl-sequences">Appendix XII - ASL</a> for more information on the most common ASL sequences.</p>
 <p>(magnetic-resonance-imaging:arterial-spin-labeling-perfusion-data:asl.json-file:common-metadata-fields-applicable-to-both-pcasl-and-pasl)=</p>
-<div class="section" id="common-metadata-fields-applicable-to-both-p-casl-and-pasl">
-<h4>Common metadata fields applicable to both (P)CASL and PASL<a class="headerlink" href="#common-metadata-fields-applicable-to-both-p-casl-and-pasl" title="Permalink to this headline">¶</a></h4>
+<section id="common-metadata-fields-applicable-to-both-p-casl-and-pasl">
+<h4>Common metadata fields applicable to both (P)CASL and PASL<a class="headerlink" href="#common-metadata-fields-applicable-to-both-p-casl-and-pasl" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
@@ -2462,9 +2588,9 @@ See <a class="reference external" href="../99-appendices/12-arterial-spin-labeli
 </table></div></div>
 </div>
 <p>(magnetic-resonance-imaging:arterial-spin-labeling-perfusion-data:asl.json-file:pcasl-specific-metadata-fields)=</p>
-</div>
-<div class="section" id="p-casl-specific-metadata-fields">
-<h4>(P)CASL-specific metadata fields<a class="headerlink" href="#p-casl-specific-metadata-fields" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="p-casl-specific-metadata-fields">
+<h4>(P)CASL-specific metadata fields<a class="headerlink" href="#p-casl-specific-metadata-fields" title="Permalink to this headline">#</a></h4>
 <p>These fields can only be used when <code class="docutils literal notranslate"><span class="pre">ArterialSpinLabelingType</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;CASL&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;PCASL&quot;</span></code>. See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#pcasl-sequence">Appendix XII - ASL</a> for more information on the (P)CASL sequence and the Labeling Pulse fields.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2536,9 +2662,9 @@ See <a class="reference external" href="../99-appendices/12-arterial-spin-labeli
 </table></div></div>
 </div>
 <p>(magnetic-resonance-imaging:arterial-spin-labeling-perfusion-data:asl.json-file:pasl-specific-metadata-fields)=</p>
-</div>
-<div class="section" id="pasl-specific-metadata-fields">
-<h4>PASL-specific metadata fields<a class="headerlink" href="#pasl-specific-metadata-fields" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="pasl-specific-metadata-fields">
+<h4>PASL-specific metadata fields<a class="headerlink" href="#pasl-specific-metadata-fields" title="Permalink to this headline">#</a></h4>
 <p>These fields can only be used when <code class="docutils literal notranslate"><span class="pre">ArterialSpinLabelingType</span></code> is <code class="docutils literal notranslate"><span class="pre">PASL</span></code>. See <a class="reference external" href="../99-appendices/12-arterial-spin-labeling.md#pasl-sequence">Appendix XII - ASL</a> for more information on the PASL sequence and the BolusCutOff fields.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2585,10 +2711,10 @@ See <a class="reference external" href="../99-appendices/12-arterial-spin-labeli
 </tbody>
 </table></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="m0scan-metadata-fields">
-<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-m0scan-metadata-fields"></span><h3><code class="docutils literal notranslate"><span class="pre">m0scan</span></code> metadata fields<a class="headerlink" href="#m0scan-metadata-fields" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="m0scan-metadata-fields">
+<span id="magnetic-resonance-imaging-arterial-spin-labeling-perfusion-data-m0scan-metadata-fields"></span><h3><code class="docutils literal notranslate"><span class="pre">m0scan</span></code> metadata fields<a class="headerlink" href="#m0scan-metadata-fields" title="Permalink to this headline">#</a></h3>
 <p>Some common metadata fields are REQUIRED for the <code class="docutils literal notranslate"><span class="pre">*_m0scan.json</span></code>: <code class="docutils literal notranslate"><span class="pre">EchoTime</span></code>, <code class="docutils literal notranslate"><span class="pre">RepetitionTimePreparation</span></code>, and <code class="docutils literal notranslate"><span class="pre">FlipAngle</span></code> in case <code class="docutils literal notranslate"><span class="pre">LookLocker</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -2686,10 +2812,10 @@ form of flowcharts.</p>
 <li><p>[ X ] –&gt; MUST be defined</p></li>
 <li><p>[   ] –&gt; MUST NOT be defined</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="fieldmap-data">
-<span id="magnetic-resonance-imaging-fieldmap-data"></span><h2>Fieldmap data<a class="headerlink" href="#fieldmap-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="fieldmap-data">
+<span id="magnetic-resonance-imaging-fieldmap-data"></span><h2>Fieldmap data<a class="headerlink" href="#fieldmap-data" title="Permalink to this headline">#</a></h2>
 <p>Data acquired to correct for <em>B<sub>0</sub></em> inhomogeneities can come in different forms.
 The current version of this standard considers four different scenarios:</p>
 <ol class="simple">
@@ -2709,14 +2835,14 @@ to distinguish multiple fieldmaps with the same parameters.</p></li>
 <li><p>The OPTIONAL <a class="reference external" href="../99-appendices/09-entities.md#acq"><code class="docutils literal notranslate"><span class="pre">acq-&lt;label&gt;</span></code></a> key/value pair corresponds to a custom label
 the user may use to distinguish different set of parameters.</p></li>
 </ul>
-<div class="section" id="expressing-the-mr-protocol-intent-for-fieldmaps">
-<span id="magnetic-resonance-imaging-fieldmap-data-expressing-the-mr-protocol-intent-for-fieldmaps"></span><h3>Expressing the MR protocol intent for fieldmaps<a class="headerlink" href="#expressing-the-mr-protocol-intent-for-fieldmaps" title="Permalink to this headline">¶</a></h3>
+<section id="expressing-the-mr-protocol-intent-for-fieldmaps">
+<span id="magnetic-resonance-imaging-fieldmap-data-expressing-the-mr-protocol-intent-for-fieldmaps"></span><h3>Expressing the MR protocol intent for fieldmaps<a class="headerlink" href="#expressing-the-mr-protocol-intent-for-fieldmaps" title="Permalink to this headline">#</a></h3>
 <p>Fieldmaps are typically acquired with the purpose of correcting one or more EPI
 scans under <code class="docutils literal notranslate"><span class="pre">dwi/</span></code>, <code class="docutils literal notranslate"><span class="pre">func/</span></code>, or <code class="docutils literal notranslate"><span class="pre">perf/</span></code> for distortions derived from <em>B<sub>0</sub></em>
 nonuniformity.</p>
 <p>(magnetic-resonance-imaging:fieldmap-data:expressing-the-mr-protocol-intent-for-fieldmaps:using-b0fieldidentifier-metadata)=</p>
-<div class="section" id="using-b0fieldidentifier-metadata">
-<h4>Using <code class="docutils literal notranslate"><span class="pre">B0FieldIdentifier</span></code> metadata<a class="headerlink" href="#using-b0fieldidentifier-metadata" title="Permalink to this headline">¶</a></h4>
+<section id="using-b0fieldidentifier-metadata">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">B0FieldIdentifier</span></code> metadata<a class="headerlink" href="#using-b0fieldidentifier-metadata" title="Permalink to this headline">#</a></h4>
 <p>The general purpose <a class="reference external" href="#echo-planar-imaging-and-b0-mapping"><code class="docutils literal notranslate"><span class="pre">B0FieldIdentifier</span></code> MRI metadata</a>
 is RECOMMENDED for the prescription of the <em>B<sub>0</sub></em> field estimation intent of the
 original acquisition protocol.
@@ -2726,9 +2852,9 @@ complex use cases.
 It is RECOMMENDED to use both approaches to maintain compatibility with
 tools that support older datasets.</p>
 <p>(magnetic-resonance-imaging:fieldmap-data:expressing-the-mr-protocol-intent-for-fieldmaps:using-intendedfor-metadata)=</p>
-</div>
-<div class="section" id="using-intendedfor-metadata">
-<h4>Using <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> metadata<a class="headerlink" href="#using-intendedfor-metadata" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-intendedfor-metadata">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> metadata<a class="headerlink" href="#using-intendedfor-metadata" title="Permalink to this headline">#</a></h4>
 <p>Fieldmap data MAY be linked to the specific scan(s) it was acquired for by
 filling the <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> field in the corresponding JSON file.</p>
 <div class="cell tag_remove-input docutils container">
@@ -2761,12 +2887,12 @@ filling the <code class="docutils literal notranslate"><span class="pre">Intende
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="types-of-fieldmaps">
-<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps"></span><h3>Types of fieldmaps<a class="headerlink" href="#types-of-fieldmaps" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="case-1-phase-difference-map-and-at-least-one-magnitude-image">
-<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-1"></span><h4>Case 1: Phase-difference map and at least one magnitude image<a class="headerlink" href="#case-1-phase-difference-map-and-at-least-one-magnitude-image" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="types-of-fieldmaps">
+<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps"></span><h3>Types of fieldmaps<a class="headerlink" href="#types-of-fieldmaps" title="Permalink to this headline">#</a></h3>
+<section id="case-1-phase-difference-map-and-at-least-one-magnitude-image">
+<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-1"></span><h4>Case 1: Phase-difference map and at least one magnitude image<a class="headerlink" href="#case-1-phase-difference-map-and-at-least-one-magnitude-image" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://github.com/bids-standard/bids-examples">Example datasets</a>
 containing that type of fieldmap can be found here:</p>
 <ul class="simple">
@@ -2818,9 +2944,9 @@ For example:</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="case-2-two-phase-maps-and-two-magnitude-images">
-<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-2"></span><h4>Case 2: Two phase maps and two magnitude images<a class="headerlink" href="#case-2-two-phase-maps-and-two-magnitude-images" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="case-2-two-phase-maps-and-two-magnitude-images">
+<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-2"></span><h4>Case 2: Two phase maps and two magnitude images<a class="headerlink" href="#case-2-two-phase-maps-and-two-magnitude-images" title="Permalink to this headline">#</a></h4>
 <p>Similar to case 1, but instead of a precomputed phase-difference map, two
 separate phase images and two magnitude images corresponding to first and
 second echos are available.</p>
@@ -2854,9 +2980,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">sub-&l
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="case-3-direct-field-mapping">
-<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-3"></span><h4>Case 3: Direct <em>field mapping</em><a class="headerlink" href="#case-3-direct-field-mapping" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="case-3-direct-field-mapping">
+<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-3"></span><h4>Case 3: Direct <em>field mapping</em><a class="headerlink" href="#case-3-direct-field-mapping" title="Permalink to this headline">#</a></h4>
 <p>In some cases (for example GE), the scanner software will directly reconstruct a
 <em>B<sub>0</sub></em> field map along with a magnitude image used for anatomical reference.</p>
 <p>Required fields:</p>
@@ -2891,9 +3017,9 @@ For example, <code class="docutils literal notranslate"><span class="pre">sub-&l
 </div>
 <p>See <a class="reference external" href="#using-intendedfor-metadata">Using <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> metadata</a>
 for details on the <code class="docutils literal notranslate"><span class="pre">IntendedFor</span></code> field.</p>
-</div>
-<div class="section" id="case-4-multiple-phase-encoded-directions-pepolar">
-<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-4"></span><h4>Case 4: Multiple phase encoded directions (“pepolar”)<a class="headerlink" href="#case-4-multiple-phase-encoded-directions-pepolar" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="case-4-multiple-phase-encoded-directions-pepolar">
+<span id="magnetic-resonance-imaging-fieldmap-data-types-of-fieldmaps-case-4"></span><h4>Case 4: Multiple phase encoded directions (“pepolar”)<a class="headerlink" href="#case-4-multiple-phase-encoded-directions-pepolar" title="Permalink to this headline">#</a></h4>
 <p>An <a class="reference external" href="https://github.com/bids-standard/bids-examples">example dataset</a>
 containing that type of fieldmap can be found here:</p>
 <ul class="simple">
@@ -2954,10 +3080,10 @@ for details on the <code class="docutils literal notranslate"><span class="pre">
 <a class="reference external" href="#in-plane-spatial-encoding">in-plane spatial encoding</a> metadata keys.
 However, please note that <code class="docutils literal notranslate"><span class="pre">PhaseEncodingDirection</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalReadoutTime</span></code> keys
 are REQUIRED for these field mapping sequences.</p>
-<!-- Link Definitions --></div>
-</div>
-</div>
-</div>
+<!-- Link Definitions --></section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2981,9 +3107,11 @@ are REQUIRED for these field mapping sequences.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../04-modality-specific-files.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2999,24 +3127,28 @@ are REQUIRED for these field mapping sequences.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The BIDS Community<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The BIDS Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

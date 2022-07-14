@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Appendix XI: Quantitative MRI &#8212; The Brain Imaging Data Standard</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   The Brain Imaging Data Structure
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    The Brain Imaging Data Structure
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The BIDS Specification
  </span>
@@ -331,110 +346,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/src/99-appendices/11-qmri.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/99-appendices/11-qmri.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/11-qmri.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/99-appendices/11-qmri.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/99-appendices/11-qmri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/11-qmri.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/src/99-appendices/11-qmri.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/src/99-appendices/11-qmri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#organization-of-qmri-data-in-bids">
    Organization of qMRI data in BIDS
@@ -612,12 +743,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Appendix XI: Quantitative MRI</h1>
@@ -811,11 +941,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-xi-quantitative-mri">
-<h1>Appendix XI: Quantitative MRI<a class="headerlink" href="#appendix-xi-quantitative-mri" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="appendix-xi-quantitative-mri">
+<h1>Appendix XI: Quantitative MRI<a class="headerlink" href="#appendix-xi-quantitative-mri" title="Permalink to this headline">#</a></h1>
 <p>Quantitative MRI (qMRI) is a collection of methods aiming at generating parametric maps
 that can characterize underlying tissue properties.
 Unlike those of conventional MR images (for example, <code class="docutils literal notranslate"><span class="pre">T1w</span></code> or <code class="docutils literal notranslate"><span class="pre">T2w</span></code>),
@@ -824,8 +955,8 @@ Instead, these maps are represented either in absolute physical units
 (for example, <code class="docutils literal notranslate"><span class="pre">seconds</span></code> for <code class="docutils literal notranslate"><span class="pre">T1map</span></code>),
 or within an application dependent range of arbitrary units
 (for example, myelin water fraction <code class="docutils literal notranslate"><span class="pre">MWFmap</span></code> in brain).</p>
-<div class="section" id="organization-of-qmri-data-in-bids">
-<h2>Organization of qMRI data in BIDS<a class="headerlink" href="#organization-of-qmri-data-in-bids" title="Permalink to this headline">¶</a></h2>
+<section id="organization-of-qmri-data-in-bids">
+<h2>Organization of qMRI data in BIDS<a class="headerlink" href="#organization-of-qmri-data-in-bids" title="Permalink to this headline">#</a></h2>
 <p>Unlike conventional MR images, quantitative maps are not immediate products of the image reconstruction step
 (from k-space data to structural images).
 Intensity values of qMRI maps are calculated by fitting a collection of parametrically
@@ -847,8 +978,8 @@ This type of processing is commonly carried out using an open-source software su
 <a class="reference external" href="https://github.com/qmrlab/qmrlab">qMRLab</a>,
 and <a class="reference external" href="https://github.com/spinicist/QUIT">QUIT</a>.</p></li>
 </ol>
-<div class="section" id="inputs-are-file-collections">
-<h3>Inputs are file collections<a class="headerlink" href="#inputs-are-file-collections" title="Permalink to this headline">¶</a></h3>
+<section id="inputs-are-file-collections">
+<h3>Inputs are file collections<a class="headerlink" href="#inputs-are-file-collections" title="Permalink to this headline">#</a></h3>
 <p>The common concept of <a class="reference external" href="../02-common-principles.md#entity-linked-file-collections">entity-linked file collections</a> enables the description of a qMRI
 application by creating logical groups of input files through <code class="docutils literal notranslate"><span class="pre">suffix</span></code> and certain entities
 representing acquisition parameters (<code class="docutils literal notranslate"><span class="pre">echo</span></code>, <code class="docutils literal notranslate"><span class="pre">flip</span></code>, <code class="docutils literal notranslate"><span class="pre">inv</span></code>, <code class="docutils literal notranslate"><span class="pre">mt</span></code>) or file parts (<code class="docutils literal notranslate"><span class="pre">part</span></code>).</p>
@@ -862,9 +993,9 @@ respective file collections of RF fieldmaps are stored in the <code class="docut
 Below is an example file collection for RF transmit field map <code class="docutils literal notranslate"><span class="pre">TB1EPI</span></code>:</p>
 <p></p>
 <p>Please visit the <a class="reference external" href="./10-file-collections.md#magnetic-resonance-imaging">file collections appendix</a> to see the list of currently supported qMRI applications.</p>
-</div>
-<div class="section" id="quantitative-maps-are-derivatives">
-<h3>Quantitative maps are derivatives<a class="headerlink" href="#quantitative-maps-are-derivatives" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="quantitative-maps-are-derivatives">
+<h3>Quantitative maps are derivatives<a class="headerlink" href="#quantitative-maps-are-derivatives" title="Permalink to this headline">#</a></h3>
 <p>Regardless of how they are obtained (pre- or post-generated), qMRI maps are stored in the <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> directory.
 For example a <code class="docutils literal notranslate"><span class="pre">T1map</span></code> can be generated from an <code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code> file collection using either options.</p>
 <p>If the map is post-generated:</p>
@@ -874,22 +1005,22 @@ For example a <code class="docutils literal notranslate"><span class="pre">T1map
 <p>Note: Even though the process from which pre-generated qMRI maps are obtained (vendor pipelines) is not known,
 vendors generally allow exporting of the corresponding input data.
 It is RECOMMENDED to share them along with the vendor outputs, whenever possible for a qMRI method supported by BIDS.</p>
-</div>
-<div class="section" id="example-datasets">
-<h3>Example datasets<a class="headerlink" href="#example-datasets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-datasets">
+<h3>Example datasets<a class="headerlink" href="#example-datasets" title="Permalink to this headline">#</a></h3>
 <p>You can find example file collections and qMRI maps organized according to BIDS
 in the <a class="reference external" href="https://github.com/bids-standard/bids-examples#qmri-datasets">BIDS examples</a>.</p>
-</div>
-</div>
-<div class="section" id="metadata-requirements-for-qmri-data">
-<h2>Metadata requirements for qMRI data<a class="headerlink" href="#metadata-requirements-for-qmri-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="metadata-requirements-for-qmri-data">
+<h2>Metadata requirements for qMRI data<a class="headerlink" href="#metadata-requirements-for-qmri-data" title="Permalink to this headline">#</a></h2>
 <p>The table of required entities for qMRI file collections are provided in the <a class="reference internal" href="04-entity-table.html"><span class="doc std std-doc">entity table</span></a>.
 However, viability of a qMRI file collection is determined not only by the naming and organization of the input files,
 but also by which metadata fields are provided in accompanying json files.</p>
-<div class="section" id="method-specific-priority-levels-for-qmri-file-collections">
-<h3>Method-specific priority levels for qMRI file collections<a class="headerlink" href="#method-specific-priority-levels-for-qmri-file-collections" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="anatomy-imaging-data">
-<h4>Anatomy imaging data<a class="headerlink" href="#anatomy-imaging-data" title="Permalink to this headline">¶</a></h4>
+<section id="method-specific-priority-levels-for-qmri-file-collections">
+<h3>Method-specific priority levels for qMRI file collections<a class="headerlink" href="#method-specific-priority-levels-for-qmri-file-collections" title="Permalink to this headline">#</a></h3>
+<section id="anatomy-imaging-data">
+<h4>Anatomy imaging data<a class="headerlink" href="#anatomy-imaging-data" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>File collection</strong></p></th>
@@ -945,9 +1076,9 @@ dispensing with the need for introducing a new suffix.
 See <a class="reference external" href="#deriving-the-intended-qmri-application-from-an-ambiguous-file-collection">deriving the intended qMRI application from an ambiguous file collection</a>
 for details.</p></li>
 </ul>
-</div>
-<div class="section" id="field-maps">
-<h4>Field maps<a class="headerlink" href="#field-maps" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="field-maps">
+<h4>Field maps<a class="headerlink" href="#field-maps" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>File collection</strong></p></th>
@@ -979,10 +1110,10 @@ for details.</p></li>
 </tbody>
 </table>
 <p><sup>*</sup> Please see TB1SRGE-specific notes for the calculation of <code class="docutils literal notranslate"><span class="pre">NumberShots</span></code>.</p>
-</div>
-</div>
-<div class="section" id="metadata-requirements-for-qmri-maps">
-<h3>Metadata requirements for qMRI maps<a class="headerlink" href="#metadata-requirements-for-qmri-maps" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="metadata-requirements-for-qmri-maps">
+<h3>Metadata requirements for qMRI maps<a class="headerlink" href="#metadata-requirements-for-qmri-maps" title="Permalink to this headline">#</a></h3>
 <p>As qMRI maps are stored as derivatives, they are subjected to the metadata requirements of
 <a class="reference external" href="../03-modality-agnostic-files.md#derived-dataset-and-pipeline-description">derived datasets</a>.</p>
 <p>An example <code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code> for a qMRI map derivatives directory:</p>
@@ -1070,10 +1201,10 @@ sub-01_T1map.json
 }
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="deriving-the-intended-qmri-application-from-an-ambiguous-file-collection">
-<h2>Deriving the intended qMRI application from an ambiguous file collection<a class="headerlink" href="#deriving-the-intended-qmri-application-from-an-ambiguous-file-collection" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="deriving-the-intended-qmri-application-from-an-ambiguous-file-collection">
+<h2>Deriving the intended qMRI application from an ambiguous file collection<a class="headerlink" href="#deriving-the-intended-qmri-application-from-an-ambiguous-file-collection" title="Permalink to this headline">#</a></h2>
 <p>Certain file collection suffixes may refer to a generic data collection regime such as variable flip angle (VFA),
 rather than a more specific acquisition, for example, magnetization prepared two gradient echoes (MP2RAGE).
 Such generic acquisitions can serve as a basis to derive various qMRI applications by changes to the acquisition sequence
@@ -1143,9 +1274,9 @@ T2 fitting application.</p>
 are included in the optional (third) column of
 <a class="reference external" href="#method-specific-priority-levels-for-qmri-file-collections">the priority levels table</a>
 for the consistency of this appendix.</p>
-</div>
-<div class="section" id="introducing-a-new-qmri-file-collection">
-<h2>Introducing a new qMRI file collection<a class="headerlink" href="#introducing-a-new-qmri-file-collection" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introducing-a-new-qmri-file-collection">
+<h2>Introducing a new qMRI file collection<a class="headerlink" href="#introducing-a-new-qmri-file-collection" title="Permalink to this headline">#</a></h2>
 <p>If a qMRI application cannot be interpreted as a subtype of an already existing suffix
 of a qMRI-related file collection, we RECOMMEND adhering to the following principles to
 introduce a new suffix:</p>
@@ -1163,11 +1294,11 @@ and the
 <a class="reference external" href="#anatomy-imaging-data">anatomy data priority levels</a>
 sections are extended instead of introducing a new suffix.</p></li>
 </ul>
-</div>
-<div class="section" id="application-specific-notes-for-qmri-file-collections">
-<h2>Application-specific notes for qMRI file collections<a class="headerlink" href="#application-specific-notes-for-qmri-file-collections" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Anatomy imaging data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="application-specific-notes-for-qmri-file-collections">
+<h2>Application-specific notes for qMRI file collections<a class="headerlink" href="#application-specific-notes-for-qmri-file-collections" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Anatomy imaging data<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>General notes:</p>
 <ul class="simple">
 <li><p>Some BIDS metadata field values are calculated based on the values of other metadata fields that are not listed as required fields.
@@ -1175,10 +1306,10 @@ These fields include: <code class="docutils literal notranslate"><span class="pr
 The calculation of the values may depend on the type of the acquisition.
 These acquisitions include: <code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code> and <code class="docutils literal notranslate"><span class="pre">TB1SRGE</span></code>.</p></li>
 </ul>
-<div class="section" id="mp2rage-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code> specific notes<a class="headerlink" href="#mp2rage-specific-notes" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="unit1-images">
-<h5><code class="docutils literal notranslate"><span class="pre">UNIT1</span></code> images<a class="headerlink" href="#unit1-images" title="Permalink to this headline">¶</a></h5>
+<section id="mp2rage-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code> specific notes<a class="headerlink" href="#mp2rage-specific-notes" title="Permalink to this headline">#</a></h4>
+<section id="unit1-images">
+<h5><code class="docutils literal notranslate"><span class="pre">UNIT1</span></code> images<a class="headerlink" href="#unit1-images" title="Permalink to this headline">#</a></h5>
 <p>Although the <code class="docutils literal notranslate"><span class="pre">UNIT1</span></code> image is provided as an output by the acquisition sequence, it is used
 as an input to offline calculation of a <code class="docutils literal notranslate"><span class="pre">T1map</span></code> using a dictionary lookup approach. However,
 <code class="docutils literal notranslate"><span class="pre">complex</span></code> data is needed for an accurate calculation of the <code class="docutils literal notranslate"><span class="pre">UNIT1</span></code> image, which is not commonly
@@ -1189,9 +1320,9 @@ raw dataset directory along with the <code class="docutils literal notranslate">
 for quantifying a <code class="docutils literal notranslate"><span class="pre">T1map</span></code>.</p>
 <p>If an additional <code class="docutils literal notranslate"><span class="pre">UNIT1</span></code> image is calculated offline, then the output is to be stored in the
 <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> directory with necessary provenance information.</p>
-</div>
-<div class="section" id="numbershots-metadata-field">
-<h5><code class="docutils literal notranslate"><span class="pre">NumberShots</span></code> metadata field<a class="headerlink" href="#numbershots-metadata-field" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="numbershots-metadata-field">
+<h5><code class="docutils literal notranslate"><span class="pre">NumberShots</span></code> metadata field<a class="headerlink" href="#numbershots-metadata-field" title="Permalink to this headline">#</a></h5>
 <p>Note that the type of <code class="docutils literal notranslate"><span class="pre">NumberShots</span></code> field can be either a <code class="docutils literal notranslate"><span class="pre">number</span></code> or an <code class="docutils literal notranslate"><span class="pre">array</span> <span class="pre">of</span> <span class="pre">numbers</span></code>.</p>
 <ul class="simple">
 <li><p>If a single <code class="docutils literal notranslate"><span class="pre">number</span></code> is provided, this should correspond to the number of <code class="docutils literal notranslate"><span class="pre">SlicesPerSlab</span></code> or <code class="docutils literal notranslate"><span class="pre">ReconMatrixPE</span></code>.
@@ -1209,36 +1340,36 @@ after  = SlicesPerSlab/2
 </pre></div>
 </div>
 <p>See this <a class="reference external" href="https://github.com/JosePMarques/MP2RAGE-related-scripts/blob/a405df30ac2c617d29d8b1b16025aaa911e86370/func/bids_T1B1correct.m#L16">reference implementation</a>.</p>
-</div>
-<div class="section" id="other-metadata-fields">
-<h5>Other metadata fields<a class="headerlink" href="#other-metadata-fields" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="other-metadata-fields">
+<h5>Other metadata fields<a class="headerlink" href="#other-metadata-fields" title="Permalink to this headline">#</a></h5>
 <p>The value of the <code class="docutils literal notranslate"><span class="pre">RepetitionTimeExcitation</span></code> field is not commonly found in the DICOM files.
 When accessible, the value of <code class="docutils literal notranslate"><span class="pre">EchoSpacing</span></code> corresponds to this metadata.
 When not accessible, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">X</span> <span class="pre">EchoTime</span></code> can be used as a surrogate.</p>
 <p>Further information about other <code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code> qMRI protocol fields can be found in the
 <a class="reference external" href="https://qmrlab.readthedocs.io/en/master/protocols.html#mp2rage">qMRLab documentation</a>.</p>
-</div>
-</div>
-<div class="section" id="tb1srge-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">TB1SRGE</span></code> specific notes<a class="headerlink" href="#tb1srge-specific-notes" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="tb1srge-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">TB1SRGE</span></code> specific notes<a class="headerlink" href="#tb1srge-specific-notes" title="Permalink to this headline">#</a></h4>
 <p>Calculation of <code class="docutils literal notranslate"><span class="pre">before</span></code> and <code class="docutils literal notranslate"><span class="pre">after</span></code> entries for <code class="docutils literal notranslate"><span class="pre">NumberShots</span></code> metadata field of <code class="docutils literal notranslate"><span class="pre">TB1SRGE</span></code> is more involved than that of <code class="docutils literal notranslate"><span class="pre">MP2RAGE</span></code>.
 The formula can be found in a
 <a class="reference external" href="https://github.com/JosePMarques/MP2RAGE-related-scripts/blob/a405df30ac2c617d29d8b1b16025aaa911e86370/DemoForR1Correction.m#L17">reference implementation</a>,
 which requires information about <code class="docutils literal notranslate"><span class="pre">BaseResolution</span></code> (that is, image matrix size in PE direction),
 partial Fourier fraction in the PE direction, number of reference lines for parallel imaging acceleration,
 and the parallel imaging acceleration factor in PE direction.</p>
-</div>
-</div>
-<div class="section" id="radiofrequency-rf-field-mapping">
-<h3>Radiofrequency (RF) field mapping<a class="headerlink" href="#radiofrequency-rf-field-mapping" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="radiofrequency-rf-field-mapping">
+<h3>Radiofrequency (RF) field mapping<a class="headerlink" href="#radiofrequency-rf-field-mapping" title="Permalink to this headline">#</a></h3>
 <p>Some RF file collections call for the use of special notations that cannot be resolved by
 by entities that can generalize to other applications.
 Instead of introducing an entity that is exclusive to a single application,
 method developers who commonly use these file collections for the <code class="docutils literal notranslate"><span class="pre">MPM</span></code> application reached
 the consensus on the use of <code class="docutils literal notranslate"><span class="pre">acq</span></code> entity to distinguish individual files.
 These suffixes include: <code class="docutils literal notranslate"><span class="pre">TB1AFI</span></code>, <code class="docutils literal notranslate"><span class="pre">TB1TFL</span></code>, <code class="docutils literal notranslate"><span class="pre">TB1RFM</span></code>, and <code class="docutils literal notranslate"><span class="pre">RB1COR</span></code>.</p>
-<div class="section" id="tb1epi-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">TB1EPI</span></code> specific notes<a class="headerlink" href="#tb1epi-specific-notes" title="Permalink to this headline">¶</a></h4>
+<section id="tb1epi-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">TB1EPI</span></code> specific notes<a class="headerlink" href="#tb1epi-specific-notes" title="Permalink to this headline">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">flip</span></code> and <code class="docutils literal notranslate"><span class="pre">echo</span></code> entities MUST be used to distinguish images with this suffix.
 The use of <code class="docutils literal notranslate"><span class="pre">flip</span></code> follows the default convention. However, this suffix defines a
 specific use case for the <code class="docutils literal notranslate"><span class="pre">echo</span></code> entity:</p>
@@ -1284,9 +1415,9 @@ files:</p>
 <p>To properly identify constituents of this particular method, values of the <code class="docutils literal notranslate"><span class="pre">echo</span></code>
 entity MUST index the images as follows:</p>
 <p></p>
-</div>
-<div class="section" id="tb1afi-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">TB1AFI</span></code> specific notes<a class="headerlink" href="#tb1afi-specific-notes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tb1afi-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">TB1AFI</span></code> specific notes<a class="headerlink" href="#tb1afi-specific-notes" title="Permalink to this headline">#</a></h4>
 <p>This method calculates a B1<sup>+</sup> map from two images acquired at two interleaved excitation repetition times (TR).
 Note that there is no entity for the TR that can be used to label the files corresponding to the two
 repetition times and the definition of repetition time depends on the modality
@@ -1317,9 +1448,9 @@ and MAY be followed by freeform entries:</p>
 </tbody>
 </table>
 <p></p>
-</div>
-<div class="section" id="tb1tfl-and-tb1rfm-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">TB1TFL</span></code> and <code class="docutils literal notranslate"><span class="pre">TB1RFM</span></code> specific notes<a class="headerlink" href="#tb1tfl-and-tb1rfm-specific-notes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tb1tfl-and-tb1rfm-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">TB1TFL</span></code> and <code class="docutils literal notranslate"><span class="pre">TB1RFM</span></code> specific notes<a class="headerlink" href="#tb1tfl-and-tb1rfm-specific-notes" title="Permalink to this headline">#</a></h4>
 <p>These suffixes describe two outputs generated by Siemens <code class="docutils literal notranslate"><span class="pre">tfl_b1_map</span></code> and <code class="docutils literal notranslate"><span class="pre">rf_map</span></code> product sequences, respectively.
 Both sequences output two images.
 The first image appears like an anatomical image and the second output is a scaled flip angle map.</p>
@@ -1349,9 +1480,9 @@ values of the <code class="docutils literal notranslate"><span class="pre">acq</
 </table>
 <p></p>
 <p>The example above applies to the <code class="docutils literal notranslate"><span class="pre">TB1RFM</span></code> suffix as well.</p>
-</div>
-<div class="section" id="rb1cor-specific-notes">
-<h4><code class="docutils literal notranslate"><span class="pre">RB1COR</span></code> specific notes<a class="headerlink" href="#rb1cor-specific-notes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="rb1cor-specific-notes">
+<h4><code class="docutils literal notranslate"><span class="pre">RB1COR</span></code> specific notes<a class="headerlink" href="#rb1cor-specific-notes" title="Permalink to this headline">#</a></h4>
 <p>This method generates a sensitivity map by combining two low resolution images
 collected by two transmit coils (the body and the head coil) upon subsequent scans
 with identical acquisition parameters.</p>
@@ -1385,10 +1516,10 @@ entries:</p>
 </tbody>
 </table>
 <p></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1412,9 +1543,11 @@ entries:</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="10-file-collections.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1430,24 +1563,28 @@ entries:</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The BIDS Community<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The BIDS Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

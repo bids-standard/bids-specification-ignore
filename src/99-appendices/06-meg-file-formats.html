@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Appendix VI: MEG file formats &#8212; The Brain Imaging Data Standard</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,7 +62,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +85,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,14 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   The Brain Imaging Data Structure
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    The Brain Imaging Data Structure
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The BIDS Specification
  </span>
@@ -331,110 +346,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/src/99-appendices/06-meg-file-formats.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/src/99-appendices/06-meg-file-formats.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/bids-standard/bids-specification-ignore"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/06-meg-file-formats.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/99-appendices/06-meg-file-formats.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/bids-standard/bids-specification-ignore/master?urlpath=tree/src/src/99-appendices/06-meg-file-formats.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bids-standard/bids-specification-ignore/issues/new?title=Issue%20on%20page%20%2Fsrc/99-appendices/06-meg-file-formats.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/src/99-appendices/06-meg-file-formats.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/src/99-appendices/06-meg-file-formats.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ctf">
    CTF
@@ -512,12 +643,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Appendix VI: MEG file formats</h1>
@@ -611,11 +741,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="appendix-vi-meg-file-formats">
-<h1>Appendix VI: MEG file formats<a class="headerlink" href="#appendix-vi-meg-file-formats" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="appendix-vi-meg-file-formats">
+<h1>Appendix VI: MEG file formats<a class="headerlink" href="#appendix-vi-meg-file-formats" title="Permalink to this headline">#</a></h1>
 <p>Each MEG system brand has specific file organization and data formats.
 RECOMMENDED values for <code class="docutils literal notranslate"><span class="pre">manufacturer_specific_extensions</span></code>:</p>
 <table class="colwidths-auto table">
@@ -646,8 +777,8 @@ RECOMMENDED values for <code class="docutils literal notranslate"><span class="p
 </tbody>
 </table>
 <p>Below are specifications for each system brand.</p>
-<div class="section" id="ctf">
-<h2>CTF<a class="headerlink" href="#ctf" title="Permalink to this headline">¶</a></h2>
+<section id="ctf">
+<h2>CTF<a class="headerlink" href="#ctf" title="Permalink to this headline">#</a></h2>
 <p>Each experimental run with a CTF system yields a directory with a <code class="docutils literal notranslate"><span class="pre">.ds</span></code> extension,
 containing several files. The OPTIONAL digitized positions of the head points
 are usually stored in a separate <code class="docutils literal notranslate"><span class="pre">.pos</span></code> file, not necessarily within the <code class="docutils literal notranslate"><span class="pre">.ds</span></code>
@@ -667,9 +798,9 @@ such as the CTF newDs command-line application or
 <p></p>
 <p>To learn more about CTF’s data organization:
 <a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/ctf">https://www.fieldtriptoolbox.org/getting_started/ctf</a></p>
-</div>
-<div class="section" id="neuromag-elekta-megin">
-<h2>Neuromag/Elekta/MEGIN<a class="headerlink" href="#neuromag-elekta-megin" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="neuromag-elekta-megin">
+<h2>Neuromag/Elekta/MEGIN<a class="headerlink" href="#neuromag-elekta-megin" title="Permalink to this headline">#</a></h2>
 <p>Neuromag/Elekta/MEGIN and Tristan Technologies BabyMEG data is stored as
 FIFF files with the extension <code class="docutils literal notranslate"><span class="pre">.fif</span></code>. The digitized positions of the head
 points are saved inside the FIFF file along with the MEG data, with typically no
@@ -677,8 +808,8 @@ points are saved inside the FIFF file along with the MEG data, with typically no
 <div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_run-&lt;index&gt;]_meg.fif
 </pre></div>
 </div>
-<div class="section" id="cross-talk-and-fine-calibration-files">
-<h3>Cross-talk and fine-calibration files<a class="headerlink" href="#cross-talk-and-fine-calibration-files" title="Permalink to this headline">¶</a></h3>
+<section id="cross-talk-and-fine-calibration-files">
+<h3>Cross-talk and fine-calibration files<a class="headerlink" href="#cross-talk-and-fine-calibration-files" title="Permalink to this headline">#</a></h3>
 <p>In case internal active shielding (IAS) was used during acquisition, raw FIFF
 files need to be processed using Maxwell filtering
 (signal-space separation, SSS) to make the data usable.
@@ -700,25 +831,25 @@ entity.</p>
 fine-calibration files MUST be denoted using <code class="docutils literal notranslate"><span class="pre">acq-calibration</span></code>.</p>
 <p>The cross-talk and fine-calibration data MUST be stored in the subject-level <code class="docutils literal notranslate"><span class="pre">meg</span></code> directory,
 which may be nested inside a <code class="docutils literal notranslate"><span class="pre">ses-&lt;label&gt;</span></code> directory, as shown in the following examples.</p>
-<div class="section" id="example-with-single-session-omitted-session-directory">
-<h4>Example with single session (omitted session directory)<a class="headerlink" href="#example-with-single-session-omitted-session-directory" title="Permalink to this headline">¶</a></h4>
+<section id="example-with-single-session-omitted-session-directory">
+<h4>Example with single session (omitted session directory)<a class="headerlink" href="#example-with-single-session-omitted-session-directory" title="Permalink to this headline">#</a></h4>
 <p></p>
-</div>
-<div class="section" id="example-with-multiple-sessions">
-<h4>Example with multiple sessions<a class="headerlink" href="#example-with-multiple-sessions" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="example-with-multiple-sessions">
+<h4>Example with multiple sessions<a class="headerlink" href="#example-with-multiple-sessions" title="Permalink to this headline">#</a></h4>
 <p></p>
-</div>
-</div>
-<div class="section" id="sharing-fiff-data-after-signal-space-separation-sss">
-<h3>Sharing FIFF data after signal-space separation (SSS)<a class="headerlink" href="#sharing-fiff-data-after-signal-space-separation-sss" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sharing-fiff-data-after-signal-space-separation-sss">
+<h3>Sharing FIFF data after signal-space separation (SSS)<a class="headerlink" href="#sharing-fiff-data-after-signal-space-separation-sss" title="Permalink to this headline">#</a></h3>
 <p>After applying SSS (for example, by using the MaxFilter software),
 files SHOULD be renamed with the corresponding label (for example, <code class="docutils literal notranslate"><span class="pre">proc-sss</span></code>)
 and placed in a <code class="docutils literal notranslate"><span class="pre">derivatives</span></code> subdirectory.</p>
 <p>Example:</p>
 <p></p>
-</div>
-<div class="section" id="split-files">
-<h3>Split files<a class="headerlink" href="#split-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="split-files">
+<h3>Split files<a class="headerlink" href="#split-files" title="Permalink to this headline">#</a></h3>
 <p>In the case of long data recordings that exceed a file size of 2Gb, the <code class="docutils literal notranslate"><span class="pre">.fif</span></code>
 files are conventionally split into multiple parts.
 For example:</p>
@@ -745,9 +876,9 @@ for the <code class="docutils literal notranslate"><span class="pre">acq_time</s
 <li><p><a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/neuromag">Neuromag/Elekta/MEGIN data organization</a></p></li>
 <li><p><a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/babysquid">BabyMEG</a></p></li>
 </ul>
-</div>
-<div class="section" id="recording-dates-in-fif-files">
-<h3>Recording dates in <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files<a class="headerlink" href="#recording-dates-in-fif-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recording-dates-in-fif-files">
+<h3>Recording dates in <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files<a class="headerlink" href="#recording-dates-in-fif-files" title="Permalink to this headline">#</a></h3>
 <p>It is important to note that recording dates in <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files are represented
 as <code class="docutils literal notranslate"><span class="pre">int32</span></code> format seconds since (or before) <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time"><em>the Epoch</em></a>
 (<code class="docutils literal notranslate"><span class="pre">1970-01-01T00:00:00.000000</span></code> UTC).
@@ -755,10 +886,10 @@ Integers in <code class="docutils literal notranslate"><span class="pre">int32</
 Due to this representation, the Neuromag/Elekta/MEGIN file format for MEG (<code class="docutils literal notranslate"><span class="pre">.fif</span></code>) does <em>not</em>
 support recording dates earlier than <code class="docutils literal notranslate"><span class="pre">1901-12-13T08:45:53.000000</span></code> UTC or later than
 <code class="docutils literal notranslate"><span class="pre">2038-01-19T03:14:07.000000</span></code> UTC.</p>
-</div>
-</div>
-<div class="section" id="bti-4d-neuroimaging">
-<h2>BTi/4D neuroimaging<a class="headerlink" href="#bti-4d-neuroimaging" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="bti-4d-neuroimaging">
+<h2>BTi/4D neuroimaging<a class="headerlink" href="#bti-4d-neuroimaging" title="Permalink to this headline">#</a></h2>
 <p>Each experimental run on a 4D neuroimaging/BTi system results in a directory
 containing multiple files without extensions.</p>
 <div class="highlight-Text notranslate"><div class="highlight"><pre><span></span>[sub-&lt;label&gt;[_ses-&lt;label&gt;]_headshape.pos]
@@ -773,9 +904,9 @@ files for each run inside (for example, <code class="docutils literal notranslat
 <p></p>
 <p>More about the 4D neuroimaging/BTi data organization at:
 <a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/bti">https://www.fieldtriptoolbox.org/getting_started/bti</a></p>
-</div>
-<div class="section" id="kit-yokogawa-ricoh">
-<h2>KIT/Yokogawa/Ricoh<a class="headerlink" href="#kit-yokogawa-ricoh" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="kit-yokogawa-ricoh">
+<h2>KIT/Yokogawa/Ricoh<a class="headerlink" href="#kit-yokogawa-ricoh" title="Permalink to this headline">#</a></h2>
 <p>Each experimental run on a KIT/Yokogawa/Ricoh system yields a raw file with either
 <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> or <code class="docutils literal notranslate"><span class="pre">.con</span></code> extension,
 and with its associated marker coil file(s) with either <code class="docutils literal notranslate"><span class="pre">.sqd</span></code> or <code class="docutils literal notranslate"><span class="pre">.mrk</span></code> extension.
@@ -801,9 +932,9 @@ the two marker measurements occur before and after the raw data acquisition,
 <code class="docutils literal notranslate"><span class="pre">pre</span></code> and <code class="docutils literal notranslate"><span class="pre">post</span></code> are used to differentiate the two situations.</p>
 <p>More about the KIT/Yokogawa/Ricoh data organization at:
 <a class="reference external" href="https://www.fieldtriptoolbox.org/getting_started/yokogawa">https://www.fieldtriptoolbox.org/getting_started/yokogawa</a></p>
-</div>
-<div class="section" id="kriss">
-<h2>KRISS<a class="headerlink" href="#kriss" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="kriss">
+<h2>KRISS<a class="headerlink" href="#kriss" title="Permalink to this headline">#</a></h2>
 <p>Each experimental run on the KRISS system produces a file with extension
 <code class="docutils literal notranslate"><span class="pre">.kdf</span></code>. Additional files can be available in the same directory: the digitized
 positions of the head points (<code class="docutils literal notranslate"><span class="pre">\_digitizer.txt</span></code>), the position of the center of
@@ -817,9 +948,9 @@ sub-&lt;label&gt;[_ses-&lt;label&gt;]_task-&lt;label&gt;[_acq-&lt;label&gt;]_dig
 </div>
 <p>Example:</p>
 <p></p>
-</div>
-<div class="section" id="itab">
-<h2>ITAB<a class="headerlink" href="#itab" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="itab">
+<h2>ITAB<a class="headerlink" href="#itab" title="Permalink to this headline">#</a></h2>
 <p>Each experimental run on a ITAB-ARGOS153 system yields a raw (<code class="docutils literal notranslate"><span class="pre">.raw</span></code>) data file
 plus an associated binary header file (<code class="docutils literal notranslate"><span class="pre">.mhd</span></code>). The raw data file has an ASCII
 header that contains detailed information about the data acquisition system,
@@ -830,16 +961,16 @@ plus other information on offline preprocessing performed after data acquisition
 information).</p>
 <p>Example:</p>
 <p></p>
-</div>
-<div class="section" id="aalto-megmri">
-<h2>Aalto MEG–MRI<a class="headerlink" href="#aalto-megmri" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="aalto-megmri">
+<h2>Aalto MEG–MRI<a class="headerlink" href="#aalto-megmri" title="Permalink to this headline">#</a></h2>
 <p>For stand-alone MEG data, the Aalto hybrid device uses the standard <code class="docutils literal notranslate"><span class="pre">.fif</span></code> data
 format and follows the conventions of Elekta/Neuromag as described
 <a class="reference external" href="06-meg-file-formats.md#neuromagelektamegin">above</a>. The <code class="docutils literal notranslate"><span class="pre">.fif</span></code> files may
 contain unreconstructed MRI data. The inclusion of MRI data and information for
 accurate reconstruction will be fully standardized at a later stage.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -863,9 +994,11 @@ accurate reconstruction will be fully standardized at a later stage.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="05-units.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -881,24 +1014,28 @@ accurate reconstruction will be fully standardized at a later stage.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The BIDS Community<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The BIDS Community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
