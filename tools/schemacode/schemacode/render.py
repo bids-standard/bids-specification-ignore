@@ -139,7 +139,7 @@ def make_glossary_myst(schema):
         if temp_obj_def:
             text += f"\tschema information:\n\t```yaml\n\t{temp_obj_def}\n\t```\n\n"
 
-    text += "```"
+    text += "```\n"
 
     return text
 
