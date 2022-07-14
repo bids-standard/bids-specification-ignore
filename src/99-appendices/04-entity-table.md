@@ -13,6 +13,19 @@ kernelspec:
 
 # Appendix IV: Entity table
 
+```{code-cell} ipython3
+:tags: [remove-cell]
+
+from myst_nb import glue
+from IPython.display import display, Markdown, HTML
+from schemacode import render, schema, utils
+from markdown import markdown
+
+# Load the schema path
+schemapath = utils.get_schema_path()
+schema_obj = schema.load_schema(schemapath)
+```
+
 This section compiles the entities (key-value pairs) described throughout this
 specification, and establishes a common order within a filename.
 For example, if a file has an acquisition and reconstruction label, the
@@ -33,24 +46,54 @@ while entity definitions are in [Appendix IX](09-entities.md).
 
 ## Magnetic Resonance Imaging
 
-{{ MACROS___make_entity_table(datatypes=["anat", "dwi", "func", "fmap", "perf"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["anat", "dwi", "func", "fmap", "perf"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```
 
 ## Biopotential Amplification (EEG and iEEG)
 
-{{ MACROS___make_entity_table(datatypes=["ieeg", "eeg"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["ieeg", "eeg"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```
 
 ## Magnetoencephalography (MEG)
 
-{{ MACROS___make_entity_table(datatypes=["meg"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["meg"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```
 
 ## Positron Emission Tomography (PET)
 
-{{ MACROS___make_entity_table(datatypes=["pet"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["pet"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```
 
 ## Behavioral Data
 
-{{ MACROS___make_entity_table(datatypes=["beh"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["beh"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```
 
 ## Microscopy
 
-{{ MACROS___make_entity_table(datatypes=["micr"]) }}
+```{code-cell} ipython3
+:tags: [remove-input]
+
+table = render.make_entity_table(schema_obj, datatypes=["micr"])
+display(HTML(markdown(table.to_markdown(), extensions=['tables'])))
+```

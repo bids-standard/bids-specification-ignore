@@ -6,6 +6,16 @@ from pprint import pprint
 import numpy as np
 
 
+def fix(string):
+    import re
+
+    pattern = "(\{term\}<code>(.*?)</code>)"
+    for found in re.findall(pattern, string):
+        string = string.replace(found[0], "{term}" + f"`{found[1]}`")
+
+    return string
+
+
 def get_schema_path():
     """Get the path to the schema directory.
 

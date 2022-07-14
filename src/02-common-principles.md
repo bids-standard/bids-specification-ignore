@@ -14,7 +14,7 @@ kernelspec:
 # Common principles
 
 ```{code-cell} ipython3
-:tags: [hide-cell]
+:tags: [remove-cell]
 
 from myst_nb import glue
 from IPython.display import display, Markdown, HTML
@@ -487,7 +487,7 @@ then that field MUST contain a description of the corresponding column,
 using an object containing the following fields:
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [remove-input]
 
 field_info = {
     "LongName": "OPTIONAL",
